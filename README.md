@@ -1,6 +1,6 @@
-# URBANopt Docs README
+# ComStock EUSS Documentation
 
-This repo contains documentation for the gems that make up the URBANopt<sup>&trade;</sup> SDK
+This repo contains documentation for the End-Use Savings Shapes (EUSS) project powered by ComStock.
 
 ## Local Development
 
