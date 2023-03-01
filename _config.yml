@@ -1,4 +1,4 @@
-remote_theme: pmarsceill/just-the-docs
+remote_theme: pages-themes/leap-day@v0.2.0
 color_scheme: uo
 title: [ComStock EUSS Documentation]
 logo: "/resources/ComStock Logo.jpg"
