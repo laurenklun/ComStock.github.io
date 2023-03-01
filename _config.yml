@@ -29,9 +29,10 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: https://comstock.github.io/
 
 # Build settings
-theme: leap-day
+remote_theme: andrewbanchich/forty-jekyll-theme
 plugins:
   - jekyll-feed
+  - jekyll-include-cache
 
 # Exclude from processing.
 # The following items will not be processed, by default.
