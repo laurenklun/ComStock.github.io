@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+title: ComStock EUSS
 has_children: false
 has_toc: false
 nav_order: 0
