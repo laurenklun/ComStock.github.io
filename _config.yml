@@ -1,7 +1,7 @@
 remote_theme: pmarsceill/just-the-docs
 color_scheme: uo
 title: [ComStock EUSS Documentation]
-logo: "/doc_files/URBANopt-Logo-Horizontal-2Color.png"
+logo: "/resources/ComStock Logo.jpg"
 description: [Documentation for the End-Use Savings Shapes (EUSS) project powered by ComStock]
 heading_anchors: true
 search_enabled: true
