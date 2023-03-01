@@ -19,11 +19,16 @@
 # in the templates via {{ site.myvariable }}.
 
 title: ComStock EUSS Documentation
-# logo: "/resources/ComStock Logo.jpg"
-# description: 
 url: https://comstock.github.io/
 
+remote_theme: LeNPaul/Millennial
+
+# jekyll-paginate configuration
+paginate:            5
+
 # Build settings
-remote_theme: just-the-docs/just-the-docs
-plugins:             [jekyll-feed]
+markdown:            kramdown
+highlighter:         rouge
+permalink:           /:title
+plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
 
