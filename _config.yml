@@ -1,4 +1,4 @@
-remote_theme: pmarsceill/just-the-docs
+remote_theme: pages-themes/leap-day@v0.2.0
 color_scheme: uo
 title: [ComStock EUSS Documentation]
 logo: "/doc_files/URBANopt-Logo-Horizontal-2Color.png"
@@ -7,3 +7,5 @@ heading_anchors: true
 search_enabled: true
 url: https://comstock.github.io/
 footer_content: "ComStock, Copyright (c) 2019-2022, Alliance for Sustainable Energy, LLC, and other contributors. All rights reserved."
+plugins:
+- jekyll-remote-theme # add this line to the plugins list if you already have one
