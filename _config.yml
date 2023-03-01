@@ -28,17 +28,18 @@ url: https://comstock.github.io/
 
 # Build settings
 remote_theme: LeNPaul/Millennial
-plugins:
-  - jekyll-feed
-  - jekyll-include-cache
 
-# homepage tiles
-tiles-source: pages # accepts "posts" or "pages"
-tiles-count: 3
+# jekyll-paginate configuration
+paginate:            5
 
-# build settings
-markdown: kramdown
+# Build settings
+markdown:            kramdown
+highlighter:         rouge
+permalink:           /:title
+plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag, jekyll-include-cache]
 
-sass:
-  style: compressed
+# Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
+title:		           "Millennial"
+description:	       "a minimalist Jekyll theme for running a blog or publication"
+author:              "Paul Le"
 
