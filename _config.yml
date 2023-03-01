@@ -29,7 +29,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: https://comstock.github.io/
 
 # Build settings
-theme: leap day
+theme: minima
 plugins:
   - jekyll-feed
 
