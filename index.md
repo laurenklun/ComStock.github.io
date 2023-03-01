@@ -8,14 +8,20 @@ nav_order: 0
 
 <img src="resources/ComStock Logo.jpg" width="80%" height="80%" alt="comstock logo">
 
-# ComStock EUSS Documentation
+# Header 1
 
-URBANopt<sup>&trade;</sup> (Urban Renewable Building And Neighborhood optimization) is an EnergyPlus<sup>&trade;</sup>- and OpenStudio<sup>&copy;</sup>-based simulation platform aimed at district- and campus-scale thermal and electrical analysis for Community and Urban District Energy Modeling.
+TBD
 
-**_URBANopt is not a standalone program for end users._** URBANopt is a Software Development Kit (SDK) &mdash; a collection of open source modules focused on underlying analytics for a variety of multi-building design and analysis use cases. Commercial software developers can use existing URBANopt modules, customize URBANopt modules, and create new modules to help implement the desired workflows for their end user tools. Other users of the SDK could include researchers looking to create customized workflows to perform specific environmental design tasks.
+# Header 2
+
+TBD
+
+# Header 3
+
+TBD
 
 
-## Quicklinks
+# Header 4
 
 [Getting Started](./getting_started/getting_started){: .btn .btn-uo .white-text} TBD
 
