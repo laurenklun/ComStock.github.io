@@ -1,7 +1,9 @@
 ---
 layout: post
 title: "Getting Started"
-image: cuba-2.jpg
+categories: documentation
+tags: [documentation,sample]
+image: cuba-1.jpg
 ---
 
 # TBD
