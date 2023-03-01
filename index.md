@@ -17,12 +17,12 @@ URBANopt<sup>&trade;</sup> (Urban Renewable Building And Neighborhood optimizati
 
 ## Quicklinks
 
-[Getting Started](./getting_started/getting_started){: .btn .btn-uo .white-text} &mdash; Visit the [Getting Started page](./getting_started/getting_started) for detailed instructions on how to use URBANopt in a variety of workflows. You can also view the [tutorial videos](./resources/tutorials/tutorials) to guide you through various aspects of the URBANopt SDK and its workflows.
+[Getting Started](./getting_started/getting_started){: .btn .btn-uo .white-text} TBD
 
-[Workflows](./workflows/workflows){: .btn .btn-uo .white-text} &mdash; For more details about the workflows enabled through URBANopt, visit the [Workflows](./workflows/workflows) section.
+[Example Use Cases](./example_use_cases/example_use_cases){: .btn .btn-uo .white-text} TBD
 
-[Resources](./resources/about){: .btn .btn-uo .white-text} &mdash; Visit the [Resources](./resources/about) section for general information on URBANopt structure and customizations.
+[References](./references/references){: .btn .btn-uo .white-text} TBD
 
-[For Developers](./developer_resources/developer_resources){: .btn .btn-uo .white-text} &mdash; Visit the [Developer Resources](developer_resources/developer_resources) section for details on how to develop and test new URBANopt functionality as well as a compatibility matrix for all URBANopt dependencies.
+[Tutorials](./tutorials/tutorials){: .btn .btn-uo .white-text} TBD
 
-[Questions, Comments, Requests?](https://github.com/orgs/urbanopt/discussions){: .btn .btn-uo .white-text} &mdash; Visit the new [URBANopt Discussions](https://github.com/orgs/urbanopt/discussions) page on GitHub to ask questions or make feature requests.
+[Publications](./publications/publications){: .btn .btn-uo .white-text} TBD
