@@ -11,7 +11,7 @@ menu:
 - {name: 'ComStock', url: 'comstock'}
 - {name: 'Example Use Cases',       url: 'example-use-cases'}
 - {name: 'Tutorials',      url: 'tutorials'}
-- {name: 'Publications',              url: 'about'}
+- {name: 'Publications',              url: 'publications'}
 - {name: 'Contact',            url: 'contact'}
 
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
