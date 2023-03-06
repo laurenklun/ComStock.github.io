@@ -4,7 +4,8 @@ theme: just-the-docs
 remote_theme: pmarsceill/just-the-docs
 
 url: https://github.com/NREL/ComStock.github.io
-logo: "/assets/images/ComStock Logo.jpg"
+logo: "/assets/images/ComStock_color_hort-transparent.png"
+favicon_ico: "/assets/images/favicon.ico"
 search_enabled: false
 
 aux_links:
