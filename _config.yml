@@ -1,7 +1,7 @@
 title: Just the Docs Template
 description: A starter template for a Jeykll site using the Just the Docs theme!
 theme: just-the-docs
-remote_theme: pmarsceill/just-the-docs
+# remote_theme: pmarsceill/just-the-docs
 
 url: https://github.com/NREL/ComStock.github.io
 logo: "/assets/images/ComStock_color_hort-transparent.png"
