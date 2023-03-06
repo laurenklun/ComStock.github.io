@@ -14,10 +14,10 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: ComStock
-description: A Jekyll theme for documentation
-baseurl: "/" # the subpath of your site, e.g. /blog
+description: Documentation for ComStock
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://github.com/NREL/ComStock.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-repository: ComStock.github.io # for github-metadata
+repository: NREL/ComStock.github.io # for github-metadata
 
 permalink: pretty
 
