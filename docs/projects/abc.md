@@ -10,7 +10,7 @@ nav_order: 3
 ## Motivation
 add motivation
 
-## Results
+## Highlights
 put short summary of results (with visuals) and point to detailed references (e.g., documentation, report, paper, etc.)
 
 ## Contributors
