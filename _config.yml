@@ -9,6 +9,12 @@ search_enabled: true
 aux_links:
   "ComStock on GitHub":
     - "https://github.com/NREL/ComStock"
+aux_links_new_tab: true
 footer_content: "ComStock, Copyright (c) 2019-2022, Alliance for Sustainable Energy, LLC, and other contributors. All rights reserved."
+color_scheme: comstock
 
+# Google Analytics Tracking (optional)
+# Supports a CSV of tracking ID strings (eg. "UA-1234567-89,G-1AB234CDE5")
+# ga_tracking: UA-2709176-10
+# ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true/nil by default)
 
