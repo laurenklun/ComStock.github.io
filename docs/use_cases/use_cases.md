@@ -7,3 +7,4 @@ permalink: docs/use_cases
 ---
 
 # Example Use Cases
+{: .fw-500 }

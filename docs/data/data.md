@@ -7,3 +7,4 @@ permalink: docs/data
 ---
 
 # Data
+{: .fw-500 }

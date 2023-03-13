@@ -6,3 +6,5 @@ has_children: true
 permalink: docs/projects
 ---
 
+# Past and On-Going Projects
+{: .fw-500 }
