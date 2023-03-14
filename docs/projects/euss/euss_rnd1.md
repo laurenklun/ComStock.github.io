@@ -7,9 +7,9 @@ permalink: /docs/projects/euss/round1/
 nav_order: 1
 ---
 
-![project_logo](/assets/images/logo_euss_rnd1.png)
-
 # EUSS Round 1
+
+![project_logo](/assets/images/logo_euss_rnd1.png)
 
 ## Motivation
 TBD
