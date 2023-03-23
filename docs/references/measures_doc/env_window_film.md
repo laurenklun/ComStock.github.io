@@ -7,25 +7,11 @@ permalink: /docs/references/measures_doc/env_window_film/
 nav_order: 1
 ---
 
-End-Use Savings Shapes
+# Measure Documentation: Window Film
 
-Measure Documentation: Window Film
+Authors: Janghyun Kim, Chris CaraDonna, Andrew Parker, and Shanti Pless
 
-Janghyun Kim, Chris CaraDonna, Andrew Parker, and Shanti Pless![A picture containing text, clipart Description automatically generated](media/2d517078b5cd74b923ddc0958d488be1.jpeg)
-
-List of Acronyms
-
-| AEDG  | Advanced Energy Design Guide               |
-|-------|--------------------------------------------|
-| HVAC  | heating, ventilating, and air conditioning |
-| IGU   | insulated glass unit                       |
-| LBNL  | Lawrence Berkeley National Laboratory      |
-| low-E | low emissivity                             |
-| SCF   | solar control film                         |
-| SHGC  | solar heat gain coefficient                |
-| VLT   | visual light transmittance                 |
-
-Executive Summary
+# Executive Summary
 
 Building on the successfully completed effort to calibrate and validate the U.S. Department of Energy’s ResStock™ and ComStock™ models over the past three years, the objective of this work is to produce national data sets that empower analysts working for federal, state, utility, city, and manufacturer stakeholders to answer a broad range of analysis questions.
 
@@ -41,118 +27,14 @@ While the practical goal of purchasing and installing a window film varies widel
 
 Window film products that were modeled in this analysis significantly reduced the solar heat gain coefficient of the overall glazing system, resulting in better energy savings for buildings in hot climate regions. However, significantly reducing the solar heat gain coefficient that can block unfavorable heat during the summer can actually harm blocking favorable heat during the winter. By applying window films on a stock of buildings covering various load and weather conditions, this analysis highlights the line that differentiates “when/where we will save” and “when/where we will use more.”
 
-Acknowledgments
-
-The authors would like to acknowledge the valuable guidance and input provided by Jen Daly at 3M.
-
-Table of Contents
-
-[Executive Summary](#_Toc130207991)
-
-[1 Window Film](#_Toc130207992)
-
-[1.1 Accessing Results](#_Toc130207993)
-
-[1.2 Measure Summary](#_Toc130207994)
-
-[2 Technology Summary](#_Toc130207995)
-
-[3 ComStock Baseline Approach](#_Toc130207996)
-
-[4 Modeling Approach](#_Toc130207997)
-
-[4.1 Technology Specifications](#_Toc130207998)
-
-[4.2 Applicability](#_Toc130207999)
-
-[4.3 Output Variables of the Measure](#_Toc130208000)
-
-[4.4 Non-Energy Impacts, Limitations, and Concerns](#_Toc130208001)
-
-[5 Results](#_Toc130208002)
-
-[5.1 Energy Impacts: Single Building Example](#_Toc130208003)
-
-[5.2 Energy Impacts: 100 Building Examples](#_Toc130208004)
-
-[5.3 Energy Impacts: 10,000 Building Examples](#_Toc130208005)
-
-[5.4 Energy Impacts: Full ComStock National Results](#_Toc130208006)
-
-[References](#_Toc130208007)
-
-List of Figures
-
-[Figure 1. Different installation positions of window films for (a) single pane, (b) double pane, and (c) triple pane windows](#_Toc130207875)
-
-[Figure 2. Number and type of SCFs in the International Glazing Database](#_Toc130207876)
-
-[Figure 3. Performance characteristics and variations of SCFs from 3M](#_Toc130207877)
-
-[Figure 4. Floor area portion of different baseline window types across the entire building stock in ComStock](#_Toc130207878)
-
-[Figure 5. Workflow of creating new glass, glazing systems, and windows with window films](#_Toc130207879)
-
-[Figure 6. Simulation results with and without window film: hotter region (Tucson, AZ)](#_Toc130207880)
-
-[Figure 7. Simulation results with and without window film: colder region (International Falls, MN)](#_Toc130207881)
-
-[Figure 8. Average window performance of 100 building samples: solar heat gain coefficient, U-factor, and visual light transmittance](#_Toc130207882)
-
-[Figure 9. ComStock test results with 100 sample buildings: percent savings by end uses](#_Toc130207883)
-
-[Figure 10. ComStock test results with 100 sample buildings: percent savings by climate zone](#_Toc130207884)
-
-[Figure 11. Average window performance of 10,000 building samples: solar heat gain coefficient, U-factor, and visual light transmittance](#_Toc130207885)
-
-[Figure 12. ComStock test results with 10,000 sample buildings: site energy savings by climate zones](#_Toc130207886)
-
-[Figure 13. ComStock test results with 10,000 sample buildings: site energy savings by baseline window type](#_Toc130207887)
-
-[Figure 14. ComStock test results with 10,000 sample buildings: percent savings by end uses](#_Toc130207888)
-
-[Figure 15. ComStock test results with 10,000 sample buildings: percent savings by climate zone](#_Toc130207889)
-
-[Figure 16. ComStock full national results: aggregated site energy savings on cooling, heating, and total site energy](#_Toc130207890)
-
-[Figure 17. ComStock full national results: aggregated site energy savings on cooling, heating, and total site energy for single pane window](#_Toc130207891)
-
-[Figure 18. ComStock full national results: window film impact on interior lighting with daylighting control](#_Toc130207892)
-
-[Figure 19. ComStock full national results: aggregated total site energy consumptions](#_Toc130207893)
-
-List of Tables
-
-[Table 1. Overall Assembly Performance Characteristics by Climate Zone](#_Toc130207870)
-
-[Table 2. Performance Range Baseline Windows With Window Films](#_Toc130207871)
-
-[Table 3. Applicability Criteria of Window Films](#_Toc130207872)
-
-[Table 4. Output Variables Calculated From the Measure Application](#_Toc130207873)
-
-1.  Window Film
-    1.  Accessing Results
-
-This documentation covers window film upgrade methodology and briefly discusses key results. Results can be accessed on the ComStock data lake “[end-use-load-profiles-for-us-building-stock](https://data.openei.org/s3_viewer?bucket=oedi-data-lake&prefix=nrel-pds-building-stock%2Fend-use-load-profiles-for-us-building-stock%2F)” or via the Data Viewer at comstock.nrel.gov.
-
-1.  Measure Summary
-
-| **Measure Title**  | **Window Film**                                                                                                                                                            |
-|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Measure Definition | This measure applies new performance of the overall glazing system reflecting a scenario when an applicable window film is attached to the original (“baseline”) window.   |
-| Applicability      | Certain window film (based on real products in the market) is paired with (1) baseline window type and (2) climate zone.                                                   |
-| Not Applicable     | Triple pane windows are considered not applicable for buildings in any climate zone. Double pane windows in buildings in very cold regions are considered not applicable.  |
-| Release            | ?                                                                                                                                                                          |
-
-1.  Technology Summary
+## 1. Technology Summary
 
 Window films, especially solar control films (SCFs), are a passive retrofit solution for windows that does not require a full window replacement. Following is a summary of SCF technology from a 2022 literature review published in *Applied Sciences* [1].
 
 -   SCF—composed of transparent, tinted, or metalized laminated polyester layers—is designed to shift thermal and solar optical properties of the overall glazing system by reflecting or absorbing part of the incident solar radiation. SCF promotes the improvement of the thermal and luminous performance of building glazing while reducing potential glare and the transmittance of ultraviolet radiation. The manufacturers of window films offer a wide range of performances depending on different use cases (e.g., energy savings, mitigating glare, controlling occupant’s view, protecting privacy).
 -   Figure 1 shows different film positions (e.g., Class A to D) with respect to typical insulated glass units (IGUs). While indoor films are more common than outdoor films in the current market, some of the latest outdoor films provide better energy performance when applied on relatively high-performing windows (e.g., double pane low-E, triple pane), and some of those products are currently being studied in real applications [2].
 
-![Graphical user interface, diagram Description automatically generated](media/02c6603fedbd847b2ee2f48f7878b12e.png)
+![Graphical user interface, diagram Description automatically generated](../media/02c6603fedbd847b2ee2f48f7878b12e.png)
 
 Figure 1. Different installation positions of window films for (a) single pane, (b) double pane, and (c) triple pane windows
 
@@ -162,38 +44,38 @@ Types of SCFs can vary, driven by different use cases:
 
 -   Reflective type
     -   Has reflective properties on both sides
-        -   Mitigates high heat, glare, and ultraviolet control
-        -   Has a silvery/mirrored look to the glazing when viewed with indoor lighting or outdoor daylight.
+    -   Mitigates high heat, glare, and ultraviolet control
+    -   Has a silvery/mirrored look to the glazing when viewed with indoor lighting or outdoor daylight.
 -   Dual-reflective type
     -   Has reflective outside-facing layer with a subtler inside-facing layer
-        -   Mitigates significant solar control during the day
-        -   Maintains clear outside view at night.
+    -   Mitigates significant solar control during the day
+    -   Maintains clear outside view at night.
 -   Neutral type
     -   Controls solar gains through the glass
-        -   Maintains original appearance of the glazing system.
+    -   Maintains original appearance of the glazing system.
 -   Low emissivity type
     -   Reduces the thermal transmittance coefficient (U-value) of the glazing system
-        -   Increases thermal insulation and heat rejection properties
-        -   Suitable for temperate regions.
+    -   Increases thermal insulation and heat rejection properties
+    -   Suitable for temperate regions.
 -   Spectrally selective type
     -   Offers an excellent heat rejection with a virtually invisible appearance
-        -   Blocks specific regions of the solar spectrum associated with solar heat gains
-        -   Does not penalize transmittance of daylight through the glazing.
+    -   Blocks specific regions of the solar spectrum associated with solar heat gains
+    -   Does not penalize transmittance of daylight through the glazing.
 -   Ceramic type
     -   Offers solar control without a metal layer
-        -   Maintains low visible reflectivity and high resistance to corrosion
-        -   Suitable for coastal areas.
+    -   Maintains low visible reflectivity and high resistance to corrosion
+    -   Suitable for coastal areas.
 -   Safety and protection type
     -   Controls excessive solar heat gains
-        -   Increases the resistance of the glass pane to intentional or accidental impacts
-        -   Reduces amount and dimension of potential glass fragments
-        -   Offers higher resistance to the glass to support shock waves from explosions and/or ballistic attacks.
+    -   Increases the resistance of the glass pane to intentional or accidental impacts
+    -   Reduces amount and dimension of potential glass fragments
+    -   Offers higher resistance to the glass to support shock waves from explosions and/or ballistic attacks.
 
 Manufacturers provide standardized data for SCFs through the National Fenestration Rating Council’s guidelines and the International Glazing Database, which can be used for additional analysis such as building energy modeling. Figure 2 shows the number of SCF models in the International Glazing Database (v72.0). Models included in the International Glazing Database can be imported to Lawrence Berkeley National Laboratory’s (LBNL) WINDOW[^1] software for either calculating (1) simplified (center-of-glass) properties (e.g., solar heat gain coefficient, U-value, visual light transmittance) or (2) detailed properties (e.g., varying solar heat gain coefficient by solar angular dependence) that can be also used in EnergyPlus™ for building energy simulations.
 
 [^1]: For more information, see <https://windows.lbl.gov/software/window>.
 
-![Diagram Description automatically generated](media/566207a6a894242ec7a7c313e7ecb166.png)
+![Diagram Description automatically generated](../media/566207a6a894242ec7a7c313e7ecb166.png)
 
 Figure 2. Number and type of SCFs in the International Glazing Database
 
@@ -201,22 +83,21 @@ Figure from [1]
 
 SCF products are available from various manufacturers covering various ranges of thermal (e.g., U-value, SHGC) and optical (e.g., transmittance and reflectance of light) performances as shown in Figure 3. Plots shown in Figure 3 indicate performance of windows when certain window film is applied on four different baseline windows. Multiple markers in each row represent different models (e.g., Low E 20, Low E 35) in a series (e.g., All Season) with varying tint levels. These window performance calculations were performed by the manufacturer using LBNL’s WINDOW software. As shown in Figure 3, customers can select from a wide range of products based on various needs between thermal goals (e.g., summer heat gain is too high) and visual goals (e.g., glare inside of the building is too much).
 
-![](media/2effc4c32be5abd50d29b3e079b8b2ba.png)
+![](../media/2effc4c32be5abd50d29b3e079b8b2ba.png)
 
 Figure 3. Performance characteristics and variations of SCFs from 3M
 
-Figure from 3M
-
-1.  ComStock Baseline Approach
+## 2. ComStock Baseline Approach
 
 The current baseline building stock in ComStock has 12 different window configurations. Figure 4 shows the breakdown of windows by total floor area. In total, single pane windows represent about 53% of the floor area, double pane 47%, and triple pane \<1%. The window film measure is applicable to all buildings that currently have single or double pane windows, which is nearly 100% of the stock. The very small fraction of buildings that already have triple pane windows do not receive this upgrade in our modeling.
 
-![Timeline Description automatically generated](media/64795c73024119a43c9f95a6e4ab9658.png)
+![Timeline Description automatically generated](../media/64795c73024119a43c9f95a6e4ab9658.png)
 
 Figure 4. Floor area portion of different baseline window types across the entire building stock in ComStock
 
-1.  Modeling Approach
-    1.  Technology Specifications
+## 3. Modeling Approach
+
+### 3.1. Technology Specifications
 
 It is possible to achieve a wide range of thermal and optical performances with an IGU that is composed of glass, spacer, gas, frame, and with and without window film. Because of the differences in climates across the United States, it is not desirable to drive the performance of the IGU in one direction (i.e., tradeoff is required); warmer climates with high cooling requirements may want lower SHGC to avoid overheating, while higher SHGC may be preferable to allow beneficial solar gain in colder climates. As a starting point for the target IGU performance, the performance properties from ASHRAE’s *Achieving Zero Energy: Advanced Energy Design Guide (AEDG) for Small to Medium Office Buildings* [3] are documented, as shown in Table 1.
 
@@ -230,78 +111,13 @@ Table 1. Overall Assembly Performance Characteristics by Climate Zone
 
 To understand the expected performance of the total assembly, combinations of existing windows and window films are modeled using LBNL’s WINDOW (v7.8) and Optics (v6) software, shown in Figure 5. Table 2 includes (1) performance (e.g., U-factor, SHGC, and visual light transmittance [VLT]) improvements between ComStock baseline windows and windows with window films; and (2) performance comparison against AEDG targets, with respect to different climate zones. Several window film products were selected from a larger pool (shown in Figure 3) based on the emphasis on thermal performance improvements rather than visual performance improvements, as this analysis is focused on the energy savings potential.
 
-![A picture containing graphical user interface Description automatically generated](media/d0764a788769024f14bcf92a945b4337.png)
+![](../media/710dba5cd3324231c99c9f5070f831ff.png){: width="600" }
 
 Figure 5. Workflow of creating new glass, glazing systems, and windows with window films
 
 Table 2. Performance Range Baseline Windows With Window Films
 
-| **Baseline Window Configuration** | **Window Film Retrofit Options** | **Retrofit Compared to Baseline** | **Baseline Compared to AEDG ZE** | **Retrofit Compared to AEDG ZE** |                      |              |          |                          |                      |                          |                      |                |             |                |                |             |                |                |             |
-|-----------------------------------|----------------------------------|-----------------------------------|----------------------------------|----------------------------------|----------------------|--------------|----------|--------------------------|----------------------|--------------------------|----------------------|----------------|-------------|----------------|----------------|-------------|----------------|----------------|-------------|
-| **Pane**                          | **Low-E**                        | **Glazing**                       | **Frame**                        | **Film Position**                | **Film Product**     | **U-factor** | **SHGC** | **U-factor within 10%?** | **SHGC within 10%?** | **U-factor within 10%?** | **SHGC within 10%?** |                |             |                |                |             |                |                |             |
-|                                   |                                  |                                   |                                  |                                  |                      |              |          | **CZ 1, 2, 3**           | **CZ 4, 5, 6**       | **CZ 7, 8**              | **CZ 1, 2, 3**       | **CZ 4, 5, 6** | **CZ 7, 8** | **CZ 1, 2, 3** | **CZ 4, 5, 6** | **CZ 7, 8** | **CZ 1, 2, 3** | **CZ 4, 5, 6** | **CZ 7, 8** |
-| Single                            | No                               | Clear                             | Aluminum                         | Interior                         | Affinity 15          | 1%           | 68%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Single                            | No                               | Clear                             | Aluminum                         | Interior                         | Affinity 30          | 3%           | 49%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | FALSE          | TRUE           | TRUE        |
-| Single                            | No                               | Clear                             | Aluminum                         | Interior                         | Low e 20             | 18%          | 67%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Single                            | No                               | Clear                             | Aluminum                         | Interior                         | Low e 35             | 14%          | 68%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Single                            | No                               | Clear                             | Aluminum                         | Exterior                         | Prestige exterior 20 | 0%           | 55%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | FALSE          | TRUE           | TRUE        |
-| Single                            | No                               | Clear                             | Aluminum                         | Exterior                         | Prestige exterior 70 | 0%           | 39%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       |
-| Single                            | No                               | Tinted/Reflective                 | Aluminum                         | Interior                         | Affinity 15          | 1%           | 51%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | FALSE          | TRUE           | TRUE        |
-| Single                            | No                               | Tinted/Reflective                 | Aluminum                         | Interior                         | Affinity 30          | 3%           | 39%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | FALSE          | TRUE           | TRUE        |
-| Single                            | No                               | Tinted/Reflective                 | Aluminum                         | Interior                         | Low e 20             | 18%          | 55%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | FALSE          | TRUE           | TRUE        |
-| Single                            | No                               | Tinted/Reflective                 | Aluminum                         | Interior                         | Low e 35             | 14%          | 54%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | FALSE          | TRUE           | TRUE        |
-| Single                            | No                               | Tinted/Reflective                 | Aluminum                         | Exterior                         | Prestige exterior 20 | 0%           | 48%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | FALSE          | TRUE           | TRUE        |
-| Single                            | No                               | Tinted/Reflective                 | Aluminum                         | Exterior                         | Prestige exterior 70 | 0%           | 35%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | FALSE          | TRUE           | TRUE        |
-| Single                            | No                               | Clear                             | Wood                             | Interior                         | Affinity 15          | 1%           | 71%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Single                            | No                               | Clear                             | Wood                             | Interior                         | Affinity 30          | 4%           | 51%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | FALSE          | TRUE           | TRUE        |
-| Single                            | No                               | Clear                             | Wood                             | Interior                         | Low e 20             | 22%          | 70%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Single                            | No                               | Clear                             | Wood                             | Interior                         | Low e 35             | 17%          | 71%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Single                            | No                               | Clear                             | Wood                             | Exterior                         | Prestige exterior 20 | 0%           | 58%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | FALSE          | TRUE           | TRUE        |
-| Single                            | No                               | Clear                             | Wood                             | Exterior                         | Prestige exterior 70 | 0%           | 41%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | FALSE          | FALSE          | TRUE        |
-| Single                            | No                               | Tinted/Reflective                 | Wood                             | Interior                         | Affinity 15          | 1%           | 54%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Single                            | No                               | Tinted/Reflective                 | Wood                             | Interior                         | Affinity 30          | 4%           | 41%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | FALSE          | TRUE           | TRUE        |
-| Single                            | No                               | Tinted/Reflective                 | Wood                             | Interior                         | Low e 20             | 22%          | 58%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Single                            | No                               | Tinted/Reflective                 | Wood                             | Interior                         | Low e 35             | 17%          | 57%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Single                            | No                               | Tinted/Reflective                 | Wood                             | Exterior                         | Prestige exterior 20 | 0%           | 51%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | FALSE          | TRUE           | TRUE        |
-| Single                            | No                               | Tinted/Reflective                 | Wood                             | Exterior                         | Prestige exterior 70 | 0%           | 37%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | FALSE          | TRUE           | TRUE        |
-| Double                            | No                               | Clear                             | Aluminum                         | Interior                         | Affinity 15          | 0%           | 49%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | FALSE          | TRUE           | TRUE        |
-| Double                            | No                               | Clear                             | Aluminum                         | Interior                         | Affinity 30          | 1%           | 31%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       |
-| Double                            | No                               | Clear                             | Aluminum                         | Interior                         | Low e 20             | 8%           | 50%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | FALSE          | TRUE           | TRUE        |
-| Double                            | No                               | Clear                             | Aluminum                         | Interior                         | Low e 35             | 6%           | 53%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | FALSE          | TRUE           | TRUE        |
-| Double                            | No                               | Clear                             | Aluminum                         | Exterior                         | Prestige exterior 20 | 0%           | 62%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Double                            | No                               | Clear                             | Aluminum                         | Exterior                         | Prestige exterior 70 | 0%           | 42%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | FALSE          | TRUE           | TRUE        |
-| Double                            | No                               | Tinted/Reflective                 | Aluminum                         | Interior                         | Affinity 15          | 0%           | 44%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | FALSE          | TRUE           | TRUE        |
-| Double                            | No                               | Tinted/Reflective                 | Aluminum                         | Interior                         | Affinity 30          | 1%           | 29%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | FALSE          | TRUE           | TRUE        |
-| Double                            | No                               | Tinted/Reflective                 | Aluminum                         | Interior                         | Low e 20             | 8%           | 46%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | FALSE          | TRUE           | TRUE        |
-| Double                            | No                               | Tinted/Reflective                 | Aluminum                         | Interior                         | Low e 35             | 6%           | 49%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Double                            | No                               | Tinted/Reflective                 | Aluminum                         | Exterior                         | Prestige exterior 20 | 0%           | 56%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Double                            | No                               | Tinted/Reflective                 | Aluminum                         | Exterior                         | Prestige exterior 70 | 0%           | 39%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | FALSE       | FALSE          | FALSE          | FALSE       | FALSE          | TRUE           | TRUE        |
-| Double                            | Yes                              | Clear                             | Aluminum                         | Interior                         | Affinity 15          | 0%           | 39%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | TRUE        | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Double                            | Yes                              | Clear                             | Aluminum                         | Interior                         | Affinity 30          | 1%           | 20%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | TRUE        | FALSE          | FALSE          | FALSE       | FALSE          | TRUE           | TRUE        |
-| Double                            | Yes                              | Clear                             | Aluminum                         | Interior                         | Low e 20             | 4%           | 37%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | TRUE        | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Double                            | Yes                              | Clear                             | Aluminum                         | Interior                         | Low e 35             | 3%           | 41%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | TRUE        | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Double                            | Yes                              | Clear                             | Aluminum                         | Exterior                         | Prestige exterior 20 | 0%           | 60%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | TRUE        | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Double                            | Yes                              | Clear                             | Aluminum                         | Exterior                         | Prestige exterior 70 | 0%           | 25%      | FALSE                    | FALSE                | FALSE                    | FALSE                | FALSE          | TRUE        | FALSE          | FALSE          | FALSE       | FALSE          | TRUE           | TRUE        |
-| Double                            | Yes                              | Clear                             | Aluminum with thermal break      | Interior                         | Affinity 15          | 0%           | 39%      | FALSE                    | FALSE                | FALSE                    | FALSE                | TRUE           | TRUE        | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Double                            | Yes                              | Clear                             | Aluminum with thermal break      | Interior                         | Affinity 30          | 1%           | 20%      | FALSE                    | FALSE                | FALSE                    | FALSE                | TRUE           | TRUE        | FALSE          | FALSE          | FALSE       | FALSE          | TRUE           | TRUE        |
-| Double                            | Yes                              | Clear                             | Aluminum with thermal break      | Interior                         | Low e 20             | 5%           | 38%      | FALSE                    | FALSE                | FALSE                    | FALSE                | TRUE           | TRUE        | TRUE           | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Double                            | Yes                              | Clear                             | Aluminum with thermal break      | Interior                         | Low e 35             | 4%           | 42%      | FALSE                    | FALSE                | FALSE                    | FALSE                | TRUE           | TRUE        | TRUE           | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Double                            | Yes                              | Clear                             | Aluminum with thermal break      | Exterior                         | Prestige exterior 20 | 0%           | 61%      | FALSE                    | FALSE                | FALSE                    | FALSE                | TRUE           | TRUE        | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Double                            | Yes                              | Clear                             | Aluminum with thermal break      | Exterior                         | Prestige exterior 70 | 0%           | 25%      | FALSE                    | FALSE                | FALSE                    | FALSE                | TRUE           | TRUE        | FALSE          | FALSE          | FALSE       | FALSE          | TRUE           | TRUE        |
-| Double                            | Yes                              | Tinted/Reflective                 | Aluminum                         | Interior                         | Affinity 15          | 0%           | 32%      | FALSE                    | FALSE                | FALSE                    | FALSE                | TRUE           | TRUE        | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Double                            | Yes                              | Tinted/Reflective                 | Aluminum                         | Interior                         | Affinity 30          | 1%           | 17%      | FALSE                    | FALSE                | FALSE                    | FALSE                | TRUE           | TRUE        | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Double                            | Yes                              | Tinted/Reflective                 | Aluminum                         | Interior                         | Low e 20             | 4%           | 32%      | FALSE                    | FALSE                | FALSE                    | FALSE                | TRUE           | TRUE        | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Double                            | Yes                              | Tinted/Reflective                 | Aluminum                         | Interior                         | Low e 35             | 3%           | 35%      | FALSE                    | FALSE                | FALSE                    | FALSE                | TRUE           | TRUE        | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Double                            | Yes                              | Tinted/Reflective                 | Aluminum                         | Exterior                         | Prestige exterior 20 | 0%           | 53%      | FALSE                    | FALSE                | FALSE                    | FALSE                | TRUE           | TRUE        | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Double                            | Yes                              | Tinted/Reflective                 | Aluminum                         | Exterior                         | Prestige exterior 70 | 0%           | 22%      | FALSE                    | FALSE                | FALSE                    | FALSE                | TRUE           | TRUE        | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Double                            | Yes                              | Tinted/Reflective                 | Aluminum with thermal break      | Interior                         | Affinity 15          | 0%           | 34%      | FALSE                    | FALSE                | FALSE                    | FALSE                | TRUE           | TRUE        | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Double                            | Yes                              | Tinted/Reflective                 | Aluminum with thermal break      | Interior                         | Affinity 30          | 1%           | 17%      | FALSE                    | FALSE                | FALSE                    | FALSE                | TRUE           | TRUE        | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Double                            | Yes                              | Tinted/Reflective                 | Aluminum with thermal break      | Interior                         | Low e 20             | 5%           | 33%      | FALSE                    | FALSE                | FALSE                    | FALSE                | TRUE           | TRUE        | TRUE           | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Double                            | Yes                              | Tinted/Reflective                 | Aluminum with thermal break      | Interior                         | Low e 35             | 3%           | 36%      | FALSE                    | FALSE                | FALSE                    | FALSE                | TRUE           | TRUE        | TRUE           | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Double                            | Yes                              | Tinted/Reflective                 | Aluminum with thermal break      | Exterior                         | Prestige exterior 20 | 0%           | 55%      | FALSE                    | FALSE                | FALSE                    | FALSE                | TRUE           | TRUE        | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Double                            | Yes                              | Tinted/Reflective                 | Aluminum with thermal break      | Exterior                         | Prestige exterior 70 | 0%           | 23%      | FALSE                    | FALSE                | FALSE                    | FALSE                | TRUE           | TRUE        | FALSE          | FALSE          | FALSE       | TRUE           | TRUE           | TRUE        |
-| Triple                            | Yes                              | Clear                             | Aluminum with thermal break      | n/a                              | n/a                  | n/a          | n/a      | TRUE                     | TRUE                 | FALSE                    | FALSE                | TRUE           | TRUE        | n/a            | n/a            | n/a         | n/a            | n/a            | n/a         |
-| Triple                            | Yes                              | Tinted/Reflective                 | Aluminum with thermal break      | n/a                              | n/a                  | n/a          | n/a      | TRUE                     | TRUE                 | FALSE                    | TRUE                 | TRUE           | TRUE        | n/a            | n/a            | n/a         | n/a            | n/a            | n/a         |
+![](../media/d919bda72c3bccf6fb7c9ce144e48e7f.png)
 
 As shown in the two “retrofit compared to baseline” columns in Table 2, U-factor improvements (i.e., reductions) vary from 0% to 22%, and SHGC improvements (i.e., reductions) vary from 17% to 71% when applying window films on different baseline windows. As expected, (1) relative improvements with window films are more significant on SHGC rather than on U-factor (while low-E coated window films still improve U-factor) and (2) higher SHGC improvements (colored in blue) are mostly seen in lower-performing windows (e.g., clear single pane).
 
@@ -309,31 +125,19 @@ The “baseline compared to AEDG ZE” and “retrofit compared to AEDG ZE” co
 
 While many low-E coated double pane baseline windows perform well (in climate zones 4, 5, 6, 7, and 8) in terms of SHGC compared to AEDG targets, attaching a window film on the exterior side (e.g., Prestige Exterior series) of the window can still achieve significant SHGC reduction compared to the baseline windows, meeting the AEDG targets for climate zones 1, 2, and 3. While the price (e.g., material and labor) of exterior films can be higher than interior films and maintenance of exterior films (i.e., exposed to weather) can include additional effort, it may be a good option for hot climates with high cooling loads in terms of energy performance.
 
-1.  Applicability
+### 3.2. Applicability
 
 Table 3 presents the applicability of the window film measure to ComStock baseline windows. Each row in the table represents (1) one of the baseline windows besides triple pane (i.e., Baseline Window Configuration column), (2) which window film product is paired with the baseline window (i.e., Window Film Retrofit Options column), and (3) how the applicability of the window film is defined between different climate zones (i.e., Applicability with Climate Zone Number Column). While it is expected that the addition of window films might not provide energy savings in the colder climates, all single pane baseline windows are paired with one product for every climate zone as shown in the table to understand both positive and negative impacts. All double pane baseline windows are paired with exterior film that has maximum improvements in SHGC. However, since these exterior films on double pane windows do not offer improvements on U-factor (favorable to winter season) as shown in Table 2, window films are not applied to double pane windows in colder climates (i.e., climate zones 7 and 8).
 
 Table 3. Applicability Criteria of Window Films
 
-| **Baseline Window Configuration** | **Baseline Window Performance** | **Window Film Retrofit Options** | **Retrofitted Window Performance** | **Retrofit Compared to Baseline**  | **Applicability with Climate Zone Number** |          |         |                   |                      |            |            |          |         |       |          |                 |
-|-----------------------------------|---------------------------------|----------------------------------|------------------------------------|------------------------------------|--------------------------------------------|----------|---------|-------------------|----------------------|------------|------------|----------|---------|-------|----------|-----------------|
-| **Pane**                          | **Low-E**                       | **Glazing**                      | **Frame**                          | **U (SI\*)**                       | **U (IP\*\*)**                             | **SHGC** | **VLT** | **Film Position** | **Film Product**     | **U (SI)** | **U (IP)** | **SHGC** | **VLT** | **U** | **SHGC** |                 |
-| Single                            | No                              | Clear                            | Aluminum                           | 6.689                              | 1.178                                      | 0.744    | 0.754   | Interior          | Low E 20             | 5.502      | 0.969      | 0.248    | 0.170   | 18%   | 67%      | 1,2,3,4,5,6,7,8 |
-| Single                            | No                              | Tinted/ Reflective               | Aluminum                           | 6.688                              | 1.178                                      | 0.579    | 0.455   | Interior          | Low E 20             | 5.502      | 0.969      | 0.259    | 0.100   | 18%   | 55%      | 1,2,3,4,5,6,7,8 |
-| Single                            | No                              | Clear                            | Wood                               | 5.169                              | 0.910                                      | 0.683    | 0.723   | Interior          | Low E s20            | 4.031      | 0.710      | 0.208    | 0.163   | 22%   | 70%      | 1,2,3,4,5,6,7,8 |
-| Single                            | No                              | Tinted/ Reflective               | Wood                               | 5.168                              | 0.910                                      | 0.525    | 0.436   | Interior          | Low E 20             | 4.031      | 0.710      | 0.219    | 0.096   | 22%   | 58%      | 1,2,3,4,5,6,7,8 |
-| Double                            | No                              | Clear                            | Aluminum                           | 4.238                              | 0.746                                      | 0.646    | 0.671   | Exterior          | Prestige exterior 20 | 4.236      | 0.746      | 0.246    | 0.154   | 0%    | 62%      | 1,2,3,4,5,6     |
-| Double                            | No                              | Tinted/ Reflective               | Aluminum                           | 4.255                              | 0.749                                      | 0.484    | 0.411   | Exterior          | Prestige exterior 20 | 4.253      | 0.749      | 0.214    | 0.095   | 0%    | 56%      | 1,2,3,4,5,6     |
-| Double                            | Yes                             | Clear                            | Aluminum                           | 3.174                              | 0.559                                      | 0.386    | 0.591   | Exterior          | Prestige exterior 20 | 3.173      | 0.559      | 0.154    | 0.136   | 0%    | 60%      | 1,2,3,4,5,6     |
-| Double                            | Yes                             | Clear                            | Aluminum with thermal break        | 2.833                              | 0.499                                      | 0.378    | 0.591   | Exterior          | Prestige exterior 20 | 2.832      | 0.499      | 0.146    | 0.136   | 0%    | 61%      | 1,2,3,4,5,6     |
-| Double                            | Yes                             | Tinted/ Reflective               | Aluminum                           | 3.160                              | 0.557                                      | 0.274    | 0.359   | Exterior          | Prestige exterior 20 | 3.159      | 0.556      | 0.129    | 0.083   | 0%    | 53%      | 1,2,3,4,5,6     |
-| Double                            | Yes                             | Tinted/ Reflective               | Aluminum with thermal break        | 2.818                              | 0.496                                      | 0.266    | 0.359   | Exterior          | Prestige exterior 20 | 2.817      | 0.496      | 0.121    | 0.083   | 0%    | 55%      | 1,2,3,4,5,6     |
+![](../media/20ee43f4f772684fe4ff6f0438b8514b.png)
 
 \*SI = International system of units
 
 \*\*IP = inch-pound units
 
-1.  Output Variables of the Measure
+### 3.3. Output Variables of the Measure
 
 Table 4 includes a list of output variables that are being processed in ComStock. These variables are important in terms of understanding the differences between buildings (or IGUs) with and without window films. Additionally, these output variables can also be used for understanding the economics (e.g., return of investment) of the upgrade if cost information (i.e., material, labor, and maintenance cost for window film application) is available,
 
@@ -346,7 +150,7 @@ Table 4. Output Variables Calculated From the Measure Application
 | Surface area weighted average SHGC for exterior windows     | Window-surface-area-weighted-average SHGC for all exterior windows     |
 | Surface area weighted average VLT for exterior windows      | Window-surface-area-weighted-average VLT for all exterior windows      |
 
-1.  Non-Energy Impacts, Limitations, and Concerns
+### 3.4. Non-Energy Impacts, Limitations, and Concerns
 
 It should be noted that this analysis focuses only on the energy performance of window film application without considering other important aspects: visual comfort, privacy, aesthetics, ultraviolet protection, etc. In practice, customers typically choose a window film product based on their issues around glare and excessive light, too much heat, daytime privacy, inconsistent appearance of the building, and so on. For example, a building might have to comply with historical landmark designations, thus, decisions on window film can even be more complicated in terms of not just considering thermal/visual aspects but also considering how it matches with surrounding buildings. Additionally, museum owners and residential customers may prioritize protecting building interiors (and things placed indoors) from ultraviolet radiation. Thus, more comprehensive research for window films should include these non-energy aspects as well.
 
@@ -354,102 +158,99 @@ In Comstock, window blinds are not included in terms of reflecting the variation
 
 Finally, there are further analyses that the window film measure can potentially offer beyond the scope of this analysis. Once the cost information can be readily available, a simple payback calculation (considering material and labor cost for initial installation) or a more detailed life cycle assessment (considering material, labor, and maintenance cost) can be performed to understand the economics of window film implementation. While it is unclear what exact format the cost information will be (e.g., cost normalized by window surface area?), output variables such as overall window area and area-weighted average window properties (U-factor, SHGC, and VLT) are calculated (as described in Section 3.3) in ComStock to provide indicators for estimating the cost of the upgrade. Additionally, the window film measure can also be used for quantifying the mitigation or aggravation impact of window films under electrification scenarios. As mentioned previously, window films considered in this analysis mostly improve SHGC of the window that benefits more toward the cooling season. However, if an electrification scenario results in peak shifting from cooling season to heating season (e.g., gas heating converted to electric heating), window films considered in this analysis might even make the peak shifting worse in those scenarios.
 
-1.  Results
-    1.  Energy Impacts: Single Building Example
+## 4.  Results
+
+### 4.1. Energy Impacts: Single Building Example (QAQC)
 
 The window film measure with the window film shown as “low-E 20” in Table 3 was tested on a small office building model with electric heating, and under both hot and cold weather conditions. Figure 6 and Figure 7 show (1) comparisons between baseline and upgrade simulations, (2) results under hot and cold weather conditions, and (3) results with annual energy consumption metrics and segmented load profiles (i.e., electricity usage on HVAC system). Based on the performance of window films shown in Table 2, it is expected that most of the window film applications that show higher improvements on SHGC will be favorable for reducing the cooling load in the hotter climate. On the other hand, the same windows that block the unfavorable solar heat from the indoor space during the cooling season will then block the favorable solar heat in heating season. This trend of performance difference between hot and cold seasons is depicted well in Figure 6 and Figure 7, respectively.
 
->   ![](media/3051f751c0321ce85f8c097aee403f55.png)
+>   ![](../media/3051f751c0321ce85f8c097aee403f55.png)
 
 Figure 6. Simulation results with and without window film: hotter region (Tucson, AZ)
 
->   ![](media/41e9ef6d236c1f8af2363b6a5319cabc.png)
+>   ![](../media/41e9ef6d236c1f8af2363b6a5319cabc.png)
 
 Figure 7. Simulation results with and without window film: colder region (International Falls, MN)
 
-1.  Energy Impacts: 100 Building Examples
+### 4.2. Energy Impacts: 100 Building Examples (QAQC)
 
 The window film measure was tested on 100 building samples in ComStock that cover relevant variety across the entire stock characteristics (e.g., climate zone, building type). Figure 8 includes average nominal window performances (SHGC, U-factor, and VLT) of 100 building samples between baseline and upgrade scenarios across different climate zones (number above the bar represents the number of samples/buildings). As expected, windows with window film provide significant reduction in SHGC. Based on the applicability criteria described previously, windows on one sample building (with double pane windows) in climate zone 7 did not received the window film upgrade, resulting in no change in window performance between the baseline and the upgrade scenario. Also, the relative reduction in U-factor is much less than the reduction in SHGC. The reduction in VLT is highly correlated with the reduction in SHGC, as expected, and while this helps reducing summer cooling load by blocking solar heat gains, reduction in visible light reduces illumination level in the space, resulting in increased interior lighting usage when daylighting is implemented in the building.
 
->   ![Graphical user interface, chart, bar chart Description automatically generated](media/ca8feee1efa624f885a6deaa4f59ce8f.png)
+>   ![Graphical user interface, chart, bar chart Description automatically generated](../media/ca8feee1efa624f885a6deaa4f59ce8f.png)
 
 Figure 8. Average window performance of 100 building samples: solar heat gain coefficient, U-factor, and visual light transmittance
 
 Figure 9 shows distributions of energy savings for the 100 building samples across different end uses. The distributions confirm that end uses related to cooling (e.g., electricity cooling, district cooling, and electricity fans) show positive savings while end uses related to heating (e.g., natural gas heating and electricity heating) show negative savings. Some of the models at the edge of the violin plot that show 100% increase in electric heating are mostly attributed to a building in the hotter climate with very small heating load and where the addition of window film increased the heating load that is small in absolute scale but significant in terms of relative percentage increase.
 
->   ![Chart Description automatically generated with medium confidence](media/362df006fdfe245be8a1eae7b99c6bbc.jpeg)
+>   ![Chart Description automatically generated with medium confidence](../media/362df006fdfe245be8a1eae7b99c6bbc.jpeg)
 
 Figure 9. ComStock test results with 100 sample buildings: percent savings by end uses
 
 Figure 10 shows distributions of energy savings for the 100 building samples across different climate zones. The distributions confirm the trend of more savings in the hotter climate zones.
 
->   ![A picture containing chart Description automatically generated](media/6e1d66397c94c214a116b0c31d35b7e9.jpeg)
+>   ![A picture containing chart Description automatically generated](../media/6e1d66397c94c214a116b0c31d35b7e9.jpeg)
 
 Figure 10. ComStock test results with 100 sample buildings: percent savings by climate zone
 
-1.  Energy Impacts: 10,000 Building Examples
+### 4.3. Energy Impacts: 10,000 Building Examples (QAQC)
 
 The window film measure was then tested with 10,000 building samples in ComStock that cover relevant variety across the entire stock characteristics (e.g., climate zone, building type). Figure 11 includes average nominal window performances (SHGC, U-factor, and VLT) of 10,000 building samples between baseline and upgrade scenarios across different climate zones (the number above the bar represents the number of samples/buildings). Similar trends compared to Figure 8 can be seen in Figure 11 from these 10,000 building samples: greatly reduced average SHGC/VLT and slightly reduced average U-factor.
 
->   ![Graphical user interface, application Description automatically generated](media/863e04168c5447fbe7648fa77f244dc9.png)
+>   ![Graphical user interface, application Description automatically generated](../media/863e04168c5447fbe7648fa77f244dc9.png)
 
 Figure 11. Average window performance of 10,000 building samples: solar heat gain coefficient, U-factor, and visual light transmittance
 
 Figure 12 highlights site energy (e.g., heating, cooling, and total) savings across climate zones by implementing window film. The color intensity represents the total external window surface area for all sample buildings in each category, and the labels above each bar represent building counts. Positive cooling energy savings is mostly expected on windows with window film, and the savings increase with increased window area. The reverse trend is seen for heating energy savings. And the total energy savings reflect the effectiveness of window films between hot and cold regions; window films considered in this analysis are more effective (in terms of energy) in hotter regions.
 
->   ![Chart, waterfall chart Description automatically generated](media/47075155b1119bf3811e1f9dd08a246e.png)
+>   ![Chart, waterfall chart Description automatically generated](../media/47075155b1119bf3811e1f9dd08a246e.png)
 
 Figure 12. ComStock test results with 10,000 sample buildings: site energy savings by climate zones
 
 Figure 13 shows site energy (e.g., heating, cooling, and total) savings across different baseline window type. The color intensity represents the total external window surface area for all sample buildings in each category, and the labels above each bar represent building counts. Overall site energy savings are mostly realized on the single pane window upgrades (as expected), double pane windows’ total savings are mostly negative for these samples, and triple pane windows did not receive an upgrade, as shown in the figure.
 
->   ![Chart, bar chart Description automatically generated](media/3bdfa25b4e6afeb4429839c5149230f3.png)
+>   ![Chart, bar chart Description automatically generated](../media/3bdfa25b4e6afeb4429839c5149230f3.png)
 
 Figure 13. ComStock test results with 10,000 sample buildings: site energy savings by baseline window type
 
 Figure 14 shows distributions of end-use intensity savings for the 10,000 building samples across different end uses. The distributions confirm that end uses related to cooling (e.g., electricity cooling, district cooling, and electricity fans) include positive savings, while end uses related to heating (e.g., natural gas heating and electricity heating) show negative savings.
 
->   ![Chart Description automatically generated with low confidence](media/83846d6a472f3c0fc199421efcc061a2.jpeg)
+>   ![Chart Description automatically generated with low confidence](../media/83846d6a472f3c0fc199421efcc061a2.jpeg)
 
 Figure 14. ComStock test results with 10,000 sample buildings: percent savings by end uses
 
 Figure 15 shows distributions of end-use intensity savings for the 10,000 building samples across different climate zones. The distributions confirm the trend of more savings in the hotter climate zones.
 
->   ![Chart Description automatically generated with medium confidence](media/afea0cebb135fb217c60eb8698c78870.jpeg)
+>   ![Chart Description automatically generated with medium confidence](../media/afea0cebb135fb217c60eb8698c78870.jpeg)
 
 Figure 15. ComStock test results with 10,000 sample buildings: percent savings by climate zone
 
-1.  Energy Impacts: Full ComStock National Results
+### 4.4. Energy Impacts: Full ComStock National Results
 
 This section includes results of the full ComStock run representing the potential impact of the window film measure at the national scale. Figure 16 highlights site energy savings (cooling, heating, and total) across different segments of buildings: window type, climate zone, and building type. The trends of (1) window film in hotter climates resulting in larger energy savings and (2) window film on low-performing (e.g., single pane) windows resulting in larger energy savings still stand out in the national results. Because single pane windows are still more common than double pane windows, the absolute scale of saved energy is much higher for single pane windows. Building types such as warehouse, retail, primary school, and hotel contribute more than half of the savings because of their presence in terms of floor area coverage across the stock.
 
-![Chart Description automatically generated](media/cedb9d302c66a108184266ce2f529884.png)
+![Chart Description automatically generated](../media/cedb9d302c66a108184266ce2f529884.png)
 
 Figure 16. ComStock full national results: aggregated site energy savings on cooling, heating, and total site energy
 
 Hotter regions, such as hot-humid and hot-dry, are almost guaranteed to show overall site energy savings when window film is installed on either single pane or double pane windows. Buildings typically include different levels of internal heat gains where computers, servers, elevators, appliances, humans, etc. emit heat to the indoor spaces. The level of internal heat gains differs by building type, and because the presence of internal heat gains contributes to increased cooling load, some buildings in colder regions still might have some cooling demand during colder months. Because of this, there are some possible total site energy savings even in colder regions as shown in Figure 17 (zoomed version of Figure 16 for the very bottom row). As shown in the figure, building types such as hotel and retail will require relatively more cooling demand compared to a warehouse in the same region, thus positive savings are more realized in retail and hotel buildings even in the cold region, resulting in positive overall site energy savings with the window film upgrade.
 
-![Chart, box and whisker chart Description automatically generated](media/b9f6a6c8cce9d622fb5de5c5c53465e4.png)
+![Chart, box and whisker chart Description automatically generated](../media/b9f6a6c8cce9d622fb5de5c5c53465e4.png)
 
 Figure 17. ComStock full national results: aggregated site energy savings on cooling, heating, and total site energy for single pane window
 
 The overall impact is minimal, but Figure 18 shows the impact of window film on interior lighting energy. There are buildings with daylighting control where the luminance of the light bulb adjusts depending on how bright/dark the indoor space is. The change of illuminance level in the indoor space is due to multiple factors such as sunlight, shading from exterior objects (e.g., trees, neighboring building), window blind position, and window tint level. While factors such as exterior shading and window blinds are not considered in this version of ComStock, sunlight and window tint level are reflected in the simulation results, showing the negative interior lighting energy savings (shown in Figure 18) due to the darkened window by adding window film. And as expected, the scale of negative savings is linearly dependent on the fraction of daylighting control among buildings.
 
-![Chart, box and whisker chart Description automatically generated](media/f17e9b880b7ebf4b31dc4e529e394e62.png)
+![Chart, box and whisker chart Description automatically generated](../media/f17e9b880b7ebf4b31dc4e529e394e62.png)
 
 Figure 18. ComStock full national results: window film impact on interior lighting with daylighting control
 
 While the previous results were mostly focused on more detailed segment of buildings for certain climate zones, building type, or end use, the overall impact of site energy savings with window film on the entire building stock is small (0.25%).
 
-![](media/d8401af46f97a203ebf6b1e75cfc62fd.jpg)
+![](../media/d8401af46f97a203ebf6b1e75cfc62fd.jpg)
 
 Figure 19. ComStock full national results: aggregated total site energy consumptions
 
-[what’s the impact on peak? Discuss this with load profiles graphs. Not ready yet.]
-
-[what’s the impact on GHG? Discuss this with GHG graphs. Not ready yet.]
-
-References
+## References
 
 [1] J. Pereira, H. Teixeira, M. da G. Gomes, and A. Moret Rodrigues, “Performance of Solar Control Films on Building Glazing: A Literature Review,” *Applied Sciences*, vol. 12, no. 12, Art. no. 12, Jan. 2022, doi: 10.3390/app12125923.
 
