@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Energy Efficiency Measures Documentation
-parent: References
+title: Energy Efficiency Measures
+parent: Documentations
 nav_order: 5
 has_children: true
-permalink: /docs/references/measures_doc/
+permalink: /docs/documentations/measures/
 ---
 
 # Energy Efficient Measures Documentation

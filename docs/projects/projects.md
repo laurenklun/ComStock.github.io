@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Projects
-nav_order: 9
+nav_order: 6
 has_children: true
 permalink: docs/projects
 ---
