@@ -1,9 +1,9 @@
 ---
 layout: default
-title: References
+title: Documentations
 nav_order: 2
 has_children: true
-permalink: docs/references
+permalink: docs/documentations
 ---
 
 # Reference Materials
