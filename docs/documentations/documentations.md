@@ -6,5 +6,5 @@ has_children: true
 permalink: docs/documentations
 ---
 
-# Reference Materials
+# Documentations
 {: .fw-500 }
