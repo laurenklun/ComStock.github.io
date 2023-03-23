@@ -2,6 +2,7 @@
 layout: default
 title: Citation
 nav_order: 8
+permalink: docs/citation
 ---
 
 # Citation and Data Attribution
