@@ -3,7 +3,6 @@ layout: default
 title: GTO HP
 parent: Projects
 nav_order: 7
-permalink: docs/projects/gto_hp
 ---
 
 # Grand Turismo Omolgato Horse Power Measure (GTO HP)

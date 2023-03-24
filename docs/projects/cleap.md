@@ -3,7 +3,6 @@ layout: default
 title: CLEAP
 parent: Projects
 nav_order: 6
-permalink: docs/projects/cleap
 ---
 
 # Clean Low Energy Asset Program (CLEAP)

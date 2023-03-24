@@ -3,7 +3,6 @@ layout: default
 title: Round 1
 parent: EUSS
 grand_parent: Projects
-permalink: /docs/projects/euss/round1/
 nav_order: 1
 ---
 

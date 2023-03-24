@@ -3,7 +3,6 @@ layout: default
 title: Window Film
 parent: Energy Efficiency Measures
 grand_parent: Documentations
-permalink: /docs/documentations/measures/env_window_film/
 nav_order: 1
 ---
 

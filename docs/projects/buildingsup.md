@@ -3,7 +3,6 @@ layout: default
 title: Buildings UP
 parent: Projects
 nav_order: 5
-permalink: docs/projects/buildingsup
 ---
 
 # Buildings Upgrade Prize (Buildings UP)

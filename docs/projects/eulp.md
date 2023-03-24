@@ -3,7 +3,6 @@ layout: default
 title: End-Use Load Profiles
 parent: Projects
 nav_order: 2
-permalink: docs/projects/eulp
 ---
 
 # End-Use Load Profiles (EULP) for the U.S. Building Stock
