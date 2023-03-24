@@ -3,7 +3,6 @@ layout: default
 title: Buildings UP
 parent: Projects
 nav_order: 5
-permalink: docs/projects/buildingsup
 ---
 
 # Buildings Upgrade Prize (Buildings UP)
@@ -15,4 +14,4 @@ add motivation
 put short summary of results (with visuals) and point to detailed references (e.g., documentation, report, paper, etc.)
 
 ## Contributors
-Chris CaraDonna [![email](../../../assets/images/email.png)](mailto:Christopher.CaraDonna@nrel.gov) [![bio](../../../assets/images/bio.png)](https://www.nrel.gov/research/staff/chris-caradonna.html)
+Chris CaraDonna [![email](../../assets/images/email.png)](mailto:Christopher.CaraDonna@nrel.gov) [![bio](../../assets/images/bio.png)](https://www.nrel.gov/research/staff/chris-caradonna.html)

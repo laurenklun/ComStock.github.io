@@ -3,7 +3,6 @@ layout: default
 title: GTO HP
 parent: Projects
 nav_order: 7
-permalink: docs/projects/gto_hp
 ---
 
 # Grand Turismo Omolgato Horse Power Measure (GTO HP)
@@ -15,4 +14,4 @@ add motivation
 put short summary of results (with visuals) and point to detailed references (e.g., documentation, report, paper, etc.)
 
 ## Contributors
-Chris CaraDonna [![email](../../../assets/images/email.png)](mailto:Christopher.CaraDonna@nrel.gov) [![bio](../../../assets/images/bio.png)](https://www.nrel.gov/research/staff/chris-caradonna.html)
+Chris CaraDonna [![email](../../assets/images/email.png)](mailto:Christopher.CaraDonna@nrel.gov) [![bio](../../assets/images/bio.png)](https://www.nrel.gov/research/staff/chris-caradonna.html)

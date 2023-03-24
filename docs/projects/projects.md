@@ -3,7 +3,6 @@ layout: default
 title: Projects
 nav_order: 6
 has_children: true
-permalink: docs/projects
 ---
 
 # Past and On-Going Projects
