@@ -6,9 +6,9 @@ grand_parent: Projects
 nav_order: 2
 ---
 
-![project_logo](../../../../assets/images/coming_soon.png)
-
 # EUSS Round 2
+
+![project_logo](../../../../assets/images/coming_soon.png)
 
 ## Motivation
 TBD
