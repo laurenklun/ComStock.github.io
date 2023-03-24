@@ -33,7 +33,7 @@ Window films, especially solar control films (SCFs), are a passive retrofit solu
 -   SCF—composed of transparent, tinted, or metalized laminated polyester layers—is designed to shift thermal and solar optical properties of the overall glazing system by reflecting or absorbing part of the incident solar radiation. SCF promotes the improvement of the thermal and luminous performance of building glazing while reducing potential glare and the transmittance of ultraviolet radiation. The manufacturers of window films offer a wide range of performances depending on different use cases (e.g., energy savings, mitigating glare, controlling occupant’s view, protecting privacy).
 -   Figure 1 shows different film positions (e.g., Class A to D) with respect to typical insulated glass units (IGUs). While indoor films are more common than outdoor films in the current market, some of the latest outdoor films provide better energy performance when applied on relatively high-performing windows (e.g., double pane low-E, triple pane), and some of those products are currently being studied in real applications [2].
 
-![Graphical user interface, diagram Description automatically generated](../media/02c6603fedbd847b2ee2f48f7878b12e.png)
+![Graphical user interface, diagram Description automatically generated](media/02c6603fedbd847b2ee2f48f7878b12e.png)
 
 Figure 1. Different installation positions of window films for (a) single pane, (b) double pane, and (c) triple pane windows
 
@@ -74,7 +74,7 @@ Manufacturers provide standardized data for SCFs through the National Fenestrati
 
 [^1]: For more information, see <https://windows.lbl.gov/software/window>.
 
-![Diagram Description automatically generated](../media/566207a6a894242ec7a7c313e7ecb166.png)
+![Diagram Description automatically generated](media/566207a6a894242ec7a7c313e7ecb166.png)
 
 Figure 2. Number and type of SCFs in the International Glazing Database
 
@@ -82,7 +82,7 @@ Figure from [1]
 
 SCF products are available from various manufacturers covering various ranges of thermal (e.g., U-value, SHGC) and optical (e.g., transmittance and reflectance of light) performances as shown in Figure 3. Plots shown in Figure 3 indicate performance of windows when certain window film is applied on four different baseline windows. Multiple markers in each row represent different models (e.g., Low E 20, Low E 35) in a series (e.g., All Season) with varying tint levels. These window performance calculations were performed by the manufacturer using LBNL’s WINDOW software. As shown in Figure 3, customers can select from a wide range of products based on various needs between thermal goals (e.g., summer heat gain is too high) and visual goals (e.g., glare inside of the building is too much).
 
-![](../media/2effc4c32be5abd50d29b3e079b8b2ba.png)
+![](media/2effc4c32be5abd50d29b3e079b8b2ba.png)
 
 Figure 3. Performance characteristics and variations of SCFs from 3M
 
@@ -90,7 +90,7 @@ Figure 3. Performance characteristics and variations of SCFs from 3M
 
 The current baseline building stock in ComStock has 12 different window configurations. Figure 4 shows the breakdown of windows by total floor area. In total, single pane windows represent about 53% of the floor area, double pane 47%, and triple pane \<1%. The window film measure is applicable to all buildings that currently have single or double pane windows, which is nearly 100% of the stock. The very small fraction of buildings that already have triple pane windows do not receive this upgrade in our modeling.
 
-![Timeline Description automatically generated](../media/64795c73024119a43c9f95a6e4ab9658.png)
+![Timeline Description automatically generated](media/64795c73024119a43c9f95a6e4ab9658.png)
 
 Figure 4. Floor area portion of different baseline window types across the entire building stock in ComStock
 
@@ -110,13 +110,13 @@ Table 1. Overall Assembly Performance Characteristics by Climate Zone
 
 To understand the expected performance of the total assembly, combinations of existing windows and window films are modeled using LBNL’s WINDOW (v7.8) and Optics (v6) software, shown in Figure 5. Table 2 includes (1) performance (e.g., U-factor, SHGC, and visual light transmittance [VLT]) improvements between ComStock baseline windows and windows with window films; and (2) performance comparison against AEDG targets, with respect to different climate zones. Several window film products were selected from a larger pool (shown in Figure 3) based on the emphasis on thermal performance improvements rather than visual performance improvements, as this analysis is focused on the energy savings potential.
 
-![](../media/710dba5cd3324231c99c9f5070f831ff.png){: width="600" }
+![](media/710dba5cd3324231c99c9f5070f831ff.png){: width="600" }
 
 Figure 5. Workflow of creating new glass, glazing systems, and windows with window films
 
 Table 2. Performance Range Baseline Windows With Window Films
 
-![](../media/d919bda72c3bccf6fb7c9ce144e48e7f.png)
+![](media/d919bda72c3bccf6fb7c9ce144e48e7f.png)
 
 As shown in the two “retrofit compared to baseline” columns in Table 2, U-factor improvements (i.e., reductions) vary from 0% to 22%, and SHGC improvements (i.e., reductions) vary from 17% to 71% when applying window films on different baseline windows. As expected, (1) relative improvements with window films are more significant on SHGC rather than on U-factor (while low-E coated window films still improve U-factor) and (2) higher SHGC improvements (colored in blue) are mostly seen in lower-performing windows (e.g., clear single pane).
 
@@ -130,7 +130,7 @@ Table 3 presents the applicability of the window film measure to ComStock baseli
 
 Table 3. Applicability Criteria of Window Films
 
-![](../media/20ee43f4f772684fe4ff6f0438b8514b.png)
+![](media/20ee43f4f772684fe4ff6f0438b8514b.png)
 
 \*SI = International system of units
 
@@ -163,11 +163,11 @@ Finally, there are further analyses that the window film measure can potentially
 
 The window film measure with the window film shown as “low-E 20” in Table 3 was tested on a small office building model with electric heating, and under both hot and cold weather conditions. Figure 6 and Figure 7 show (1) comparisons between baseline and upgrade simulations, (2) results under hot and cold weather conditions, and (3) results with annual energy consumption metrics and segmented load profiles (i.e., electricity usage on HVAC system). Based on the performance of window films shown in Table 2, it is expected that most of the window film applications that show higher improvements on SHGC will be favorable for reducing the cooling load in the hotter climate. On the other hand, the same windows that block the unfavorable solar heat from the indoor space during the cooling season will then block the favorable solar heat in heating season. This trend of performance difference between hot and cold seasons is depicted well in Figure 6 and Figure 7, respectively.
 
->   ![](../media/3051f751c0321ce85f8c097aee403f55.png)
+>   ![](media/3051f751c0321ce85f8c097aee403f55.png)
 
 Figure 6. Simulation results with and without window film: hotter region (Tucson, AZ)
 
->   ![](../media/41e9ef6d236c1f8af2363b6a5319cabc.png)
+>   ![](media/41e9ef6d236c1f8af2363b6a5319cabc.png)
 
 Figure 7. Simulation results with and without window film: colder region (International Falls, MN)
 
@@ -175,19 +175,19 @@ Figure 7. Simulation results with and without window film: colder region (Intern
 
 The window film measure was tested on 100 building samples in ComStock that cover relevant variety across the entire stock characteristics (e.g., climate zone, building type). Figure 8 includes average nominal window performances (SHGC, U-factor, and VLT) of 100 building samples between baseline and upgrade scenarios across different climate zones (number above the bar represents the number of samples/buildings). As expected, windows with window film provide significant reduction in SHGC. Based on the applicability criteria described previously, windows on one sample building (with double pane windows) in climate zone 7 did not received the window film upgrade, resulting in no change in window performance between the baseline and the upgrade scenario. Also, the relative reduction in U-factor is much less than the reduction in SHGC. The reduction in VLT is highly correlated with the reduction in SHGC, as expected, and while this helps reducing summer cooling load by blocking solar heat gains, reduction in visible light reduces illumination level in the space, resulting in increased interior lighting usage when daylighting is implemented in the building.
 
->   ![Graphical user interface, chart, bar chart Description automatically generated](../media/ca8feee1efa624f885a6deaa4f59ce8f.png)
+>   ![Graphical user interface, chart, bar chart Description automatically generated](media/ca8feee1efa624f885a6deaa4f59ce8f.png)
 
 Figure 8. Average window performance of 100 building samples: solar heat gain coefficient, U-factor, and visual light transmittance
 
 Figure 9 shows distributions of energy savings for the 100 building samples across different end uses. The distributions confirm that end uses related to cooling (e.g., electricity cooling, district cooling, and electricity fans) show positive savings while end uses related to heating (e.g., natural gas heating and electricity heating) show negative savings. Some of the models at the edge of the violin plot that show 100% increase in electric heating are mostly attributed to a building in the hotter climate with very small heating load and where the addition of window film increased the heating load that is small in absolute scale but significant in terms of relative percentage increase.
 
->   ![Chart Description automatically generated with medium confidence](../media/362df006fdfe245be8a1eae7b99c6bbc.jpeg)
+>   ![Chart Description automatically generated with medium confidence](media/362df006fdfe245be8a1eae7b99c6bbc.jpeg)
 
 Figure 9. ComStock test results with 100 sample buildings: percent savings by end uses
 
 Figure 10 shows distributions of energy savings for the 100 building samples across different climate zones. The distributions confirm the trend of more savings in the hotter climate zones.
 
->   ![A picture containing chart Description automatically generated](../media/6e1d66397c94c214a116b0c31d35b7e9.jpeg)
+>   ![A picture containing chart Description automatically generated](media/6e1d66397c94c214a116b0c31d35b7e9.jpeg)
 
 Figure 10. ComStock test results with 100 sample buildings: percent savings by climate zone
 
@@ -195,31 +195,31 @@ Figure 10. ComStock test results with 100 sample buildings: percent savings by c
 
 The window film measure was then tested with 10,000 building samples in ComStock that cover relevant variety across the entire stock characteristics (e.g., climate zone, building type). Figure 11 includes average nominal window performances (SHGC, U-factor, and VLT) of 10,000 building samples between baseline and upgrade scenarios across different climate zones (the number above the bar represents the number of samples/buildings). Similar trends compared to Figure 8 can be seen in Figure 11 from these 10,000 building samples: greatly reduced average SHGC/VLT and slightly reduced average U-factor.
 
->   ![Graphical user interface, application Description automatically generated](../media/863e04168c5447fbe7648fa77f244dc9.png)
+>   ![Graphical user interface, application Description automatically generated](media/863e04168c5447fbe7648fa77f244dc9.png)
 
 Figure 11. Average window performance of 10,000 building samples: solar heat gain coefficient, U-factor, and visual light transmittance
 
 Figure 12 highlights site energy (e.g., heating, cooling, and total) savings across climate zones by implementing window film. The color intensity represents the total external window surface area for all sample buildings in each category, and the labels above each bar represent building counts. Positive cooling energy savings is mostly expected on windows with window film, and the savings increase with increased window area. The reverse trend is seen for heating energy savings. And the total energy savings reflect the effectiveness of window films between hot and cold regions; window films considered in this analysis are more effective (in terms of energy) in hotter regions.
 
->   ![Chart, waterfall chart Description automatically generated](../media/47075155b1119bf3811e1f9dd08a246e.png)
+>   ![Chart, waterfall chart Description automatically generated](media/47075155b1119bf3811e1f9dd08a246e.png)
 
 Figure 12. ComStock test results with 10,000 sample buildings: site energy savings by climate zones
 
 Figure 13 shows site energy (e.g., heating, cooling, and total) savings across different baseline window type. The color intensity represents the total external window surface area for all sample buildings in each category, and the labels above each bar represent building counts. Overall site energy savings are mostly realized on the single pane window upgrades (as expected), double pane windows’ total savings are mostly negative for these samples, and triple pane windows did not receive an upgrade, as shown in the figure.
 
->   ![Chart, bar chart Description automatically generated](../media/3bdfa25b4e6afeb4429839c5149230f3.png)
+>   ![Chart, bar chart Description automatically generated](media/3bdfa25b4e6afeb4429839c5149230f3.png)
 
 Figure 13. ComStock test results with 10,000 sample buildings: site energy savings by baseline window type
 
 Figure 14 shows distributions of end-use intensity savings for the 10,000 building samples across different end uses. The distributions confirm that end uses related to cooling (e.g., electricity cooling, district cooling, and electricity fans) include positive savings, while end uses related to heating (e.g., natural gas heating and electricity heating) show negative savings.
 
->   ![Chart Description automatically generated with low confidence](../media/83846d6a472f3c0fc199421efcc061a2.jpeg)
+>   ![Chart Description automatically generated with low confidence](media/83846d6a472f3c0fc199421efcc061a2.jpeg)
 
 Figure 14. ComStock test results with 10,000 sample buildings: percent savings by end uses
 
 Figure 15 shows distributions of end-use intensity savings for the 10,000 building samples across different climate zones. The distributions confirm the trend of more savings in the hotter climate zones.
 
->   ![Chart Description automatically generated with medium confidence](../media/afea0cebb135fb217c60eb8698c78870.jpeg)
+>   ![Chart Description automatically generated with medium confidence](media/afea0cebb135fb217c60eb8698c78870.jpeg)
 
 Figure 15. ComStock test results with 10,000 sample buildings: percent savings by climate zone
 
@@ -227,25 +227,25 @@ Figure 15. ComStock test results with 10,000 sample buildings: percent savings b
 
 This section includes results of the full ComStock run representing the potential impact of the window film measure at the national scale. Figure 16 highlights site energy savings (cooling, heating, and total) across different segments of buildings: window type, climate zone, and building type. The trends of (1) window film in hotter climates resulting in larger energy savings and (2) window film on low-performing (e.g., single pane) windows resulting in larger energy savings still stand out in the national results. Because single pane windows are still more common than double pane windows, the absolute scale of saved energy is much higher for single pane windows. Building types such as warehouse, retail, primary school, and hotel contribute more than half of the savings because of their presence in terms of floor area coverage across the stock.
 
-![Chart Description automatically generated](../media/cedb9d302c66a108184266ce2f529884.png)
+![Chart Description automatically generated](media/cedb9d302c66a108184266ce2f529884.png)
 
 Figure 16. ComStock full national results: aggregated site energy savings on cooling, heating, and total site energy
 
 Hotter regions, such as hot-humid and hot-dry, are almost guaranteed to show overall site energy savings when window film is installed on either single pane or double pane windows. Buildings typically include different levels of internal heat gains where computers, servers, elevators, appliances, humans, etc. emit heat to the indoor spaces. The level of internal heat gains differs by building type, and because the presence of internal heat gains contributes to increased cooling load, some buildings in colder regions still might have some cooling demand during colder months. Because of this, there are some possible total site energy savings even in colder regions as shown in Figure 17 (zoomed version of Figure 16 for the very bottom row). As shown in the figure, building types such as hotel and retail will require relatively more cooling demand compared to a warehouse in the same region, thus positive savings are more realized in retail and hotel buildings even in the cold region, resulting in positive overall site energy savings with the window film upgrade.
 
-![Chart, box and whisker chart Description automatically generated](../media/b9f6a6c8cce9d622fb5de5c5c53465e4.png)
+![Chart, box and whisker chart Description automatically generated](media/b9f6a6c8cce9d622fb5de5c5c53465e4.png)
 
 Figure 17. ComStock full national results: aggregated site energy savings on cooling, heating, and total site energy for single pane window
 
 The overall impact is minimal, but Figure 18 shows the impact of window film on interior lighting energy. There are buildings with daylighting control where the luminance of the light bulb adjusts depending on how bright/dark the indoor space is. The change of illuminance level in the indoor space is due to multiple factors such as sunlight, shading from exterior objects (e.g., trees, neighboring building), window blind position, and window tint level. While factors such as exterior shading and window blinds are not considered in this version of ComStock, sunlight and window tint level are reflected in the simulation results, showing the negative interior lighting energy savings (shown in Figure 18) due to the darkened window by adding window film. And as expected, the scale of negative savings is linearly dependent on the fraction of daylighting control among buildings.
 
-![Chart, box and whisker chart Description automatically generated](../media/f17e9b880b7ebf4b31dc4e529e394e62.png)
+![Chart, box and whisker chart Description automatically generated](media/f17e9b880b7ebf4b31dc4e529e394e62.png)
 
 Figure 18. ComStock full national results: window film impact on interior lighting with daylighting control
 
 While the previous results were mostly focused on more detailed segment of buildings for certain climate zones, building type, or end use, the overall impact of site energy savings with window film on the entire building stock is small (0.25%).
 
-![](../media/d8401af46f97a203ebf6b1e75cfc62fd.jpg)
+![](media/d8401af46f97a203ebf6b1e75cfc62fd.jpg)
 
 Figure 19. ComStock full national results: aggregated total site energy consumptions
 
