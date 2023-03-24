@@ -17,7 +17,7 @@ The team, which includes Lawrence Berkeley National Laboratory (LBNL) and Argonn
 ## Highlights
 put short summary of results (with visuals) and point to detailed references (e.g., documentation, report, paper, etc.)
 
-![project_logo](../../../assets/images/highlight_eulp.png)
+![project_logo](../../assets/images/highlight_eulp.png)
 
 ## Contributors
-Chris CaraDonna [![email](../../../assets/images/email.png)](mailto:Christopher.CaraDonna@nrel.gov) [![bio](../../../assets/images/bio.png)](https://www.nrel.gov/research/staff/chris-caradonna.html)
+Chris CaraDonna [![email](../../assets/images/email.png)](mailto:Christopher.CaraDonna@nrel.gov) [![bio](../../assets/images/bio.png)](https://www.nrel.gov/research/staff/chris-caradonna.html)
