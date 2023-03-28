@@ -3,7 +3,7 @@ layout: default
 title: Window Film
 parent: Energy Efficiency Measures
 grand_parent: Documentations
-nav_order: 1
+nav_order: 9
 ---
 
 # Executive Summary
@@ -93,7 +93,7 @@ Figure from [1]
 
 [^1]: For more information, see <https://windows.lbl.gov/software/window>.
 {:refdef: style="text-align: center;"}
-![](media/dfade3dd9e578a753615d0914e6acc3e.png){: width="600" }
+![](media/dfade3dd9e578a753615d0914e6acc3e.png){: width="400" }
 {:refdef}
 
 {:refdef: style="text-align: center;"}
@@ -142,7 +142,7 @@ Table 1. Overall Assembly Performance Characteristics by Climate Zone
 To understand the expected performance of the total assembly, combinations of existing windows and window films are modeled using LBNL’s WINDOW (v7.8) and Optics (v6) software, shown in Figure 5. Table 2 includes (1) performance (e.g., U-factor, SHGC, and visual light transmittance [VLT]) improvements between ComStock baseline windows and windows with window films; and (2) performance comparison against AEDG targets, with respect to different climate zones. Several window film products were selected from a larger pool (shown in Figure 3) based on the emphasis on thermal performance improvements rather than visual performance improvements, as this analysis is focused on the energy savings potential.
 
 {:refdef: style="text-align: center;"}
-![](media/da1e7d6f9b520c4ad0d2b13322635bb0.png){: width="600" }
+![](media/da1e7d6f9b520c4ad0d2b13322635bb0.png){: width="500" }
 {:refdef}
 
 {:refdef: style="text-align: center;"}
