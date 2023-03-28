@@ -16,24 +16,24 @@ Accessing national ComStock building load profiles in the full dataset requires 
 - 2,400+ U.S. Census Public Use Microdata Areas
 - 3,000+ U.S. counties.
 
-Aggregate ComStock datasets can be accessed via the [Open Energy Data Initiative (OEDI)](https://data.openei.org/s3_viewer?bucket=oedi-data-lake&prefix=nrel-pds-building-stock%2F) and the [ComStock Data Visualization Platform](https://comstock.nrel.gov/). There are two versions of the datasets published with each release: one with actual weather data (AMY), and another with typical (TMY3) weather data. The TMY3 15-minute energy data should not be used for larger geographies because weather events are not regionally aligned.
+Aggregate ComStock datasets can be accessed via the [Open Energy Data Initiative (OEDI)](https://data.openei.org/s3_viewer?bucket=oedi-data-lake&prefix=nrel-pds-building-stock%2F) and the [ComStock data viewer](https://comstock.nrel.gov/). There are two versions of the datasets published with each release: one with actual weather data (AMY), and another with typical weather data (TMY3). Note: The TMY3 15-minute energy data should not be used for larger geographies because weather events are not regionally aligned.
 
 For information on how to query the full ComStock dataset, please refer to this [documentation](https://github.com/openEDI/documentation/blob/main/NREL_Building_Stock/Query_ComStock_Athena.md).
 
 Visit the [Published Datasets]({{site.baseurl}}{% link docs/data/published_datasets.md %}) for a summary of published ComStock datasets and links to access the data for each release.
 
 ## Open Energy Data Initiative
-OEDI contains all aggregate data for each ComStock release. This includes metadata and timeseries energy consumption results (baseline and upgrades. if applicable), individual building energy models, weather files, geographic information, and data dictionaries. 
+OEDI is powered by OpenEI, an energy information portal. OEDI contains comprehensive aggregate data for ComStock releases. This includes metadata and timeseries energy consumption results (baseline and upgrades, if applicable), individual building energy models, weather files, geographic information, and data dictionaries. 
 
-The OEDI directory structure is summarized in the table, below. For more detailed information about the contents of the ComStock OEDI, visit the [README](https://oedi-data-lake.s3.amazonaws.com/nrel-pds-building-stock/end-use-load-profiles-for-us-building-stock/README.md).
+The ComStock release directory structure on OEDI is summarized in the table, below. For more detailed information about the contents of the ComStock OEDI, visit the [README](https://oedi-data-lake.s3.amazonaws.com/nrel-pds-building-stock/end-use-load-profiles-for-us-building-stock/README.md).
 
 ### Directory Structure
 
-| **Name** | **Contents**|
-|-----------|--------|
+| **Name**                          | **Contents**|
+|-----------------------------------|--------|
 |building_energy_models             | Building energy models, in [OpenStudio](https://www.openstudio.net/) format, that were run to create the dataset.|
 |geographic_information             | Information on various geographies used in the dataset provided for convenience. Includes map files showing the shapes of the geographies (states, PUMAs) used for partitioning and a lookup table mapping between census tracts and various other geographies. |
-|metadata                           | Building characteristics (age, area, HVAC system type, etc.) for each of the building energy models run to create the timeseries data.Descriptions of these characteristics are included in `data_dictionary.tsv`, `enumeration_dictionary.tsv`, and `upgrade_dictionary.tsv`.|
+|metadata                           | Building characteristics (age, area, HVAC system type, etc.) for each of the building energy models run to create the timeseries data and annual energy results. Descriptions of the characteristics are included in `data_dictionary.tsv`, `enumeration_dictionary.tsv`, and `upgrade_dictionary.tsv`.|
 |timeseries_aggregates              | Aggregate end-use load profiles by building type and geography that can be opened and analyzed in Excel, python, or other common data analysis tools.|
 |timeseries_aggregates_metadata     | Building characteristics for `timeseries_aggregates` building energy models. Follows the same format at `metadata`.|
 |timeseries_individual_buildings    | The raw individual building timeseries data.  **This is a large number of individual files!**|
@@ -43,8 +43,8 @@ The OEDI directory structure is summarized in the table, below. For more detaile
 |enumeration_dictionary.tsv         | Expands the definitions of the enumerations used in the metadata files.|
 |upgrade_dictionary.tsv             | Expands the definitions of the upgrades. |
 
-## ComStock Data Visualization Platform
-The ComStock Data Visualization Platform exists to quickly filter, slice, combine, visualize, and download the results in custom ways. This platform is available at [comstock.nrel.gov](https://comstock.nrel.gov). Multiple geographic views of the datasets on the visualization platform have been created: by state, and by Census region by PUMA.
+## ComStock Data Viewer
+The ComStock data viewer exists to quickly filter, slice, combine, visualize, and download the results in custom ways. This platform is available at [comstock.nrel.gov](https://comstock.nrel.gov). Multiple geographic views of the datasets on the data viewer have been created: by state, and by Census region by PUMA.
 
 ![](..\..\assets\images\data_viewer_screenshot.png)
 
