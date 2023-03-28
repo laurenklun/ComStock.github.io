@@ -24,7 +24,7 @@ Window film products that were modeled in this analysis significantly reduced th
 
 # Acknowledgments
 
-The authors would like to acknowledge the valuable guidance and input provided by Jen Daly at 3M.
+The authors would like to acknowledge the valuable guidance and input provided by Shanti Pless at NREL and Jen Daly at 3M.
 
 # 1.  Window Film
 ## 1.1  Accessing Results
