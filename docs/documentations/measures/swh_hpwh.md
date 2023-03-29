@@ -448,7 +448,7 @@ Figure 24. ComStock full national results: Examples of water system behaviors wi
 Figure 25 shows the annual operating COP and the heating energy between heat pump (labeled as hp water heater heat pump output) and backup heating elements (labeled as heat pump water heater tank output) between different building types. As shown in Figure 25, the average annual operating COPs vary between different building types. And the variation of operating COP is correlated to the heating portion between the heat pump and backup heating elements shown in the right column of the figure. For example, strip malls show relatively higher average operating COP where water heating is mostly provided by the heat pump with minimal use of backup heating elements. This also means the level of hot water draw is large enough (for a strip mall as a whole) to trigger the backup heating elements based on the control setting of the HPWH system.
 
 {:refdef: style="text-align: center;"}
-![](media/f7b0b2d597ba349cc345ecb30629473f.png)
+![](media/f7b0b2d597ba349cc345ecb30629473f.png){: width="550" }
 {:refdef}
 
 {:refdef: style="text-align: center;"}
