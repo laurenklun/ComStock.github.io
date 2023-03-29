@@ -18,7 +18,7 @@ nav_order: 7
 **Related Work**
 
 |     [ResStock Publication Page](https://resstock.nrel.gov/page/publications) |     Publications   to date using the ResStock analysis tool.                                                                                                                                         |
-|     [Choosing the Best Carbon Factor   for the Job](https://www.osti.gov/biblio/1891472)                            |     Explores   Available Carbon Emissions Factors and the Impact of Factor Selection                                                                                                                 |
+|     [Choosing the Best Carbon Factor   for the Job](https://aceee2022.conferencespot.org/event-data/pdf/catalyst_activity_32485/catalyst_activity_paper_20220810190542996_ca9a88a9_04f7_48dc_88c1_2ba530e44474)                            |     Explores   Available Carbon Emissions Factors and the Impact of Factor Selection                                                                                                                 |
 |     [Practical   Guidance and Use Cases – Berkeley National Lab](https://emp.lbl.gov/publications/end-use-load-profiles-us-building-1)               |     Example   applications and considerations for utilities.                                                                                                                                         |
 |     [Time-Sensitive   Value (TSV) Calculator - Berkeley National Lab](https://emp.lbl.gov/publications/time-sensitive-value-calculator)          |     Excel-based   tool by Berkeley Lab that estimates the value of energy efficiency and other   distributed energy resource (DER) measures using hourly estimates of   electricity system costs.    |
 
