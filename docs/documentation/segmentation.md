@@ -2,7 +2,7 @@
 layout: default
 title: Segmentation
 nav_order: 3
-parent: Documentations
+parent: Documentation
 ---
 
 # Segmentation Documentation
