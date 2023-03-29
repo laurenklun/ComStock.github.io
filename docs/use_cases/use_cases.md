@@ -5,5 +5,3 @@ nav_order: 5
 has_children: true
 ---
 
-# Example Use Cases
-{: .fw-500 }
