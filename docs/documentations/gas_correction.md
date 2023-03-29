@@ -2,7 +2,7 @@
 layout: default
 title: Gas Correction
 nav_order: 3
-parent: Documentations
+parent: Documentation
 ---
 
 # Gas Correction Documentation
