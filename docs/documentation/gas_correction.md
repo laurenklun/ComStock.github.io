@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Segmentation
+# title: Gas Correction
 nav_order: 3
 parent: Documentation
 ---
 
-# Segmentation Documentation
+# Gas Correction Documentation
 {: .fw-500 }

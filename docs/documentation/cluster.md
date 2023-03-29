@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Cluster
+# title: Cluster
 nav_order: 2
 parent: Documentation
 ---
