@@ -41,21 +41,9 @@ Table 1. Lighting Generations and Associated Technologies for Each Category
 
 ![](media/84aac530e83376a462a4944ac8220ebf.png){:width="650"}
 
-ComStock uses a similar approach to the ASHRAE 90.1 Lighting Subcommittee for determining the lighting power density (LPD) allowance for a given space type. Equation 1 calculates the LPD for a space using target illuminance levels as defined by the ASHRAE 90.1 Lighting Subcommittee, and lighting technology properties. Table 2 provides the average installed building-level LPDs in ComStock by building type and lighting generation.
+ComStock uses a similar approach to the ASHRAE 90.1 Lighting Subcommittee for determining the lighting power density (LPD) allowance for a given space type. Equation below calculates the LPD for a space using target illuminance levels as defined by the ASHRAE 90.1 Lighting Subcommittee, and lighting technology properties. Table 2 provides the average installed building-level LPDs in ComStock by building type and lighting generation.
 
-(1)
-
-= the percent of the horizontal illuminance met by a specific lighting system
-
-= the target horizontal illuminance value
-
-= room surface dirt depreciation, an estimate of how much surface dirt on ceilings and walls reduces light from reaching the horizontal surface
-
-= total lighting factor =
-
--   = the lumens per watt for a specific lighting technology
-    -   = a term that capture how many of the lumens generated from the lighting system reaches the horizontal plane
-    -   = Lighting loss factor =
+![](media/equation.png)
 
 Table 2. Average Building-Level Lighting Power Densities (W/ft2) by Lighting Generation and Building Type
 
@@ -190,27 +178,27 @@ Models without reheat HVAC systems seeing positive natural gas and electricity h
 
 HVAC systems for models with natural gas heating savings:
 
-PVAV with gas heat with electric reheat
+- PVAV with gas heat with electric reheat
 
-VAV chiller with gas boiler reheat
+- VAV chiller with gas boiler reheat
 
-Packaged single zone air conditioner (PSZ-AC) with gas coil
+- Packaged single zone air conditioner (PSZ-AC) with gas coil
 
-Residential AC with residential forced air furnace
+- Residential AC with residential forced air furnace
 
-Dedicated outdoor air system (DOAS) with water source heat pumps cooling tower with boiler
+- Dedicated outdoor air system (DOAS) with water source heat pumps cooling tower with boiler
 
-Direct evaporative coolers with forced air furnace.
+- Direct evaporative coolers with forced air furnace.
 
 HVAC systems for models with electricity heating savings:
 
-PVAV with gas heat with electric reheat
+- PVAV with gas heat with electric reheat
 
-PSZ-AC with electric coil
+- PSZ-AC with electric coil
 
-DOAS with variable refrigerant flow (VRF)
+- DOAS with variable refrigerant flow (VRF)
 
-DOAS with water source heat pumps and ground source heat pumps.
+- DOAS with water source heat pumps and ground source heat pumps.
 
 {:refdef: style="text-align: center;"}
 ![Chart, waterfall chart Description automatically generated](media/754f297ce1069579fa4994ad386f3b61.png)
