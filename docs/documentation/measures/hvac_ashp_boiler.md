@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Air-Source Heat Pump Boiler
-parent: Energy Efficiency Measures
+parent: Measures
 grand_parent: Documentation
 nav_order: 3
 ---
