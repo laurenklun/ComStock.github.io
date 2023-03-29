@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CLEAP
+# title: CLEAP
 parent: Projects
 nav_order: 6
 ---

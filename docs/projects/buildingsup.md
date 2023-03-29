@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Buildings UP
+# title: Buildings UP
 parent: Projects
 nav_order: 5
 ---
