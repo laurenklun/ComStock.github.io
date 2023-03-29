@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Documentations
+title: Documentation
 nav_order: 2
 has_children: true
 ---
 
-# Documentations
+# Documentation
 {: .fw-500 }
