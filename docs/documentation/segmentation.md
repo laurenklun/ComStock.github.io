@@ -1,9 +1,8 @@
 ---
 layout: default
-# title: Segmentation
+title: Segmentation
 nav_order: 3
 parent: Documentation
+published: false
 ---
 
-# Segmentation Documentation
-{: .fw-500 }

@@ -1,9 +1,8 @@
 ---
 layout: default
-# title: Projects
+title: Projects
 nav_order: 6
 has_children: true
+published: false
 ---
 
-# Past and On-Going Projects
-{: .fw-500 }
