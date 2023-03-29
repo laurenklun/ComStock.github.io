@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Measures
+title: Energy Efficiency Measures
 parent: Documentation
 nav_order: 5
 has_children: true
 ---
 
-# Energy Efficiency and Electrification Measure Documentation
+# Energy Efficient Measures Documentation
 {: .fw-500 }

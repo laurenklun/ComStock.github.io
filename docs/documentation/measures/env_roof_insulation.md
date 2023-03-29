@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Roof Insulation
-parent: Measures
+parent: Energy Efficiency Measures
 grand_parent: Documentation
 nav_order: 10
 ---
