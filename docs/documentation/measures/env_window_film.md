@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Window Film
-parent: Energy Efficiency Measures
+parent: Measures
 grand_parent: Documentation
 nav_order: 9
 ---
