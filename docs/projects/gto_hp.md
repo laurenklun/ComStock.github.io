@@ -1,6 +1,6 @@
 ---
 layout: default
-title: GTO HP
+# title: GTO HP
 parent: Projects
 nav_order: 7
 ---

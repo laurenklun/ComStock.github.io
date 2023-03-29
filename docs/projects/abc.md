@@ -1,6 +1,6 @@
 ---
 layout: default
-title: ABC Typology
+# title: ABC Typology
 parent: Projects
 nav_order: 3
 ---

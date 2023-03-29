@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Round 2
+# title: Round 2
 parent: EUSS
 grand_parent: Projects
 nav_order: 2
