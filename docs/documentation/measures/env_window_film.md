@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Window Film
-parent: Energy Efficiency Measures
+parent: Measures
 grand_parent: Documentation
 nav_order: 9
 ---
@@ -26,12 +26,9 @@ Window film products that were modeled in this analysis significantly reduced th
 
 The authors would like to acknowledge the valuable guidance and input provided by Shanti Pless at NREL and Jen Daly at 3M.
 
-# 1.  Window Film
-## 1.1  Accessing Results
+# 1.  Introduction
 
 This documentation covers window film upgrade methodology and briefly discusses key results. Results can be accessed on the ComStock data lake “[end-use-load-profiles-for-us-building-stock](https://data.openei.org/s3_viewer?bucket=oedi-data-lake&prefix=nrel-pds-building-stock%2Fend-use-load-profiles-for-us-building-stock%2F)” or via the Data Visewer at [comstock.nrel.gov](https://comstock.nrel.gov/).
-
-## 1.2  Measure Summary
 
 | **Measure Title**  | **Window Film**                                                                                                                                                            |
 |--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

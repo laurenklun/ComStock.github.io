@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Residential Unitary Heat Pump Water Heater
-parent: Energy Efficiency Measures
+parent: Measures
 grand_parent: Documentation
 nav_order: 4
 published: false
@@ -31,12 +31,9 @@ Although the scope of HPWH application is limited to only commercial buildings s
 
 The authors would like to acknowledge the valuable guidance and input provided by Jeff Maguire and Bethany Sparn at NREL.
 
-# 1.  Residential Unitary Heat Pump Water Heaters
-## 1.1.  Accessing Results
+# 1.  Introduction
 
 This documentation covers residential unitary heat pump water heater (HPWH) upgrade methodology and briefly discusses key results. Results can be accessed on the ComStock data lake “[end-use-load-profiles-for-us-building-stock](https://data.openei.org/s3_viewer?bucket=oedi-data-lake&prefix=nrel-pds-building-stock%2Fend-use-load-profiles-for-us-building-stock%2F)” or via the Data Viewer at comstock.nrel.gov.
-
-## 1.2.  Measure Summary
 
 | **Measure Title**  | **Residential Unitary Heat Pump Water Heater**                                                                                                            |
 |--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
