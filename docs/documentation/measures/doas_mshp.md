@@ -3,7 +3,7 @@ layout: default
 title: DOAS with Mini Split Heat Pumps
 parent: Measures
 grand_parent: Documentation
-nav_order: 1
+nav_order: 2
 ---
 
 # Executive Summary
