@@ -26,12 +26,11 @@ The authors would like to acknowledge the valuable guidance and input provided b
 
 This documentation covers the “Replace Boiler by Air-Source Heat Pump Boiler” upgrade methodology and briefly discusses key results. Results can be accessed on the ComStock™ data lake at “end-use-load-profiles-for-us-building-stock” or via the Data Viewer at [comstock.nrel.gov](https://comstock.nrel.gov/).
 
-| **Measure Title**  | **Replace Boiler by Air-Source Heat Pump Boiler (replace_boiler_by_heatpump)**                               |
-|--------------------|--------------------------------------------------------------------------------------------------------------|
-| Measure Definition | This measure replaces a natural gas boiler by an air-source heat pump for space heating.                     |
-| Applicability      | Buildings with a natural gas boiler for space heating.                                                       |
-| Not Applicable     | Buildings not using natural gas boiler for space heating such as those with furnace or district heat source. |
-| Release            | EUSS 2023 Release 1                                                                                               |
+| **Measure Title**  | Replace Boiler by Air-Source Heat Pump Boiler (replace_boiler_by_heatpump)                               |
+| **Measure Definition** | This measure replaces a natural gas boiler by an air-source heat pump for space heating.                     |
+| **Applicability**      | Buildings with a natural gas boiler for space heating.                                                       |
+| **Not Applicable**     | Buildings not using natural gas boiler for space heating such as those with furnace or district heat source. |
+| **Release**            | EUSS 2023 Release 1                                                                                               |
 
 # 2.  Technology Summary
 
@@ -106,7 +105,7 @@ Heat pump sizing is one of the critical steps that needs to be addressed when re
 
 Optimal sizing is a balance of the above factors and should be aligned with the priorities of the building owner. Most of the commercially available ASHP boilers are relatively small and require cascading for higher capacities, but there are units that provide heating up to 2,500 MBh [5]. Apart from requiring more area for installation, cascading provides the flexibility to fire heat pumps sequentially during part load operation and reduce efficiency loss that could result from frequent cycling of bigger units. Cascading also provides redundancy and increases the resiliency of the system.
 
-### Estimation of Design Heating Load
+### 4.2.1  Estimation of Design Heating Load
 
 The design heating load (DHL) in a building can be estimated using energy audit load estimates, energy modeling of design loads, or existing equipment capacities. Because the objective of this measure is to evaluate the benefit of replacing an existing boiler, the DHL estimation is based on existing equipment capacity in the model. In practice, using existing capacity is acceptable if [6]:
 
@@ -139,7 +138,7 @@ Table 4. Winter Design Day Temperature per ASHRAE Climate Zone
 | 7                | Duluth, MN        | −19.5                                          |
 | 8                | Fairbanks, Ak     | −43.4                                          |
 
-### Sizing Options and Target Capacity Estimation
+### 4.2.2  Sizing Options and Target Capacity Estimation
 
 The sizing options depend on the client’s expectations for the ASHP boiler installation. In general, the heat pump can be sized in two ways:
 
@@ -162,7 +161,7 @@ Figure from [6]
 
 Two options are provided for heat pump sizing in the measure, one based on percentage of the peak load and the other based on outdoor air temperature, with a gas or electric backup boiler system to address the remaining loads.
 
-##### Sizing Based on Peak Load Percentage
+### 4.2.3  Sizing Based on Peak Load Percentage
 
 In this approach, the target capacity is estimated as a percentage of the DHL. The corresponding outdoor air temperature (target OAT) that results in a heating demand equal to the target capacity is determined using the heating load line, as shown in Figure 4.
 
@@ -186,7 +185,7 @@ If the target OAT is lower than the cutoff temperature, the target capacity shou
 Figure 4. Heat pump sizing approach
 {:refdef}
 
-##### Sizing Based on a Target Outdoor Air Temperature
+### 4.2.4  Sizing Based on a Target Outdoor Air Temperature
 
 In this approach, the heat pump is sized using the target capacity on the heat load line corresponding to the target outdoor air temperature provided by the user. The target capacity is calculated as:
 
@@ -196,7 +195,7 @@ In this approach, the heat pump is sized using the target capacity on the heat l
 
 In both methods, if either the HDT or the cutoff temperature is greater than the target OAT, the sizing should be done according to the maximum of the two instead of the target OAT. For example, if the cutoff temperature of the heat pump is 0°F and the user picks a target OAT of 17°F, it doesn’t make sense to size the heat pump corresponding to 17°F, as the heat pump won’t be operating below 0°F.
 
-####  Defrosting Consideration
+### 4.2.5  Defrosting Consideration
 
 ASHP boilers require occasional defrosting when operating at an outdoor air temperature below 47°F. Commercial ASHP boilers with multiple compressors reduce the impact of defrosting by limiting the defrosting to only one circuit at a time. The frequency of defrosting depends on the operating conditions. Table 5 summarizes the suggested capacity derate factors for sizing application [2].
 
@@ -216,7 +215,7 @@ The target capacity estimated in Section 4.2.2 is updated using the “Capacity 
 ![](media/ashp_boiler_eq3.png){:width="350"}
 {:refdef}
 
-#### Estimation of Rated Heat Pump Capacity
+### 4.2.6  Estimation of Rated Heat Pump Capacity
 
 Most heat pump manufacturers provide the heat pump rated capacity at a specific condition, usually at an outdoor air temperature of 47°F. The updated target capacity estimated in Section 4.2.3 needs to be converted to the required capacity at the design condition. To estimate the required rated capacity of the heat pump at the design outdoor air temperature, we used a performance curve called [9] that captures the variation of a heat pump’s capacity with outdoor air temperature and hot water set point. Heat pump performance curves are discussed in depth in Section 4.3 and Appendix A. The target capacity at the design outdoor air temperature (Target Capacity @ Design OAT) is estimated as:
 
@@ -226,7 +225,7 @@ Most heat pump manufacturers provide the heat pump rated capacity at a specific 
 
 where a, b, c, d, e, and f are *CapFT* performance curve coefficients and Tcondout is the hot water temperature at the condenser outlet of the heat pump (which is equivalent to the hot water heating set point).
 
-#### Use of Multiple Heat Pumps
+### 4.2.7  Use of Multiple Heat Pumps
 
 In practice, it is more common to have multiple heat pumps of medium size than to have one big heat pump in a building. It creates redundancy and increases the energy efficiency of the system by providing the flexibility to run a few heat pumps at a higher part load ratio and with less cycling than running a big chiller. This measure allows users to provide the rated capacity of the heat pump they would like to use. The default heating capacity per unit used in the measure is 40 kW (136.5 MBH) and is based on Mitsubishi’s Ecodan ASHP [10]. The measure adds multiple heat pumps in parallel when the estimated rated capacity is greater than the assumed rated capacity per unit. The number of ASHPs is estimated as:
 
@@ -238,7 +237,7 @@ where “Roundup” is used to convert a fraction to the closest higher integer 
 
 If the estimated rated capacity is lower than the assumed rated capacity per unit, only one heat pump with the estimated rated capacity will be used in the model.
 
-#### Heat Pump Set Point
+### 4.2.8  Heat Pump Set Point
 
 Heat pumps have a lower hot water temperature output than boilers. There are some CO2 refrigerant heat pump water heaters that supply hot water up to 180°F [11], but most of the commercially available heat pumps have a hot water supply temperature capped at around 140°F. The hot water supply temperature they generate also depends on the outdoor air temperature. Figure 5 and Figure 6 show operation maps of heat pumps by Trane and Mitsubishi. For the Trane unit, the hot water leaving temperature drops from 140°F at an outdoor air temperature of 70°F to 100°F at an outdoor air temperature of 0°F. The Mitsubishi unit maintains a hot water set point even at colder temperatures; it supplies 158°F hot water at an outdoor air temperature as low as −4°F and drops to 150°F at −13°F.
 
@@ -285,7 +284,7 @@ We have provided two options in the measure for assigning a hot water set point:
 
 When the set point is changed, it will have an impact on the downstream coils connected to the heat pump. More flow needs to be supplied by the pump to handle the same heating load with a lower set point. To accommodate this change, the measure provides an option to auto-size the heating coil. If users choose to auto-size, the measure will auto-size the overall heat transfer coefficient and maximum water flow rate of the values of the coil.
 
-### 4.3.  Modeling ASHP Boilers in OpenStudio
+## 4.3.  Modeling ASHP Boilers in OpenStudio
 
 During the measure development, we considered two heat pump models in OpenStudio. The first was a pumped condenser heat pump. This heat pump model is a combination of multiple objects, including a fan, a water tank, and an air-to-water heat pump coil object that is composed of a heat pump and a water circulation pump between the heat pump and the water tank [9]. This model doesn’t allow a cutoff temperature below 23°F. Commercial heat pumps for space heating applications have cutoff temperatures as low as −25°F, especially the CO2-based heat pumps [1]. Because of this limitation, we were forced to drop it, but it could be considered in the future once the cutoff temperature limit is relaxed to a lower value.
 
@@ -351,11 +350,11 @@ Figure 10. CAPFT performance curve output
 Figure 11. EIRFT performance curve output
 {:refdef}
 
-####  Heat Pump Backup System
+### 4.3.1  Heat Pump Backup System
 
 The measure provides two options for a backup: keep the existing boiler or use a new electric resistance element. If users choose to use a new electric resistance element, the measure uses the existing boiler as a backup heater after updating the fuel type to electricity and the thermal efficiency to 100%.
 
-### 4.4.  Limitations and Concerns
+## 4.4  Limitations and Concerns
 
 As indicated in Section 3, some of the boilers in the baseline ComStock models don’t have minimum load turndown control. This allows small flow with insignificant heating in the hot water loop. This had a negative impact during the application of this measure, as the measure introduces a heat pump loop that is triggered by a nonzero flow in the hot water loop. The small flow in the hot water loop forces the heat pump to cycle frequently and eventually affects the expected savings from the application of this measure. This issue should be addressed in the next version of the ComStock models.
 
@@ -579,7 +578,7 @@ Figure 24. Annual greenhouse gas emission comparison
 
 [14] “CxV Air Source Heat Pump Water Heater.” [Online]. Available: https://ftp-llc.com/wp-content/uploads/2019/02/CxV-Air-Source-One-Page.pdf
 
-# Appendix
+# Appendix A
 
 As discussed in Section 4.3, the heat pump object used in this measure has three performance curves for capturing the dependency of the heat pump performance on the operating conditions. Two of the curves (CapFTemp and EIRFTemp) capture the dependency of heat pump capacity and efficiency on outdoor air temperature and hot water supply temperature. EIRPLR captures the dependency of the heat pump efficiency on heat pump loading and cycling.
 
@@ -593,15 +592,15 @@ Table A-1. Capacity Reduction With OAT for Trane and Colmac Units
 
 |            | **Capacity at 50°F (Btu/hr)** | **Capacity at 0°F (Btu/hr)** | **% Capacity Reduction From 50°F to 0°F** | **COP**     |
 |------------|-------------------------------|------------------------------|-------------------------------------------|-------------|
-| Colmac[14] | 57,600                        | 31500                        | **45%**                                   | 2.70 @ 50°F |
-| Trane [2]  |                               |                              | **50%**                                   | 2.70 @ 47°F |
+| **Colmac** [14] | 57,600                        | 31500                        | 45%                                   | 2.70 @ 50°F |
+| **Trane** [2]  |                               |                              | 50%                                  | 2.70 @ 47°F |
 
 Table A-2. Capacity Reduction Comparison Between Mitsubishi and Colmac Units
 
 |                 | **Capacity at 45°F (Btu/hr)** | **Capacity at 20°F (Btu/hr)** | **% Capacity Reduction From 50°F to 20°F** | **COP**     |
 |-----------------|-------------------------------|-------------------------------|--------------------------------------------|-------------|
-| Colmac[14]      | 54,750                        | 42,200                        | **23%**                                    | 2.70 @ 50°F |
-| Mitsubishi [10] | 140,400                       | 117,234                       | **25%**                                    | 2.85 @ 45°F |
+| **Colmac** [14]      | 54,750                        | 42,200                        | 23%                                    | 2.70 @ 50°F |
+| **Mitsubishi** [10] | 140,400                       | 117,234                       | 25%                                    | 2.85 @ 45°F |
 
 In addition to the operating temperature conditions, the way the heat pump is loaded and its cycling frequency also affect its efficiency. During the measure development, we were not able to find manufacturer data and assumed a linear variation between EIR and PLR that results in a 0% reduction when the PLR is one and a 25% reduction when the PLR is close to zero.
 
@@ -609,12 +608,12 @@ Table A-3. Performance Curve Coefficients
 
 |   | **CAPFT**  | **EIRFT**  | **EIRPLR** |
 |---|------------|------------|------------|
-| a | 0.88302749 | 0.84177647 | 1.25       |
-| b | −0.0016513 | 0.00648504 | −0.25      |
-| c | 1.44E−05   | −8.68E−06  | 0          |
-| d | 0.01833385 | −0.0273677 |            |
-| e | 3.6396E−05 | 0.00018754 |            |
-| f | −2.04E−05  | 0.0001082  |            |
+| **a** | 0.88302749 | 0.84177647 | 1.25       |
+| **b** | −0.0016513 | 0.00648504 | −0.25      |
+| **c** | 1.44E−05   | −8.68E−06  | 0          |
+| **d** | 0.01833385 | −0.0273677 |            |
+| **e** | 3.6396E−05 | 0.00018754 |            |
+| **f** | −2.04E−05  | 0.0001082  |            |
 
 Figure A-1 shows the comparison of the actual heating capacity and EIR from the performance data, with the values predicted using the performance curves.
 

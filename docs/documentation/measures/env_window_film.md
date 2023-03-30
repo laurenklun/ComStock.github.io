@@ -30,12 +30,11 @@ The authors would like to acknowledge the valuable guidance and input provided b
 
 This documentation covers window film upgrade methodology and briefly discusses key results. Results can be accessed on the ComStock data lake “[end-use-load-profiles-for-us-building-stock](https://data.openei.org/s3_viewer?bucket=oedi-data-lake&prefix=nrel-pds-building-stock%2Fend-use-load-profiles-for-us-building-stock%2F)” or via the Data Visewer at [comstock.nrel.gov](https://comstock.nrel.gov/).
 
-| **Measure Title**  | **Window Film**                                                                                                                                                            |
-|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Measure Definition | This measure applies new performance of the overall glazing system reflecting a scenario when an applicable window film is attached to the original (“baseline”) window.   |
-| Applicability      | Certain window film (based on real products in the market) is paired with (1) baseline window type and (2) climate zone.                                                   |
-| Not Applicable     | Triple pane windows are considered not applicable for buildings in any climate zone. Double pane windows in buildings in very cold regions are considered not applicable.  |
-| Release            | EUSS 2023 Release 1                                                                                                                                                        |
+| **Measure Title**  | Window Film                                                                                                                                                            |
+| **Measure Definition** | This measure applies new performance of the overall glazing system reflecting a scenario when an applicable window film is attached to the original (“baseline”) window.   |
+| **Applicability**      | Certain window film (based on real products in the market) is paired with (1) baseline window type and (2) climate zone.                                                   |
+| **Not Applicable**     | Triple pane windows are considered not applicable for buildings in any climate zone. Double pane windows in buildings in very cold regions are considered not applicable.  |
+| **Release**            | EUSS 2023 Release 1                                                                                                                                                        |
 
 # 2.  Technology Summary
 

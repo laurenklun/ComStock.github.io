@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Mini Split DOAS Heat Pump
+title: DOAS with Mini Split Heat Pumps
 parent: Measures
 grand_parent: Documentation
 nav_order: 1
@@ -45,12 +45,11 @@ The authors would like to acknowledge the valuable guidance and input provided b
 This documentation covers the "Dedicated Outdoor Air Unit (DOAS) With High-Efficiency Mini Split Heat Pump (MSHP)" upgrade methodology and briefly discusses key results. Results can be accessed on the ComStock™ data lake at "[end-use-load-profiles-for-us-building-stock](https://data.openei.org/s3_viewer?bucket=oedi-data-lake&prefix=nrel-pds-building-stock%2Fend-use-load-profiles-for-us-building-stock%2F)" or via the Data Viewer at [comstock.nrel.gov.](https://comstock.nrel.gov/datasets)
 
 
-| **Measure Title**      | **DOAS With High-Efficiency Mini Split Heat Pump**                                                                                                                                                                                                                                                                                                                         |
-|--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Measure Definition | This measure replaces gas-fired and electric resistance rooftop units (RTUs) with high-efficiency (~30 seasonal energy efficiency ratio; 14 heating seasonal performance factor), variable speed MSHPs and a DOAS system with an energy recovery ventilator (ERV) or heat recovery ventilator (HRV). The DOAS system uses the existing ductwork from the replaced RTU. |
-| Applicability      | Small commercial buildings (<20,000 square feet) that contain gas-fired or electric resistance RTUs.                                                                                                                                                                                                                                                                   |
-| Not Applicable     | Buildings greater than 20,000 square feet or those that do not contain gas-fired or electric resistance RTUs. Also not applicable to kitchen spaces.                                                                                                                                                                                                                   |
-| Release            | 2023 Release 1: 2023/comstock_amy2018_release_1/                                                                                                                                                                                                                                                                                                                       |
+| **Measure Title**      | DOAS With High-Efficiency Mini Split Heat Pump                                                                                                                                                                                                                                                                                                                         |
+| **Measure Definition** | This measure replaces gas-fired and electric resistance rooftop units (RTUs) with high-efficiency (~30 seasonal energy efficiency ratio; 14 heating seasonal performance factor), variable speed MSHPs and a DOAS system with an energy recovery ventilator (ERV) or heat recovery ventilator (HRV). The DOAS system uses the existing ductwork from the replaced RTU. |
+| **Applicability**      | Small commercial buildings (<20,000 square feet) that contain gas-fired or electric resistance RTUs.                                                                                                                                                                                                                                                                   |
+| **Not Applicable**     | Buildings greater than 20,000 square feet or those that do not contain gas-fired or electric resistance RTUs. Also not applicable to kitchen spaces.                                                                                                                                                                                                                   |
+| **Release**            | 2023 Release 1: 2023/comstock_amy2018_release_1/                                                                                                                                                                                                                                                                                                                       |
 
 
 # 2.  Technology Summary

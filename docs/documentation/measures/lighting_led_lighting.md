@@ -22,12 +22,11 @@ This documentation focuses on a single end-use savings shape measure—LED light
 
 This documentation covers LED Lighting upgrade methodology and briefly discusses key results. Results can be accessed on the ComStock data lake “[end-use-load-profiles-for-us-building-stock](https://data.openei.org/s3_viewer?bucket=oedi-data-lake&prefix=nrel-pds-building-stock%2Fend-use-load-profiles-for-us-building-stock%2F)” or via the Data Viewer at comstock.nrel.gov.
 
-| **Measure Title**  | **LED Lighting**                                                                                         |
-|--------------------|----------------------------------------------------------------------------------------------------------|
-| Measure Definition | This measure replaces model interior lighting with ComStock Generation 5 LED lighting, where applicable. |
-| Applicability      | Models without LED lighting installed.  65% of stock floor area.                                         |
-| Not Applicable     | Models with LED lighting already installed.                                                              |
-| Release            | EUSS 2023 Release 1                                                                                      |
+| **Measure Title**  | LED Lighting                                                                                         |
+| **Measure Definition** | This measure replaces model interior lighting with ComStock Generation 5 LED lighting, where applicable. |
+| **Applicability**      | Models without LED lighting installed.  65% of stock floor area.                                         |
+| **Not Applicable**     | Models with LED lighting already installed.                                                              |
+| **Release**            | EUSS 2023 Release 1                                                                                      |
 
 # 2.  Technology Summary
 
@@ -39,7 +38,9 @@ ComStock interior lighting is determined using a lighting generation approach, w
 
 Table 1. Lighting Generations and Associated Technologies for Each Category
 
+{:refdef: style="text-align: center;"}
 ![](media/84aac530e83376a462a4944ac8220ebf.png){:width="650"}
+{:refdef}
 
 ComStock uses a similar approach to the ASHRAE 90.1 Lighting Subcommittee for determining the lighting power density (LPD) allowance for a given space type. Equation below calculates the LPD for a space using target illuminance levels as defined by the ASHRAE 90.1 Lighting Subcommittee, and lighting technology properties. Table 2 provides the average installed building-level LPDs in ComStock by building type and lighting generation.
 
@@ -47,7 +48,9 @@ ComStock uses a similar approach to the ASHRAE 90.1 Lighting Subcommittee for de
 
 Table 2. Average Building-Level Lighting Power Densities (W/ft2) by Lighting Generation and Building Type
 
+{:refdef: style="text-align: center;"}
 ![](media/ef919058a26c784142ec2fa61f745421.png){:width="500"}
+{:refdef}
 
 Lighting generations are assigned to each building model during sampling based on the year of last interior lighting replacement and the energy code in force during that year. Probability distributions were generated using a Gaussian distribution based on an approximate start and end year for each lighting generation. The probability distributions were duplicated for each energy code in force and further modified to ensure they were realistic (i.e., not let Generation 1 be installed in a ComStock 90.1-2019 building), using a cutoff generation for each energy code in force. Each of the lighting generations were also assigned an arbitrary weight to scale the distributions to represent realistic installation trends. For example, while the installation years of Generation 2 and Generation 3 overlapped, Generation 2 was far more popular and was therefore assigned a higher weight than Generation 3 in the model.
 
@@ -67,7 +70,7 @@ Figure 1. Installed lighting generation by building type for 2018 simulation yea
 
 This measure replaces model interior lighting with Generation 5 LED lighting, where applicable. The measure will first identify whether the upgrade is applicable to the model. If applicable, it will cycle through each of the spaces in the model, changing the lighting to the appropriate technology based on the space type’s lighting category (as defined in the resource files).
 
-## 1.1.  Applicability
+## 4.1  Applicability
 
 The purpose of this measure is to model the energy impact of 100% LEDs in the commercial building stock. To capture this, in all models without LEDs (Generation 1–3), all interior lighting categories will be retrofitted with Generation 5 lighting. Models with Generation 4 will remain unchanged, as there is not a significant change in efficacy (12%) between Generations 4 and 5. Additionally, LEDs have long lifespans (10+ years), and it is not realistic to replace Generation 4 LEDs with a newer technology if the lamps still have many years of usable life left. Models with Generation 5 will also remain unchanged.
 
