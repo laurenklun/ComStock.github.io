@@ -3,7 +3,7 @@ layout: default
 title: Air-Source Heat Pump Boiler
 parent: Measures
 grand_parent: Documentation
-nav_order: 3
+nav_order: 1
 ---
 
 # Executive Summary
