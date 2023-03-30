@@ -52,7 +52,8 @@ The ComStock data viewer exists to quickly filter, slice, combine, visualize, an
 ComStock releases on OEDI and the Data Visualization Platform use the following naming convention.
 ```
          <dataset type>_<weather data>_<year of publication>_release_<release number>
- example:    comstock        amy2018            2021         release_1
+ example:   comstock   _   amy2018    _         2021        _release_       1
+  result:   comstock_amy2018_2021_release_1
 ```
   - dataset type
     - resstock = residential buildings stock
@@ -63,8 +64,8 @@ ComStock releases on OEDI and the Data Visualization Platform use the following 
   - year of publication
     - 2021 = dataset was published in 2021
     - 2022 = dataset was published in 2022
-    - ...
+    - etc.
   - release
     - release_1 = first release of the dataset during the year of publication
     - release_2 = second release of the dataset during the year of publication
-    - ...
+    - etc.
