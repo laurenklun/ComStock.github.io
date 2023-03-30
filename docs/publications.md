@@ -27,15 +27,6 @@ nav_order: 7
 ></span>
 
 >{: .publication }
->> **Building Performance Analysis Conference (2022)**
->>
->> A National Typology for Decarbonizing U.S.
->
-><span class="fs-2">
->[Link](){: .btn}
-></span>
-
->{: .publication }
 >> **End-Use Load Profiles Executive Summary (2022)**
 >>
 >> Executive summary of the End Use Load Profile Technical Report.
