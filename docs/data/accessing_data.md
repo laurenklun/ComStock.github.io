@@ -16,18 +16,33 @@ Accessing national ComStock building load profiles in the full dataset requires 
 - 2,400+ U.S. Census Public Use Microdata Areas
 - 3,000+ U.S. counties.
 
-Aggregate ComStock datasets can be accessed via the [Open Energy Data Initiative (OEDI)](https://data.openei.org/s3_viewer?bucket=oedi-data-lake&prefix=nrel-pds-building-stock%2F) and the [ComStock data viewer](https://comstock.nrel.gov/). There are two versions of the datasets published with each release: one with actual weather data (AMY), and another with typical weather data (TMY3). Note: The TMY3 15-minute energy data should not be used for larger geographies because weather events are not regionally aligned.
+The following table summarizes the various ways to access and use ComStock data.
+![](..\..\assets\images\data_access_summary.png)
+
+The dataset has been formatted to be accessible in four main ways to meet the needs of many different users and use cases.
+
+1. Files of individual model characteristics together with annual results, commonly referred to as the “metadata” file
+
+2. Timeseries load profiles (individual building and pre-aggregated) in downloadable spreadsheets
+
+3. A web-based data viewer, customizable time scales and aggregations
+
+4. A detailed format that can be queried with big data tools
+
+Aggregate ComStock datasets can be accessed via the [Open Energy Initiative (OpenEI) Data Lake](https://data.openei.org/s3_viewer?bucket=oedi-data-lake&prefix=nrel-pds-building-stock%2F) and the [ComStock data viewer](https://comstock.nrel.gov/). There are two versions of the datasets published with each release: one with actual weather data (AMY), and another with typical weather data (TMY3). Note: The TMY3 15-minute energy data should not be used for larger geographies because weather events are not regionally aligned.
 
 For information on how to query the full ComStock dataset, please refer to this [documentation](https://github.com/openEDI/documentation/blob/main/NREL_Building_Stock/Query_ComStock_Athena.md).
 
-Visit the [Published Datasets]({{site.baseurl}}{% link docs/data/published_datasets.md %}) for a summary of published ComStock datasets and links to access the data for each release.
+Visit the [Published Datasets]({{site.baseurl}}{% link docs/data/published_datasets.md %}) page for a summary of published ComStock datasets and links to access the data for each release.
 
-## Open Energy Data Initiative
-OEDI is powered by OpenEI, an energy information portal. OEDI contains comprehensive aggregate data for ComStock releases. This includes metadata and timeseries energy consumption results (baseline and upgrades, if applicable), individual building energy models, weather files, geographic information, and data dictionaries. 
+Please note, there are separate public datasets available for residential and commercial building stocks. 
 
-The ComStock release directory structure on OEDI is summarized in the table, below. For more detailed information about the contents of the ComStock OEDI, visit the [README](https://oedi-data-lake.s3.amazonaws.com/nrel-pds-building-stock/end-use-load-profiles-for-us-building-stock/README.md).
+## Open Energy Initiative Data Lake
+OpenEI is an energy information portal, and is developed and maintained by the National Renewable Energy Laboratory with funding and support from the U.S. Department of Energy and a network of International Partners & Sponsors. The OpenEI data lake contains comprehensive aggregate data for ComStock releases. This includes metadata and timeseries energy consumption results (baseline and upgrades, if applicable), individual building energy models, weather files, geographic information, and data dictionaries. 
 
-### Directory Structure
+The ComStock release directory structure of the data lake is summarized in the table, below. For more detailed information about the contents of the ComStock OpenEI data lake, visit the [README](https://oedi-data-lake.s3.amazonaws.com/nrel-pds-building-stock/end-use-load-profiles-for-us-building-stock/README.md).
+
+### Directory Structure and Contents
 
 | **Name**                          | **Contents**|
 |-----------------------------------|--------|
@@ -48,8 +63,8 @@ The ComStock data viewer exists to quickly filter, slice, combine, visualize, an
 
 ![](..\..\assets\images\data_viewer_screenshot.png)
 
-## Dataset Naming
-ComStock releases on OEDI and the Data Visualization Platform use the following naming convention.
+## Dataset Naming Convention
+ComStock releases on OpenEI data lake and the data viewer use the following naming convention.
 ```
          <dataset type>_<weather data>_<year of publication>_release_<release number>
  example:    comstock        amy2018            2021         release_1
@@ -68,3 +83,15 @@ ComStock releases on OEDI and the Data Visualization Platform use the following 
     - release_1 = first release of the dataset during the year of publication
     - release_2 = second release of the dataset during the year of publication
     - ...
+
+## Field Naming Convention
+
+The field naming convention is fairly simple. At the highest level there is – “.in” for inputs, “.out” for outputs, “calc.” for calculated fields, then a handful of columns that provide simulation information.
+
+For the .out prefix there is a second level that includes – fuel type, emissions, model parameter and statistic fields, and site energy. The ".in" prefix does not have a second level.
+
+The third level of “out.” is where you’ll find the end uses.
+
+Finally, units are denoted by a “..” with the unit following.
+
+![](..\..\assets\images\field_naming_convention.png)
