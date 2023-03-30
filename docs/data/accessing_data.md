@@ -87,9 +87,9 @@ ComStock releases on OpenEI data lake and the data viewer use the following nami
 
 ## Field Naming Convention
 
-The field naming convention is fairly simple. At the highest level there is – “.in” for inputs, “.out” for outputs, “calc.” for calculated fields, then a handful of columns that provide simulation information.
+The field naming convention is fairly simple. At the highest level there is – “in.” for inputs, “out.” for outputs, “calc.” for calculated fields, then a handful of columns that provide simulation information.
 
-For the .out prefix there is a second level that includes – fuel type, emissions, model parameter and statistic fields, and site energy. The ".in" prefix does not have a second level.
+For the "out." prefix there is a second level that includes – fuel type, emissions, model parameter and statistic fields, and site energy. The "in." prefix does not have a second level.
 
 The third level of “out.” is where you’ll find the end uses.
 
