@@ -17,7 +17,7 @@ Accessing national ComStock building load profiles in the full dataset requires 
 - 3,000+ U.S. counties.
 
 The following table summarizes the various ways to access and use ComStock data.
-![](..\..\assets\images\data_access_summary.png)
+![](..\..\assets\images\data_access_summary.PNG)
 
 The dataset has been formatted to be accessible in four main ways to meet the needs of many different users and use cases.
 
@@ -61,7 +61,7 @@ The ComStock release directory structure of the data lake is summarized in the t
 ## ComStock Data Viewer
 The ComStock data viewer exists to quickly filter, slice, combine, visualize, and download the results in custom ways. This platform is available at [comstock.nrel.gov](https://comstock.nrel.gov). Multiple geographic views of the datasets on the data viewer have been created: by state, and by Census region by PUMA.
 
-![](..\..\assets\images\data_viewer_screenshot.png)
+![](..\..\assets\images\data_viewer_screenshot.PNG)
 
 ## Dataset Naming Convention
 ComStock releases on OpenEI data lake and the data viewer use the following naming convention.
