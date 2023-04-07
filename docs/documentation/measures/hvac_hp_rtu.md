@@ -7,11 +7,11 @@ nav_order: 4
 ---
 
 # Executive Summary
-Building on the successfully completed effort to calibrate and validate the U.S. Department of Energy’s ResStock™ and ComStock™ models over the past 3 years, the objective of this work is to produce national data sets that empower analysts working for federal, state, utility, city, and manufacturer stakeholders to answer a broad range of analysis questions. 
+Building on the successfully completed effort to calibrate and validate the U.S. Department of Energy’s ResStock™ and ComStock™ models over the past three years, the objective of this work is to produce national data sets that empower analysts working for federal, state, utility, city, and manufacturer stakeholders to answer a broad range of analysis questions.
 
 The goal of this work is to develop energy efficiency, electrification, and demand flexibility end-use load shapes (electricity, gas, propane, or fuel oil) that cover a majority of the high-impact, market-ready (or nearly market-ready) measures. “Measures” refers to energy efficiency variables that can be applied to buildings during modeling.
 
-An *end-use savings shape* is the difference in energy consumption between a baseline building and a building with an energy efficiency, electrification, or demand flexibility measure applied. It results in a timeseries profile that is broken down by end use and fuel (electricity or on-site gas, propane, or fuel oil use) at each time step. 
+An *end-use savings shape* is the difference in energy consumption between a baseline building and a building with an energy efficiency, electrification, or demand flexibility measure applied. It results in a timeseries profile that is broken down by end use and fuel (electricity or on-site gas, propane, or fuel oil use) at each timestep.
 
 ComStock is a highly granular, bottom-up model that uses multiple data sources, statistical sampling methods, and advanced building energy simulations to estimate the annual subhourly energy consumption of the commercial building stock across the United States. The baseline model intends to represent the U.S. commercial building stock as it existed in 2018. The methodology and results of the baseline model are discussed in the final technical report of the [End-Use Load Profiles](https://www.nrel.gov/buildings/end-use-load-profiles.html) project.
 
@@ -34,12 +34,11 @@ The authors would like to acknowledge the valuable guidance and input provided b
 # 1. Introduction
 This documentation covers “Heat Pump Rooftop Unit” upgrade methodology and briefly discusses key results.  Results can be accessed on the ComStock™ data lake at “[end-use-load-profiles-for-us-building-stock](https://data.openei.org/s3_viewer?bucket=oedi-data-lake&prefix=nrel-pds-building-stock%2Fend-use-load-profiles-for-us-building-stock%2F)” or via the Data Viewer at [comstock.nrel.gov.](https://comstock.nrel.gov)
 
-|**Measure Title**|**Heat Pump Rooftop Units**|
-| :- | :- |
-|Measure Definition|This measure replaces gas-fired and electric resistance rooftop units (RTUs) with high-efficiency heat pump RTUs (HP-RTUs). The HP-RTUs are assumed to be top-of-the-line with variable-speed compressors and fans allowing for high-performance part load operation. The heat pump is sized to the design cooling load and uses a compressor lockout temperature of 0°F. Supplemental electric resistance heat is used for any additional load. All energy efficiency features in the existing RTUs (energy recovery, demand control ventilation, etc.) as well as operating schedule are transferred to the new HP-RTU system for consistency.|
-|Applicability|Buildings that contain gas-fired or electric resistance RTUs. |
-|Not Applicable|Buildings that do not contain gas-fired or electric resistance RTUs. Also not applicable to kitchen spaces.|
-|Release|EUSS 2023 Release 1|
+|**Measure Title**|Heat Pump Rooftop Units|
+|**Measure Definition**|This measure replaces gas-fired and electric resistance rooftop units (RTUs) with high-efficiency heat pump RTUs (HP-RTUs). The HP-RTUs are assumed to be top-of-the-line with variable-speed compressors and fans allowing for high-performance part load operation. The heat pump is sized to the design cooling load and uses a compressor lockout temperature of 0°F. Supplemental electric resistance heat is used for any additional load. All energy efficiency features in the existing RTUs (energy recovery, demand control ventilation, etc.) as well as operating schedule are transferred to the new HP-RTU system for consistency.|
+|**Applicability**|Buildings that contain gas-fired or electric resistance RTUs. |
+|**Not Applicable**|Buildings that do not contain gas-fired or electric resistance RTUs. Also not applicable to kitchen spaces.|
+|**Release**|EUSS 2023 Release 1|
 
 # 2. Technology Summary
 
@@ -78,10 +77,10 @@ The HP-RTU measure is applicable to ComStock models with either gas furnace RTUs
 {:refdef}
 
 {:refdef: style="text-align: center;"}
-Figure 2. ComStock HVAC system type prevalence by stock floor area.
+Figure 2. ComStock HVAC system type prevalence by stock floor area.[^1]
 {:refdef}
 
-PTHP stands for packaged terminal heat pump, PVAV stands for packaged variable air volume, DOAS stands for dedicated outdoor air system, and PFP stands for parallel fan-power.
+[^1]: PTHP stands for packaged terminal heat pump, PVAV stands for packaged variable air volume, DOAS stands for dedicated outdoor air system, and PFP stands for parallel fan-power.
 
 ## 4.2. Technology Specifics Such As Sizing, Performance, Configuration
 
@@ -104,9 +103,9 @@ The variable-speed direct expansion (DX) cooling system in the proposed HP-RTUs 
 
 The other speed levels (speeds 1 through 3) represent lower compressor speeds, which would occur when the required load to be met is less than the full capacity of the unit. Each speed corresponds to a fraction of the rated capacity, a rated COP, and a rated airflow. Lower compressor speeds generally show higher COP values, which allow for higher efficiencies during these periods of partial loading. For instance, a PNNL lab testing and modeling study showed 20%–50% annual cooling energy savings for variable-speed RTUs over conventional RTU cooling systems [9]. The capacity fractions and COPs for the different compressor speeds were determined using NREL lab testing data for three variable-speed, central-ducted air-conditioning (AC) systems. Because the testing is based on residential central AC units rather than commercial RTUs, the values derived from the testing are normalized to the rated COP of 4.11 to better represent a commercially available HP-RTU for this study (Table 1) [9]. Variable-speed HP-RTUs are capable of modulating to the specified fractions, but they may not do so in the same manner as the residential units the performance parameters are based on [7].
 
-Table 1. Multispeed Cooling Coil Performance Parameters[^1]
+Table 1. Multispeed Cooling Coil Performance Parameters[^2]
 
-[^1]: Units with high outdoor air fraction may not achieve lower compressor speeds if it violates ventilation requirements.
+[^2]: Units with high outdoor air fraction may not achieve lower compressor speeds if it violates ventilation requirements.
 
 |**Compressor Speed Level**|**Capacity Fraction of Rated**|**COP Fraction of Rated**|**Applied HP-RTU COP** |**Sensible Heat Ratio Fraction**|
 | :- | :- | :- | :- | :- |
@@ -153,9 +152,9 @@ Figure 6. COP as a function of temperature performance map for the four stages o
 ### 4.2.4. Heat Pump Heating Performance
 The variable-speed heat pump heating in the proposed HP-RTUs is modeled using the EnergyPlus “Coil:Heating:DXMultiSpeed” object using four speeds of heating [4], [5]. This object performs similarly to the “Coil:Cooling:DXMultiSpeed” object described previously. The rated efficiency values used for this study are based on a 10-ton variable-speed RTU with a full-load COP of 3.42 at rated conditions (8.3°C outdoor air temperature entering the condenser and 21.1°C drybulb indoor air temperature entering the coil) [9]. Because the EnergyPlus COP input is compressor-only, and therefore removes supply fan energy, the model input is adjusted to 3.8 COP, using the methodology from PNNL’s study [9]. The parameters for each stage of heating are shown in Table 2. The capacity and COP fractions for each speed level were determined using manufacturer-provided data for a variable-speed, central-ducted, forced-air heat pump system (Table 2). The data are roughly 10 years old but are expected to be a reasonable representation of a variable-speed system. The heating COP increases with lower speed levels, similar to what was described for the cooling COPs. Because the testing is based on residential central heat pump units rather than commercial RTUs, the values derived from the testing are normalized to the rated COP of 3.8 to better represent a commercially available HP-RTU for this study (Table 1) [9]. Variable-speed HP-RTUs are capable of modulating to the specified fractions, but they may not do so in the same manner as the residential units the performance parameters are based on, which emphasizes the need for additional research in this area [7]. The minimum operating temperature for the heat pumps is modeled at −17.8°C, which is the default setting for some manufacturers. The compressor will lock out below this temperature, and only backup heat will be available.
 
-Table 2. Multispeed Heating Coil Performance Parameters[^2]
+Table 2. Multispeed Heating Coil Performance Parameters[^3]
 
-[^2]: COP values are at rated conditions and vary based on temperature.
+[^3]: COP values are at rated conditions and vary based on temperature.
 
 |**Compressor Speed Level**|**Capacity Fraction of Rated**|**COP Fraction of Rated**|**Applied HP-RTU COP** |
 | :- | :- | :- | :- |
@@ -191,31 +190,29 @@ Figure 8. Capacity as a function of temperature performance map for the four sta
 
 Table 3. Capacity Retention As a Function of Outdoor Air Temperature Comparison for Daikin Rebel, Rheem Renaissance, and the Modeled HP-RTU Performance Curves
 
-|**Reference Temperature, °C**|**8.3°C**|**−8.3°C**|**−17.8°C**|
-| :- | :- | :- | :- |
-|Modeled HP-RTU Capacity Fraction|1|0\.64|0\.45|
-|Daikin Rebel Capacity (kW)  |30\.8|18\.0|-|
-|Daikin Rebel Capacity Fraction|1|0\.59|-|
-|% Diff. Modeled HP-RTU vs. Daikin Capacity Fraction|-|7\.80%|-|
-|Rheem Renaissance Capacity (kW)  |31\.5|19\.1|12\.9|
-|Rheem Renaissance Capacity Fraction|1|0\.61|0\.41|
-|% Diff. Modeled HP-RTU vs. Rheem Renaissance Capacity Fraction|-|5\.47%|9\.33%|
+|**Reference Temperature, °C**|8.3°C|−8.3°C|−17.8°C|
+|**Modeled HP-RTU Capacity Fraction**|1|0\.64|0\.45|
+|**Daikin Rebel Capacity (kW)**|30\.8|18\.0|-|
+|**Daikin Rebel Capacity Fraction**|1|0\.59|-|
+|**% Diff. Modeled HP-RTU vs. Daikin Capacity Fraction**|-|7\.80%|-|
+|**Rheem Renaissance Capacity (kW)**|31\.5|19\.1|12\.9|
+|**Rheem Renaissance Capacity Fraction**|1|0\.61|0\.41|
+|**% Diff. Modeled HP-RTU vs. Rheem Renaissance Capacity Fraction**|-|5\.47%|9\.33%|
 
 Table 4. COP comparison of the modeled HP-RTU, the Daikin Rebel, and a lab-tested Carrier unit. Note that the COPs associated with the modeled HP-RTU and Rheem unit are compressor only while the other include the supply fan. Including the supply fan in the calculation will decrease the COP.
 
-|**Reference Temperature, °C**|**8.3°C**|**−8.3°C**|**−17.8°C**|
-| :- | :- | :- | :- |
-|Modeled HP-RTU COP (compressor only)|3\.80 (speed 4)|2\.66 (speed 4)|2\.11 (speed 4)|
-|Modeled HP-RTU COP Fraction (compressor only)|1|0\.70|0\.55|
-|Daikin Rebel COP|3\.42|2\.38|-|
-|Daikin Rebel COP Fraction|1|0\.70|-|
-|% Diff Modeled vs. Daikin COP Fraction|-|0%|-|
-|Carrier COP Estimate|3\.1|2\.1|1\.62|
-|Carrier COP Fraction|1|0\.68|0\.52|
-|% Diff Modeled vs. Carrier COP Fraction|-|2\.9%|5\.5%|
-|Rheem Renaissance COP (compressor only)|4\.2|2\.77|1\.98|
-|Rheem Renaissance COP Fraction (compressor only)|1|0\.66|0\.47|
-|% Diff Modeled HP-RTU vs. Rheem Renaissance COP Fraction|-|5\.8%|14\.3%|
+|**Reference Temperature, °C**|8.3°C|−8.3°C|−17.8°C|
+|**Modeled HP-RTU COP (compressor only)**|3\.80 (speed 4)|2\.66 (speed 4)|2\.11 (speed 4)|
+|**Modeled HP-RTU COP Fraction (compressor only)**|1|0\.70|0\.55|
+|**Daikin Rebel COP**|3\.42|2\.38|-|
+|**Daikin Rebel COP Fraction**|1|0\.70|-|
+|**% Diff Modeled vs. Daikin COP Fraction**|-|0%|-|
+|**Carrier COP Estimate**|3\.1|2\.1|1\.62|
+|**Carrier COP Fraction**|1|0\.68|0\.52|
+|**% Diff Modeled vs. Carrier COP Fraction**|-|2\.9%|5\.5%|
+|**Rheem Renaissance COP (compressor only)**|4\.2|2\.77|1\.98|
+|**Rheem Renaissance COP Fraction (compressor only)**|1|0\.66|0\.47|
+|**% Diff Modeled HP-RTU vs. Rheem Renaissance COP Fraction**|-|5\.8%|14\.3%|
 
 ### 4.2.5. Heat Pump Sizing and Backup Heating
 The sizing of heat pumps is nontrivial because the same system is used for both heating and cooling. Heat pumps in colder climates usually require a source of supplemental heat, which today is often sized to meet the entirety of the heating load. This is because heat pump capacity is reduced as outdoor ambient temperatures decrease, which generally corresponds to the highest heating loads for the building. Furthermore, compressor lockout controls are often implemented in heat pump systems, which disable heat pump operation below a certain temperature [7]. This would require the supplemental heat source to be sized to meet loads below this temperature. Because the supplemental heat source in colder climates is then often sized to meet the design heating load, the system can then be sized based on the required cooling capacity with the assumption that the supplemental heat source will address any heating load beyond the corresponding capacity of the heat pump, avoiding the need to purchase a larger-capacity unit. Supplemental heat is less of a concern in warmer climates where the design cooling load exceeds the design heating load, even when accounting for heat pump capacity degradation at lower temperatures, and where the design heating temperature is well above any minimum compressor lockout temperature. 
@@ -232,13 +229,13 @@ Control of the defrost cycle can also vary. Some units use a set time fraction, 
 ## 4.3. Greenhouse Gas Emissions
 Three electricity grid scenarios are presented to compare the emissions of the ComStock baseline and the window replacement scenario. The choice of grid scenario will impact the grid emissions factors used in the simulation, which determines the corresponding emissions produced per kilowatt-hour. Two scenarios—Long-Run Marginal Emissions Rate (LRMER) High Renewable Energy (RE) Cost 15-Year and LRMER Low RE Cost 15-Year—use the Cambium data set, and the last uses the eGrid data set [14], [15]. All three scenarios vary the emissions factors geospatially to reflect the variation in grid resources used to produce electricity across the United States. The Cambium data sets also vary emissions factors seasonally and by time of day. This study does not imply a preference for any particular grid emissions scenario, but other analysis suggests that the choice of grid emissions scenario can impact results [16]. Emissions due to on-site combustion of fossil fuels use the emissions factors shown in Table 5, which are from Table 7.1.2(1) of draft American National Standards Institute/Residential Energy Services Network/International Code Council 301 [17]. To compare total emissions due to both on-site fossil fuel consumption and grid electricity generation, the emissions from a single electricity grid scenario should be combined with all three on-site fossil fuel emissions.
 
-Table 5. On-Site Fossil Fuel Emissions Factors
+Table 5. On-Site Fossil Fuel Emissions Factors[^4]
 
 |**Natural gas** |147\.3 lb/MMBtu (228.0 kg/MWh)a |
-| :- | :- |
 |**Propane** |177\.8 lb/MMBtu (182.3 kg/MWh) |
 |**Fuel oil** |195\.9 lb/MMBtu (303.2 kg/MWh) |
-|a lb = pound; MMBtu = million British thermal units; kg = kilogram; MWh = megawatt-hour|
+
+[^4]: lb = pound; MMBtu = million British thermal units; kg = kilogram; MWh = megawatt-hour.
 
 ## 4.4. Limitations and Concerns
 Limited comprehensive heat pump performance maps exist, which are required for detailed energy modeling. Consequently, understanding of heat pump performance and operation in this work is also limited. Heat pump modeling is sensitive to performance assumptions due to the strong relationship between efficiency and capacity with outdoor air temperature. This impacts both annual energy consumption and peak demand. This work attempts to use the most informative data available and makes documented assumptions about heat pump operation and performance. These will notably impact results. Please consider these assumptions.
@@ -300,7 +297,7 @@ Figure 9. Scatterplot of HP-RTU speed level, airflow rate, and predicted load
 
 ## 6.2. Stock Energy Impacts
 The HP-RTU measure demonstrates 10.3% total site energy savings (449 trillion British thermal units [TBtu]) for the U.S. commercial building stock modeled in ComStock (Figure 10). The savings are primarily attributed to:
--
+
 - **42%** stock **heating gas** savings (190 TBtu)
 - **−3%** stock **heating electricity** savings (−6 TBtu)
 - **16%** stock **cooling electricity** savings (109 TBtu)
