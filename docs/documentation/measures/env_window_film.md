@@ -129,11 +129,10 @@ It is possible to achieve a wide range of thermal and optical performances with 
 
 Table 1. Overall Assembly Performance Characteristics by Climate Zone
 
-| **Climate zone**         | **0** | **1** | **2** | **3** | **4** | **5** | **6** | **7** | **8** |
-|--------------------------|-------|-------|-------|-------|-------|-------|-------|-------|-------|
-| U-factor (Btu/hr-ft2-°F) | 0.48  | 0.48  | 0.43  | 0.40  | 0.34  | 0.34  | 0.32  | 0.28  | 0.25  |
-| SHGC (-)                 | 0.21  | 0.22  | 0.24  | 0.24  | 0.34  | 0.36  | 0.36  | 0.38  | 0.38  |
-| VLT/SHGC (-)             | 1.10  | 1.10  | 1.10  | 1.10  | 1.10  | 1.10  | 1.10  | 1.10  | 1.10  |
+| **Climate zone**         | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+| **U-factor (Btu/hr-ft2-°F)** | 0.48  | 0.48  | 0.43  | 0.40  | 0.34  | 0.34  | 0.32  | 0.28  | 0.25  |
+| **SHGC (-)**                 | 0.21  | 0.22  | 0.24  | 0.24  | 0.34  | 0.36  | 0.36  | 0.38  | 0.38  |
+| **VLT/SHGC (-)**             | 1.10  | 1.10  | 1.10  | 1.10  | 1.10  | 1.10  | 1.10  | 1.10  | 1.10  |
 
 To understand the expected performance of the total assembly, combinations of existing windows and window films are modeled using LBNL’s WINDOW (v7.8) and Optics (v6) software, shown in Figure 5. Table 2 includes (1) performance (e.g., U-factor, SHGC, and visual light transmittance [VLT]) improvements between ComStock baseline windows and windows with window films; and (2) performance comparison against AEDG targets, with respect to different climate zones. Several window film products were selected from a larger pool (shown in Figure 3) based on the emphasis on thermal performance improvements rather than visual performance improvements, as this analysis is focused on the energy savings potential.
 
@@ -318,7 +317,6 @@ Three electricity grid scenarios are presented for comparing the emissions of th
 Table 5. On-Site Fossil Fuel Emissions Factors
 
 | **Natural gas** | 147.3 lb/mmbtu (228.0 kg/MWh) |
-|-----------------|-------------------------------|
 | **Propane**     | 177.8 lb/mmbtu (182.3 kg/MWh) |
 | **Fuel oil**    | 195.9 lb/mmbtu (303.2 kg/MWh) |
 

@@ -390,9 +390,9 @@ Table 7 shows an end-use energy consumption comparison for a 75,000-square-foot 
 
 Table 7. End-Use Energy Consumption Comparison
 
-| **End Use**        | **Baseline**          | **Updated**          |                      |                      |
+|                    | **Baseline**          | **Baseline**         | **Updated**          | **Updated**          |
 |--------------------|-----------------------|----------------------|----------------------|----------------------|
-|                    | **Electricity  [GJ]** | **Natural Gas [GJ]** | **Electricity [GJ]** | **Natural Gas [GJ]** |
+| **End Use**        | **Electricity  [GJ]** | **Natural Gas [GJ]** | **Electricity [GJ]** | **Natural Gas [GJ]** |
 | Heating            | 0                     | 6864.46              | 2976.96              | 0                    |
 | Cooling            | 681.2                 | 0                    | 681.25               | 0                    |
 | Interior Lighting  | 872.41                | 0                    | 872.41               | 0                    |
