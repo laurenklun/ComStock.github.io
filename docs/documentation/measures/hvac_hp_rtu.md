@@ -60,18 +60,26 @@ The state of the existing RTUs in the U.S. Department of Energy’s commercial b
 
 The in-force energy code for the ComStock baseline is shown as a percentage of applicable floor area in Figure 1. Applicable floor area for this analysis includes ComStock buildings with “PSZ-AC with gas coil” and “PSZ-AC with electric coil” HVAC system types (where PSZ-AC stands for packaged single-zone air conditioner). Most ComStock baseline RTUs follow energy code requirements from the early 2000s. Other energy efficiency features such as demand control ventilation, energy recovery, and economizer control are only applied to baseline ComStock RTUs if required by the in-force energy code for the particular model. The ComStock workflow checks the necessary characteristics of each RTU to determine if the feature is required. Similarly, heating, cooling, and fan efficiencies are set based on the in-force code year. For models with the “PSZ-AC with electric coil” HVAC system type, the ComStock baseline will use electric resistance coils with a coefficient of performance (COP) of 1. For models with the “PSZ-AC with gas coil” HVAC system type, the ComStock baseline will use a gas furnace efficiency of generally around 80%.  
 
-![](media/Aspose.Words.bcc483bf-9568-416e-9cbf-5c8d288d1914.001.png)
+{:refdef: style="text-align: center;"}
+![](media/Aspose.Words.bcc483bf-9568-416e-9cbf-5c8d288d1914.001.png){:width="600"}
+{:refdef}
 
-<a name="_ref128139461"></a><a name="_toc131683791"></a>**Figure 1. ComStock baseline in-force energy code followed as a percentage of applicable floor area. Applicable floor area includes ComStock buildings with “PSZ-AC with gas coil” and “PSZ-AC with electric coil” HVAC system types.**
+{:refdef: style="text-align: center;"}
+Figure 1. ComStock baseline in-force energy code followed as a percentage of applicable floor area. Applicable floor area includes ComStock buildings with “PSZ-AC with gas coil” and “PSZ-AC with electric coil” HVAC system types.
+{:refdef}
 
 # 4. Modeling Approach
 
 ## 4.1. Applicability
 The HP-RTU measure is applicable to ComStock models with either gas furnace RTUs (“PSZ-AC with gas coil”) or electric resistance RTUs (“PSZ-AC with electric coil”). This accounts for about 45% of the ComStock floor area (Figure 2). ComStock HVAC distributions are informed by the 2012 CBECS. The methodology for interpreting CBECS data to create HVAC probability distributions for ComStock is discussed in the ComStock documentation [3]. The measure is also not applicable to space types that directly serve kitchens, spaces that are unconditioned, or RTUs with outdoor air ratios above 65% (due to an EnergyPlus® bug with cycling operation). 
 
+{:refdef: style="text-align: center;"}
 ![](media/Aspose.Words.bcc483bf-9568-416e-9cbf-5c8d288d1914.002.png)
+{:refdef}
 
-<a name="_ref119239895"></a><a name="_toc131683792"></a>**Figure 2. ComStock HVAC system type prevalence by stock floor area*.***
+{:refdef: style="text-align: center;"}
+Figure 2. ComStock HVAC system type prevalence by stock floor area.
+{:refdef}
 
 PTHP stands for packaged terminal heat pump, PVAV stands for packaged variable air volume, DOAS stands for dedicated outdoor air system, and PFP stands for parallel fan-power.
 
@@ -83,18 +91,22 @@ The HP-RTUs are modeled using the EnergyPlus “AirloopHVAC:UnitarySystem” obj
 ### 4.2.2. Single-Zone VAV Operation
 The modeled HP-RTUs utilize a single-zone variable air volume (VAV) operation, which varies the supply airflow and discharge air temperature to efficiently maintain zone thermostat set points. As loads increase during heating operation, the supply air temperature is gradually raised until it hits a maximum threshold, and then supply airflow is increased until loads are met. As loads increase during cooling operation, supply air temperature is gradually lowered until it meets a minimum threshold, and the supply airflow is increased until loads are met (Figure 3) [6]. This is generally expected to provide fan energy savings during periods of reduced loads. The minimum supply airflow ratio modeled is 40%, which is common for single-zone RTUs [7]. The exception to the 40% minimum is when higher outdoor airflow rates are required to maintain ASHRAE Standard-62.1 minimum outdoor airflow rates: in these cases, the minimum flow rate to satisfy design outdoor air ventilation rates are modeled [8]. 
 
-![](media/Aspose.Words.bcc483bf-9568-416e-9cbf-5c8d288d1914.003.png)
+{:refdef: style="text-align: center;"}
+![](media/Aspose.Words.bcc483bf-9568-416e-9cbf-5c8d288d1914.003.png){:width="600"}
+{:refdef}
 
-<a name="_ref119245653"></a><a name="_toc131683793"></a>**Figure 3. Visual representation of single-zone VAV operation. Image from [10].**
+{:refdef: style="text-align: center;"}
+Figure 3. Visual representation of single-zone VAV operation. Image from [10].
+{:refdef}
 
 ### 4.2.3. Cooling Performance
 The variable-speed direct expansion (DX) cooling system in the proposed HP-RTUs is modeled using the EnergyPlus “Coil:Cooling:DXMultiSpeed” object using four speeds of cooling [4], [5]. The highest speed (speed 4) represents the cooling performance at rated conditions with the compressor fully loaded. The efficiency values used for this study are based on a 10-ton variable-speed RTU with a full-load COP of 3.6 at rated conditions with an integrated energy efficiency ratio above 17 [9]. Because the EnergyPlus COP input is compressor-only, and therefore removes supply fan energy, the modeling input is adjusted to 4.11 COP using the methodology from the Pacific Northwest National Laboratory’s (PNNL’s) Daikin Rebel study [9]. 
 
 The other speed levels (speeds 1 through 3) represent lower compressor speeds, which would occur when the required load to be met is less than the full capacity of the unit. Each speed corresponds to a fraction of the rated capacity, a rated COP, and a rated airflow. Lower compressor speeds generally show higher COP values, which allow for higher efficiencies during these periods of partial loading. For instance, a PNNL lab testing and modeling study showed 20%–50% annual cooling energy savings for variable-speed RTUs over conventional RTU cooling systems [9]. The capacity fractions and COPs for the different compressor speeds were determined using NREL lab testing data for three variable-speed, central-ducted air-conditioning (AC) systems. Because the testing is based on residential central AC units rather than commercial RTUs, the values derived from the testing are normalized to the rated COP of 4.11 to better represent a commercially available HP-RTU for this study (Table 1) [9]. Variable-speed HP-RTUs are capable of modulating to the specified fractions, but they may not do so in the same manner as the residential units the performance parameters are based on [7].
 
-<a name="_ref127706543"></a><a name="_toc131683811"></a>**Table 1. Multispeed Cooling Coil Performance Parameters** 
+Table 1. Multispeed Cooling Coil Performance Parameters[^1]
 
-Units with high outdoor air fraction may not achieve lower compressor speeds if it violates ventilation requirements.
+[^1]: Units with high outdoor air fraction may not achieve lower compressor speeds if it violates ventilation requirements.
 
 |**Compressor Speed Level**|**Capacity Fraction of Rated**|**COP Fraction of Rated**|**Applied HP-RTU COP** |**Sensible Heat Ratio Fraction**|
 | :- | :- | :- | :- | :- |
@@ -114,24 +126,36 @@ Five performance curve modifiers are used for modeling the DX multispeed cooling
 
 The cooling performance maps for EIR as a function of part load ratio, COP as a function of temperature, and capacity as a function of temperature are shown Figure 4, Figure 5, and Figure 6, respectively.
 
-![](media/Aspose.Words.bcc483bf-9568-416e-9cbf-5c8d288d1914.004.jpeg)
+{:refdef: style="text-align: center;"}
+![](media/Aspose.Words.bcc483bf-9568-416e-9cbf-5c8d288d1914.004.jpeg){:width="600"}
+{:refdef}
 
-<a name="_ref127708273"></a><a name="_toc131683794"></a>**Figure 4. Heating and cooling energy input ratio modifier as a function of part load ratio for all speed levels. This curve primarily captures losses due to part-load cycling at compressor speed 1. This value is divided by the EIR for the time step, which effectively decreases efficiency at lower part load ratios.** 
+{:refdef: style="text-align: center;"}
+Figure 4. Heating and cooling energy input ratio modifier as a function of part load ratio for all speed levels. This curve primarily captures losses due to part-load cycling at compressor speed 1. This value is divided by the EIR for the time step, which effectively decreases efficiency at lower part load ratios.
+{:refdef}
 
+{:refdef: style="text-align: center;"}
 ![](media/Aspose.Words.bcc483bf-9568-416e-9cbf-5c8d288d1914.005.jpeg)
+{:refdef}
 
-<a name="_ref121381428"></a><a name="_toc131683795"></a>**Figure 5. Capacity as a function of temperature performance map for the four stages of cooling. This value is multiplied by the nominal capacity for each time step to determine the actual available capacity for the time step.**
+{:refdef: style="text-align: center;"}
+Figure 5. Capacity as a function of temperature performance map for the four stages of cooling. This value is multiplied by the nominal capacity for each time step to determine the actual available capacity for the time step.
+{:refdef}
 
+{:refdef: style="text-align: center;"}
 ![](media/Aspose.Words.bcc483bf-9568-416e-9cbf-5c8d288d1914.006.jpeg)
+{:refdef}
 
-<a name="_ref121381443"></a><a name="_toc131683796"></a>**Figure 6. COP as a function of temperature performance map for the four stages of cooling. Note that these COP values are for the compressor only—adding in supply fan energy would decrease the values presented.**
+{:refdef: style="text-align: center;"}
+Figure 6. COP as a function of temperature performance map for the four stages of cooling. Note that these COP values are for the compressor only—adding in supply fan energy would decrease the values presented.
+{:refdef}
 
 ### 4.2.4. Heat Pump Heating Performance
 The variable-speed heat pump heating in the proposed HP-RTUs is modeled using the EnergyPlus “Coil:Heating:DXMultiSpeed” object using four speeds of heating [4], [5]. This object performs similarly to the “Coil:Cooling:DXMultiSpeed” object described previously. The rated efficiency values used for this study are based on a 10-ton variable-speed RTU with a full-load COP of 3.42 at rated conditions (8.3°C outdoor air temperature entering the condenser and 21.1°C drybulb indoor air temperature entering the coil) [9]. Because the EnergyPlus COP input is compressor-only, and therefore removes supply fan energy, the model input is adjusted to 3.8 COP, using the methodology from PNNL’s study [9]. The parameters for each stage of heating are shown in Table 2. The capacity and COP fractions for each speed level were determined using manufacturer-provided data for a variable-speed, central-ducted, forced-air heat pump system (Table 2). The data are roughly 10 years old but are expected to be a reasonable representation of a variable-speed system. The heating COP increases with lower speed levels, similar to what was described for the cooling COPs. Because the testing is based on residential central heat pump units rather than commercial RTUs, the values derived from the testing are normalized to the rated COP of 3.8 to better represent a commercially available HP-RTU for this study (Table 1) [9]. Variable-speed HP-RTUs are capable of modulating to the specified fractions, but they may not do so in the same manner as the residential units the performance parameters are based on, which emphasizes the need for additional research in this area [7]. The minimum operating temperature for the heat pumps is modeled at −17.8°C, which is the default setting for some manufacturers. The compressor will lock out below this temperature, and only backup heat will be available.
 
-<a name="_ref121384743"></a><a name="_toc131683812"></a>**Table 2. Multispeed Heating Coil Performance Parameters** 
+Table 2. Multispeed Heating Coil Performance Parameters[^2]
 
-COP values are at rated conditions and vary based on temperature.
+[^2]: COP values are at rated conditions and vary based on temperature.
 
 |**Compressor Speed Level**|**Capacity Fraction of Rated**|**COP Fraction of Rated**|**Applied HP-RTU COP** |
 | :- | :- | :- | :- |
@@ -149,17 +173,23 @@ Comparisons of modeled performance data versus alternative data sources were mad
 
 The modeled HP-RTU outperforms the capacity retention of the reference units by 5% to 9%, with the largest difference occurring with the Rheem unit at −17.8°C (Table 3). For COP retention, the modeled HP-RTU outperforms the reference units by 3% to 14%, with the largest difference occurring with the Rheem unit at −17.8°C (Table 4). Although there are some notable differences between the modeled and reference unit performance, and the modeled HP-RTU outperforms the reference units in all cases, these comparisons still suggest the modeled HP-RTU performance is reasonably appropriate compared to other available data, especially considering they are different units from different data sources. Note that no alternative data sources were found for comparing part-load performance or the impacts of cycling on variable-speed heat pump units, further emphasizing the need for more research in this space to increase modeling confidence.
 
+{:refdef: style="text-align: center;"}
 ![](media/Aspose.Words.bcc483bf-9568-416e-9cbf-5c8d288d1914.007.jpeg)
+{:refdef}
 
-<a name="_ref121388760"></a><a name="_toc131683797"></a>**Figure 7. COP as a function of temperature performance map for the four stages of heating. Note that these COP values are for the compressor only—adding in supply fan energy would decrease the values presented.**
+{:refdef: style="text-align: center;"}
+Figure 7. COP as a function of temperature performance map for the four stages of heating. Note that these COP values are for the compressor only—adding in supply fan energy would decrease the values presented.
+{:refdef}
 
-![Chart, calendar
+{:refdef: style="text-align: center;"}
+![](media/Aspose.Words.bcc483bf-9568-416e-9cbf-5c8d288d1914.008.jpeg)
+{:refdef}
 
-Description automatically generated](Aspose.Words.bcc483bf-9568-416e-9cbf-5c8d288d1914.008.jpeg)
+{:refdef: style="text-align: center;"}
+Figure 8. Capacity as a function of temperature performance map for the four stages of heating. This value is multiplied by the nominal capacity for each time step to determine the actual available capacity for the time step.
+{:refdef}
 
-<a name="_ref121388769"></a><a name="_toc131683798"></a>**Figure 8. Capacity as a function of temperature performance map for the four stages of heating. This value is multiplied by the nominal capacity for each time step to determine the actual available capacity for the time step.**
-
-<a name="_ref121388710"></a><a name="_toc131683813"></a>**Table 3. Capacity Retention As a Function of Outdoor Air Temperature Comparison for Daikin Rebel, Rheem Renaissance, and the Modeled HP-RTU Performance Curves** 
+Table 3. Capacity Retention As a Function of Outdoor Air Temperature Comparison for Daikin Rebel, Rheem Renaissance, and the Modeled HP-RTU Performance Curves
 
 |**Reference Temperature, °C**|**8.3°C**|**−8.3°C**|**−17.8°C**|
 | :- | :- | :- | :- |
@@ -171,7 +201,7 @@ Description automatically generated](Aspose.Words.bcc483bf-9568-416e-9cbf-5c8d28
 |Rheem Renaissance Capacity Fraction|1|0\.61|0\.41|
 |% Diff. Modeled HP-RTU vs. Rheem Renaissance Capacity Fraction|-|5\.47%|9\.33%|
 
-<a name="_ref121388699"></a><a name="_toc131683814"></a>**Table 4. COP comparison of the modeled HP-RTU, the Daikin Rebel, and a lab-tested Carrier unit. Note that the COPs associated with the modeled HP-RTU and Rheem unit are compressor only while the other include the supply fan. Including the supply fan in the calculation will decrease the COP.**
+Table 4. COP comparison of the modeled HP-RTU, the Daikin Rebel, and a lab-tested Carrier unit. Note that the COPs associated with the modeled HP-RTU and Rheem unit are compressor only while the other include the supply fan. Including the supply fan in the calculation will decrease the COP.
 
 |**Reference Temperature, °C**|**8.3°C**|**−8.3°C**|**−17.8°C**|
 | :- | :- | :- | :- |
@@ -200,9 +230,9 @@ Reverse cycle defrost inhibits the heating capacity of the heat pump system, whi
 Control of the defrost cycle can also vary. Some units use a set time fraction, where the unit operates in defrost mode for a specified time when outdoor air temperatures are below a specified temperature. This analysis uses the EnergyPlus “on-demand” defrost operation, which estimates the amount of time needed for defrost based on a set of empirical calculations dependent on outdoor air wetbulb temperature, coil temperature, and other parameters. These calculations are described in detail in the EnergyPlus documentation [4], [5].
 
 ## 4.3. Greenhouse Gas Emissions
-Three electricity grid scenarios are presented to compare the emissions of the ComStock baseline and the window replacement scenario. The choice of grid scenario will impact the grid emissions factors used in the simulation, which determines the corresponding emissions produced per kilowatt-hour. Two scenarios<a name="_hlk131683761"></a>—<a name="_hlk130306877"></a>Long-Run Marginal Emissions Rate (LRMER) High <a name="_hlk130306881"></a>Renewable Energy (RE) Cost 15-Year and LRMER Low RE Cost 15-Year—use the Cambium data set, and the last uses the eGrid data set [14], [15]. All three scenarios vary the emissions factors geospatially to reflect the variation in grid resources used to produce electricity across the United States. The Cambium data sets also vary emissions factors seasonally and by time of day. This study does not imply a preference for any particular grid emissions scenario, but other analysis suggests that the choice of grid emissions scenario can impact results [16]. Emissions due to on-site combustion of fossil fuels use the emissions factors shown in Table 5, which are from Table 7.1.2(1) of draft <a name="_hlk130307030"></a>American National Standards Institute/Residential Energy Services Network/<a name="_hlk130307118"></a>International Code Council 301 [17]. To compare total emissions due to both on-site fossil fuel consumption and grid electricity generation, the emissions from a single electricity grid scenario should be combined with all three on-site fossil fuel emissions.
+Three electricity grid scenarios are presented to compare the emissions of the ComStock baseline and the window replacement scenario. The choice of grid scenario will impact the grid emissions factors used in the simulation, which determines the corresponding emissions produced per kilowatt-hour. Two scenarios—Long-Run Marginal Emissions Rate (LRMER) High Renewable Energy (RE) Cost 15-Year and LRMER Low RE Cost 15-Year—use the Cambium data set, and the last uses the eGrid data set [14], [15]. All three scenarios vary the emissions factors geospatially to reflect the variation in grid resources used to produce electricity across the United States. The Cambium data sets also vary emissions factors seasonally and by time of day. This study does not imply a preference for any particular grid emissions scenario, but other analysis suggests that the choice of grid emissions scenario can impact results [16]. Emissions due to on-site combustion of fossil fuels use the emissions factors shown in Table 5, which are from Table 7.1.2(1) of draft American National Standards Institute/Residential Energy Services Network/International Code Council 301 [17]. To compare total emissions due to both on-site fossil fuel consumption and grid electricity generation, the emissions from a single electricity grid scenario should be combined with all three on-site fossil fuel emissions.
 
-` `**<a name="_ref131679990"></a><a name="_toc130979477"></a><a name="_toc131683815"></a>Table 5. On-Site Fossil Fuel Emissions Factors** 
+Table 5. On-Site Fossil Fuel Emissions Factors
 
 |**Natural gas** |147\.3 lb/MMBtu (228.0 kg/MWh)a |
 | :- | :- |
@@ -220,7 +250,7 @@ Lastly, there is a known EnergyPlus bug regarding cycling operation for multispe
 # 5. Output Variables
 Table 6 includes a list of output variables that are calculated in ComStock. These variables are important in terms of understanding the differences between buildings with and without the dedicated outdoor air system (DOAS) mini split heat pump (MSHP) measure applied. These output variables can also be used for understanding the economics of the upgrade (e.g., return on investment) if cost information (i.e., material, labor, and maintenance costs for technology implementation) is available. 
 
-<a name="_ref130287810"></a><a name="_toc130979478"></a><a name="_toc131683816"></a>**Table 6. Output Variables Calculated From the Measure Application**
+Table 6. Output Variables Calculated From the Measure Application
 
 |**Variable Name**|**Description**|
 | :- | :- |
@@ -260,9 +290,13 @@ Total site energy savings are also presented in this section. Total site energy 
 ## 6.1. Single Building Example
 The operation behavior of a small office building in Chicago is described in this section. Figure 9. illustrates how the multispeed object functions. As the sensible load increases, either positive for heating load or negative for cooling load, the airflow rate generally increases. Speeds 1 through 4 are prevalent at different airflow bins. Speed 0 represents a time step where the part load ratio, and therefore the speed level, is below 1, meaning the unit is cycling. Cycling operation is subject to efficiency losses, per Figure 4. In general, the HP-RTU operates as expected.
 
-![](media/Aspose.Words.bcc483bf-9568-416e-9cbf-5c8d288d1914.009.png)
+{:refdef: style="text-align: center;"}
+![](media/Aspose.Words.bcc483bf-9568-416e-9cbf-5c8d288d1914.009.png){:width="600"}
+{:refdef}
 
-<a name="_ref130288635"></a><a name="_toc130979466"></a><a name="_toc131683799"></a>**Figure 9. Scatterplot of HP-RTU speed level, airflow rate, and predicted load**
+{:refdef: style="text-align: center;"}
+Figure 9. Scatterplot of HP-RTU speed level, airflow rate, and predicted load
+{:refdef}
 
 ## 6.2. Stock Energy Impacts
 The HP-RTU measure demonstrates 10.3% total site energy savings (449 trillion British thermal units [TBtu]) for the U.S. commercial building stock modeled in ComStock (Figure 10). The savings are primarily attributed to:
@@ -272,9 +306,13 @@ The HP-RTU measure demonstrates 10.3% total site energy savings (449 trillion Br
 - **16%** stock **cooling electricity** savings (109 TBtu)
 - **24%** stock **fan electricity** savings (144 TBtu).
 
-![](media/Aspose.Words.bcc483bf-9568-416e-9cbf-5c8d288d1914.010.jpeg)
+{:refdef: style="text-align: center;"}
+![](media/Aspose.Words.bcc483bf-9568-416e-9cbf-5c8d288d1914.010.jpeg){:width="600"}
+{:refdef}
 
-<a name="_ref131427747"></a><a name="_toc131683800"></a>**Figure 10: Comparison of annual site energy consumption between the ComStock baseline and the HP-RTU measure scenario. Energy consumption is categorized both by fuel type and end use.**
+{:refdef: style="text-align: center;"}
+Figure 10: Comparison of annual site energy consumption between the ComStock baseline and the HP-RTU measure scenario. Energy consumption is categorized both by fuel type and end use.
+{:refdef}
 
 The site gas heating savings are attributed to switching gas-heated systems in the ComStock baseline to electric HP-RTU systems. This removes virtually all gas heating from these buildings except for the small amount that may be nonapplicable (e.g., kitchens). Site electricity heating shows net negative energy savings, although there are reasons for both savings and penalties in this category. The HP-RTU measure increases the amount of building using electric heating, which adds electric heating energy compared to the baseline. However, there is some reduction in electric heating energy as well from replacing electric resistance RTUs with higher-efficiency HP-RTUs. The baseline electric resistance RTUs have a heating COP of 1, whereas the HP-RTUs generally have much higher COPs. But as mentioned, this still results in a net increase in stock heating electricity usage, which is not necessarily surprising. As previously mentioned, ComStock currently uses more electric heating energy in the stock relative to CBECS 2012. Adjusting this could possibly cause the electric heating energy savings of the DOAS MSHP scenario to be negative, as it could reduce the prevalence of the electric resistance RTU systems, which are the primary driver of the heating electricity savings.
 
@@ -285,19 +323,26 @@ Fan energy savings are from using high-efficiency, variable-speed fans in the HP
 ## 6.3. Greenhouse Gas Emissions Impact
 ComStock simulation results show greenhouse gas emissions avoided across all electricity grid scenarios and on-site combustion fuel types (Figure 11). For the combined impact across all sources, a single electricity grid scenario should be chosen and combined with all three on-site combustion fuel scenarios. Greenhouse gas emissions avoided from the electricity grid range between 6.7% and 7.5%, depending on the scenario chosen. This is due to reduced electricity consumption from the fans and cooling end use, but also includes the increase in electricity from electrifying gas-furnace systems. The emissions avoided from on-site combustion fuels are attributable to electrifying some of these combustion-based heating systems.
 
+{:refdef: style="text-align: center;"}
 ![](media/Aspose.Words.bcc483bf-9568-416e-9cbf-5c8d288d1914.011.png)
+{:refdef}
 
-<a name="_ref131429348"></a><a name="_toc131683801"></a>**Figure 11: Greenhouse gas emissions comparison of the ComStock baseline and the HP-RTU scenario. Three electricity grid scenarios are presented: Cambium Long-Run Marginal Emissions Rate (LRMER) High Renewable Energy (RE) Cost 15-Year, Cambium LRMER Low RE Cost 15-Year, and eGrid. MMT stands for million metric tons.**
+{:refdef: style="text-align: center;"}
+Figure 11: Greenhouse gas emissions comparison of the ComStock baseline and the HP-RTU scenario. Three electricity grid scenarios are presented: Cambium Long-Run Marginal Emissions Rate (LRMER) High Renewable Energy (RE) Cost 15-Year, Cambium LRMER Low RE Cost 15-Year, and eGrid. MMT stands for million metric tons.
+{:refdef}
 
 ## 6.4. Site Energy Savings Distributions
 This section discusses site energy consumption for quality assurance/quality control purposes. Note that site energy savings can be useful for these purposes, but other factors should be considered when drawing conclusions, as these do not necessarily translate proportionally to source energy savings, greenhouse gas emissions avoided, or energy cost. 
 
 Figure 12 shows the percent savings distributions of the baseline ComStock models versus the HP-RTU scenario by end use and fuel type for applicable models. Minimal differences are observed for water systems and refrigeration, which see small changes in the baseline due only to minor changes in ambient air temperature that affect the operation of these systems. Most of the savings for the “Other Fuel Heating” and “Natural Gas Heating” categories are at 100% owing to replacing the combustion fuel-based system in the baseline with an all-electric heat pump system in the HP-RTU scenario. The samples that show savings less than 100% for combustion fuel heating are models that have some fraction of the baseline combustion fuel RTU deemed not applicable. This is either caused by the unit being in a kitchen or a partially conditioned space where traditional RTU sizing does not apply. A small number of outliers show negative natural gas heating savings; one such model is based in Hawaii with very small heating loads (<0.5 kilo-Btu per square foot per year [kBtu/ft2/year]) and represents negligible heating operation with very small total energy impact. It should be noted that percentage savings calculations are based on the baseline value, so a small change in heating energy for a model with very small heating energy to begin with may show a high percentage savings.
 
-
+{:refdef: style="text-align: center;"}
 ![](media/Aspose.Words.bcc483bf-9568-416e-9cbf-5c8d288d1914.012.jpeg)
+{:refdef}
 
-<a name="_ref131681214"></a><a name="_toc131683802"></a>**Figure 12. Percent site energy savings distribution for ComStock models with the HP-RTU measure applied by end use and fuel type. The data points that appear above some of the distributions indicate outliers in the distribution, meaning they fall outside 1.5 times the interquartile range. The value for n indicates the number of ComStock models that were applicable for energy savings for the fuel type category.**
+{:refdef: style="text-align: center;"}
+Figure 12. Percent site energy savings distribution for ComStock models with the HP-RTU measure applied by end use and fuel type. The data points that appear above some of the distributions indicate outliers in the distribution, meaning they fall outside 1.5 times the interquartile range. The value for n indicates the number of ComStock models that were applicable for energy savings for the fuel type category.
+{:refdef}
 
 Some models show negative heat recovery savings, noting that the heat recovery end use is for electricity used to operate enthalpy wheels. The negative energy savings are due to increased prevalence of wheel operation caused by increased cycling operation with the HP-RTUs compared to the baseline RTUs. In other words, increased runtime for the air handler can cause increased run time for the enthalpy wheel. This is in part due to the previously mentioned EnergyPlus bug that causes longer cycling operation with the multispeed coil objects used for modeling the HP-RTU. However, the heat recovery end use makes up a very small portion of building stock energy usage, so negative percentage savings in this end use has minimal impact.
 
@@ -305,9 +350,13 @@ The median fan and cooling energy savings are both roughly 40%, which aligns wit
 
 Figure 13 shows the site energy savings distributions between the ComStock baseline and the HP-RTU scenario by fuel type and total site energy. The total site energy savings distribution shows savings values generally between 15% and 35% for the 25th and 75th percentiles, respectively. As mentioned previously, combined site energy savings alone is not a comprehensive assessment of electrification measures, so other considerations should be made as well. The electricity distribution shows some degree of site energy penalties. These are mostly buildings that changed from gas heat to electric heat, so the penalties are expected. Some of this electricity penalty is reduced or mitigated through savings for cooling, fans, and heat recovery, as discussed. Many of the buildings, however, show electricity savings. Some of these are buildings that had electric heating in the baseline; in these cases, the higher-efficiency HP-RTU system reduces electricity usage across multiple end uses. Others may have had gas heating in the baseline, but the savings from cooling and fans outweighed the increase in electric heating from electrifying the end use. These occurrences will be specific to the building and climate zone because of the complicated interactions involved. The combustion fuels show many models with near 100% savings. These are buildings that are completely electrified from this measure (because all gas heated systems in the baseline were applicable) and where gas is not used for other end uses. Models that show less than 100% gas or other fuel savings generally have some nonapplicable gas HVAC system in the baseline, or other end uses, such as water heating, that are not electrified though this measure. Total building electrification may require multiple solutions to achieve.
 
+{:refdef: style="text-align: center;"}
 ![](media/Aspose.Words.bcc483bf-9568-416e-9cbf-5c8d288d1914.013.jpeg)
+{:refdef}
 
-<a name="_ref131576664"></a><a name="_toc131683803"></a>**Figure 13. Percent site energy savings distribution for ComStock models with the applied HP-RTU measure by fuel type. The data points that appear above some of the distributions indicate outliers in the distribution, meaning they fall outside 1.5 times the interquartile range. The value for n indicates the number of ComStock models that were applicable for energy savings for the fuel type category.**
+{:refdef: style="text-align: center;"}
+Figure 13. Percent site energy savings distribution for ComStock models with the applied HP-RTU measure by fuel type. The data points that appear above some of the distributions indicate outliers in the distribution, meaning they fall outside 1.5 times the interquartile range. The value for n indicates the number of ComStock models that were applicable for energy savings for the fuel type category.
+{:refdef}
 
 ## 6.5. Heat Pump Annual Performance
 Simulation results show variation by state in average annual effective heating COP of the HP-RTUs, with lower values around 2 COP and the highest values above 5 COP (Figure 14). This annual average heating COP includes performance and capacity degradation, heat pump sizing limitations, and heat pump defrost operation and associated supplemental heating coil operation, but does not include supply fan energy, which would lower the COP. Note that some of these higher COPs are attributed to operating the HP-RTUs at lower compressor speeds during part-load conditions (Table 2; Figure 7), which is possible with the variable-speed units modeled in this study. These average COPs would likely be reduced with constant-speed HP-RTUs that cycle the full compressor capacity to meet loads. 
@@ -316,20 +365,29 @@ States with warmer climates generally show higher heating COPs for HP-RTUs than 
 
 State average percentage of total heating electricity used by the supplementary system ranges from 6% to 56% (Figure 16). This is due to the reduced capacity of heat pumps under cold ambient conditions and to the fact that the heat pumps are generally being sized to a smaller fraction of the design heating load (when sized to design cooling load, as is done in this study). States with a higher fraction of supplementary heating generally correspond to lower COPs, as expected. Note that supplementary heating can also be induced by reverse-cycle defrost operation, which temporarily disables a heat pump from heating.
 
+{:refdef: style="text-align: center;"}
 ![](media/Aspose.Words.bcc483bf-9568-416e-9cbf-5c8d288d1914.014.png)
+{:refdef}
 
-<a name="_ref127870917"></a><a name="_toc131683804"></a>**Figure 14. Stock annual average effective heating COP by state. Effective heating COP is the total heating energy output divided by total heating energy input. Heating energy output includes heating from the heat pump and supplemental heating. Heating energy input includes heat pump compressor and outdoor fans, supplemental heating, and defrost. The heating energy input does not include associated supply fan energy use. Including supply fan energy use would reduce COPs.**
+{:refdef: style="text-align: center;"}
+Figure 14. Stock annual average effective heating COP by state. Effective heating COP is the total heating energy output divided by total heating energy input. Heating energy output includes heating from the heat pump and supplemental heating. Heating energy input includes heat pump compressor and outdoor fans, supplemental heating, and defrost. The heating energy input does not include associated supply fan energy use. Including supply fan energy use would reduce COPs.
+{:refdef}
 
+{:refdef: style="text-align: center;"}
 ![](media/Aspose.Words.bcc483bf-9568-416e-9cbf-5c8d288d1914.015.png) 
+{:refdef}
 
-<a name="_ref127886926"></a><a name="_toc131683805"></a>**Figure 15. ComStock baseline stock annual average heating energy use intensity (in kilowatt-hours per square meter per year) by state.**
+{:refdef: style="text-align: center;"}
+Figure 15. ComStock baseline stock annual average heating energy use intensity (in kilowatt-hours per square meter per year) by state.
+{:refdef}
 
-
+{:refdef: style="text-align: center;"}
 ![](media/Aspose.Words.bcc483bf-9568-416e-9cbf-5c8d288d1914.016.png)
+{:refdef}
 
-<a name="_ref127885394"></a><a name="_toc131683806"></a>**Figure 16. Stock annual average percent heating electricity input used for supplemental heating by state. Note that supplemental heating occurs because of insufficient heating capacity of the heat pump, which can be further exacerbated from defrost operation.**
-
-<a name="_toc314823693"></a><a name="_toc352071763"></a>
+{:refdef: style="text-align: center;"}
+Figure 16. Stock annual average percent heating electricity input used for supplemental heating by state. Note that supplemental heating occurs because of insufficient heating capacity of the heat pump, which can be further exacerbated from defrost operation.
+{:refdef}
 
 # References
 [1]	“Decarbonizing U.S. Buildings.” [Online]. Available: https://www.c2es.org/document/decarbonizing-u-s-buildings/. [Accessed: 15-Nov-2022].
@@ -368,19 +426,35 @@ State average percentage of total heating electricity used by the supplementary 
 
 [18]	“Commercial Buildings Energy Consumption Survey (CBECS),” 2012. https://www.eia.gov/consumption/commercial/data/2012/
 
+{:refdef: style="text-align: center;"}
 ![](media/Aspose.Words.bcc483bf-9568-416e-9cbf-5c8d288d1914.017.jpeg)
+{:refdef}
 
-<a name="_toc131683807"></a>**Figure A-1. Site annual natural gas consumption of the ComStock baseline and the measure scenario by census division**
+{:refdef: style="text-align: center;"}
+Figure A-1. Site annual natural gas consumption of the ComStock baseline and the measure scenario by census division
+{:refdef}
 
+{:refdef: style="text-align: center;"}
 ![](media/Aspose.Words.bcc483bf-9568-416e-9cbf-5c8d288d1914.018.jpeg)
+{:refdef}
 
-<a name="_toc131683808"></a>**Figure A-2. Site annual natural gas consumption of the ComStock baseline and the measure scenario by building type**
+{:refdef: style="text-align: center;"}
+Figure A-2. Site annual natural gas consumption of the ComStock baseline and the measure scenario by building type
+{:refdef}
 
+{:refdef: style="text-align: center;"}
 ![](media/Aspose.Words.bcc483bf-9568-416e-9cbf-5c8d288d1914.019.jpeg)
+{:refdef}
 
-<a name="_toc131683809"></a>**Figure A-3. Site annual electricity consumption of the ComStock baseline and the measure scenario by building type**
+{:refdef: style="text-align: center;"}
+Figure A-3. Site annual electricity consumption of the ComStock baseline and the measure scenario by building type
+{:refdef}
 
+{:refdef: style="text-align: center;"}
 ![](media/Aspose.Words.bcc483bf-9568-416e-9cbf-5c8d288d1914.020.jpeg)
+{:refdef}
 
-<a name="_toc131683810"></a>**Figure A-4. Site annual electricity consumption of the ComStock baseline and the measure scenario by census division**
+{:refdef: style="text-align: center;"}
+Figure A-4. Site annual electricity consumption of the ComStock baseline and the measure scenario by census division
+{:refdef}
 
