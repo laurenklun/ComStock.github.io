@@ -23,7 +23,6 @@ This documentation focuses on a single end-use savings shape measure---window re
 This documentation covers window replacement upgrade methodology and briefly discusses key results. Results can be accessed on the ComStock™ data lake at "[end-use-load-profiles-for-us-building-stock](https://data.openei.org/s3_viewer?bucket=oedi-data-lake&prefix=nrel-pds-building-stock%2Fend-use-load-profiles-for-us-building-stock%2F)" or via the Data Viewer at [comstock.nrel.gov](https://comstock.nrel.gov/).
 
 
-|---|---|
 | **Measure Title** | Window Replacement |
 | **Measure Definition** | This measure replaces existing windows with new windows that align with the properties proposed in the Advanced Energy Design Guide (AEDG) for each climate zone. |
 | **Applicability** | The measure is applicable to all windows with assembly U-values greater than those proposed in the AEDG, and all windows with solar heat gain coefficients (SHGCs) greater than those proposed in the AEDG. This includes most commercial buildings.  |

@@ -34,12 +34,11 @@ This documentation covers roof insulation upgrade methodology and briefly discus
 
 ## 1.2.  Measure Summary
 
-| **Measure Title**  | **Roof Insulation**                                                                                                                           |
-|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| Measure Definition | This measure adds additional roof insulation to the meet the R-values specified in the *Advanced Energy Design Guide* (AEDG) by climate zone. |
-| Applicability      | Models with roof insulation R-values that are below those specified in the AEDG for the respective climate zone.                              |
-| Not Applicable     | Models with roof insulation R-values that already meet or exceed the R-values specified in the AEDG will not be impacted.                     |
-| Release            | EUSS 2023 Release 1                                                                                                                           |
+| **Measure Title**  | Roof Insulation                                                                                                                         |
+| **Measure Definition** | This measure adds additional roof insulation to the meet the R-values specified in the *Advanced Energy Design Guide* (AEDG) by climate zone. |
+| **Applicability**      | Models with roof insulation R-values that are below those specified in the AEDG for the respective climate zone.                              |
+| **Not Applicable**     | Models with roof insulation R-values that already meet or exceed the R-values specified in the AEDG will not be impacted.                     |
+| **Release**            | EUSS 2023 Release 1                                                                                                                           |
 
 # 2.  Technology Summary
 

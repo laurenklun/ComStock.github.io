@@ -28,12 +28,11 @@ The authors would like to acknowledge the valuable guidance and input provided b
 
 This documentation covers secondary window systems upgrade methodology and briefly discusses key results. Results can be accessed on the ComStock data lake "[end-use-load-profiles-for-us-building-stock](https://data.openei.org/s3_viewer?bucket=oedi-data-lake&prefix=nrel-pds-building-stock%2Fend-use-load-profiles-for-us-building-stock%2F)" or via the Data Viewer at [comstock.nrel.gov](https://comstock.nrel.gov).
 
-| **Measure Title**  | **Secondary Window System**                                                                                                              |
-|--------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| Measure Definition | This measure adds secondary windows to the inside of existing windows, decreasing the U-value, SHGC, and VLT by a specified amount. |
-| Applicability      | The measure is applicable to all single- and double-pane windows.                                                                   |
-| Not Applicable     | The measure is not applicable to triple-pane windows.                                                                               |
-| Release            | EUSS 2023 Release 1                                                                                                                 |
+| **Measure Title**  | Secondary Window System                                                                                                            |
+| **Measure Definition** | This measure adds secondary windows to the inside of existing windows, decreasing the U-value, SHGC, and VLT by a specified amount. |
+| **Applicability**      | The measure is applicable to all single- and double-pane windows.                                                                   |
+| **Not Applicable**     | The measure is not applicable to triple-pane windows.                                                                               |
+| **Release**            | EUSS 2023 Release 1                                                                                                                 |
 
 
 # 2.  Technology Summary
@@ -70,9 +69,9 @@ Table 1. Overall Assembly Performance Characteristics from Field Studies
 
 |                         | **Provo, UT** | **Denver, CO (double-pane)** |
 |-------------------------|---------------|----------------|
-| U-factor (Btu/h-ft2-°F) | 0.27          | 0.23           |
-| SHGC                    | 0.24          | 0.42           |
-| VT                      | not stated    | 0.58           |
+| **U-factor (Btu/h-ft2-°F)** | 0.27          | 0.23           |
+| **SHGC**                    | 0.24          | 0.42           |
+| **VT**                      | not stated    | 0.58           |
 
 # 3.  ComStock Baseline Approach
 
@@ -87,7 +86,7 @@ Table 2. Window Property Data Sources
 {:refdef}
 
 {:refdef: style="text-align: center;"}
-![A picture containing table Description automatically generated](./media/c1dbe272-0b99-4cab-993a-a044485ea2b6.png)
+![A picture containing table Description automatically generated](./media/c1dbe272-0b99-4cab-993a-a044485ea2b6.png){:width="500"}
 {:refdef}
 
 {:refdef: style="text-align: center;"}
@@ -176,9 +175,9 @@ Table 6. Overall Assembly Performance Characteristics by Climate Zone
 
 |                         | **0** | **1** | **2** | **3** | **4** | **5** | **6** | **7** | **8** |
 |-------------------------|-------|-------|-------|-------|-------|-------|-------|-------|-------|
-| U-factor (Btu/h-ft2-°F) | 0.48  | 0.48  | 0.43  | 0.40  | 0.34  | 0.34  | 0.32  | 0.28  | 0.25  |
-| SHGC                    | 0.21  | 0.22  | 0.24  | 0.24  | 0.34  | 0.36  | 0.36  | 0.38  | 0.38  |
-| VT/SHGC                 | 1.10  | 1.10  | 1.10  | 1.10  | 1.10  | 1.10  | 1.10  | 1.10  | 1.10  |
+|**U-factor (Btu/h-ft2-°F)** | 0.48  | 0.48  | 0.43  | 0.40  | 0.34  | 0.34  | 0.32  | 0.28  | 0.25  |
+| **SHGC**                    | 0.21  | 0.22  | 0.24  | 0.24  | 0.34  | 0.36  | 0.36  | 0.38  | 0.38  |
+| **VT/SHGC**                 | 1.10  | 1.10  | 1.10  | 1.10  | 1.10  | 1.10  | 1.10  | 1.10  | 1.10  |
 
 To understand the expected performance of the total assembly, a range of combinations of existing window and secondary windows was modeled using the LBNL WINDOW software. As illustrated in Figure 3, a modeling simplification was made to exclude the effects of the secondary window frame, because in the frame-within-frame configuration, heat transfer would likely be dominated by the existing frame.
 
@@ -209,7 +208,7 @@ Table 8. Comparison of Existing Window Plus Secondary Window Combinations to ASH
 The current stock has 12 different window configurations. Figure 4 shows the breakdown of windows by total floor area. In total, single-pane windows represent about 53% of the floor area, double-pane 47%, and triple pane \<1%.
 
 {:refdef: style="text-align: center;"}
-![Timeline Description automatically generated](./media/9ee2ecf1-33ec-44f7-8d95-3db062766207.png)
+![Timeline Description automatically generated](./media/9ee2ecf1-33ec-44f7-8d95-3db062766207.png){:width="600"}
 {:refdef}
 
 {:refdef: style="text-align: center;"}
@@ -249,7 +248,7 @@ In the case studies, the evaluators found that the installation of secondary win
 Installing secondary windows demonstrates 1% (60 TBtu) annual stock energy savings for commercial buildings (Figure 5). This includes 3% electricity heating savings (8 TBtu), 3% natural gas heating savings (12 TBtu), 3% electricity cooling savings (19 TBtu), and 1% fan energy savings. Heating, cooling, and fan energy savings can be partially attributed to the decreased thermal conductance (U-value) of the secondary windows, which generally reduces heating and cooling loads. This reduces the energy requirement of the heating and cooling system, but can also decrease the number of times heating, ventilating, and air conditioning (HVAC) fans need to cycle on (for systems that include cycling operation), which explains the energy savings in that category. Minimal differences in energy consumption between the baseline and upgrade scenario are observed for non-HVAC end uses, which is expected.
 
 {:refdef: style="text-align: center;"}
-![A picture containing chart Description automatically generated](./media/930930cc-15a1-4985-a004-d8d51a6cf0b5.jpeg)
+![A picture containing chart Description automatically generated](./media/930930cc-15a1-4985-a004-d8d51a6cf0b5.jpeg){:width="600"}
 {:refdef}
 
 {:refdef: style="text-align: center;"}
@@ -272,7 +271,7 @@ electricity grid scenarios are presented: Cambium Long-Run Marginal Emissions Ra
 ## 7.5  Energy Savings Distributions
 
 Figure 7 shows the distribution of annual energy percent savings for the ComStock baseline compared to the window 
-replacement scenario. The majority of the distributions show site energy savings between roughly 2% and 5% for the 25^th^ and 75^th^ percentiles (as indicated by the boxplots), respectively. The distributions extend fairly wide, but much of this range is covered by outliers outside of the standard 1.5 times the interquartile range calculation. Outliers are indicated by dots above the distribution, and they represent a relatively small portion of models. Some models in the distributions show negative energy savings for a given fuel type. This is expected to some degree with this type of window strategy, as reducing the SHGC can increase heating load.
+replacement scenario. The majority of the distributions show site energy savings between roughly 2% and 5% for the 25<sup>th</sup> and 75<sup>th</sup> percentiles (as indicated by the boxplots), respectively. The distributions extend fairly wide, but much of this range is covered by outliers outside of the standard 1.5 times the interquartile range calculation. Outliers are indicated by dots above the distribution, and they represent a relatively small portion of models. Some models in the distributions show negative energy savings for a given fuel type. This is expected to some degree with this type of window strategy, as reducing the SHGC can increase heating load.
 
 {:refdef: style="text-align: center;"}
 ![Chart Description automatically generated](./media/1ed78901-1755-499b-a218-aa19a7c5d2e0.jpeg)
@@ -285,7 +284,7 @@ Figure 7. Percent savings distribution of ComStock models by fuel type
 Figure 8 shows the percent savings distribution for each end use and fuel type combination between the baseline 
 ComStock model and the corresponding upgrade model. Models are included in these distributions only if they experienced savings (or a penalty) for the specific distribution. The model count for the distributions is indicated in each distribution title. Many end uses demonstrated a wide range of savings.
 
-The heating end use (for the various fuel types) generally shows energy savings above the 25^th^ percentile of the distribution. Heating savings are expected when decreasing the window U-value due to the increased insulative properties. However, some models experienced heating penalties. This is often due to the increased SHGC of the replacement windows, which is intended to decrease cooling energy consumption. However, this can also block some beneficial solar heat gain, which can cause an increased heating load. Whether or not annual heating savings are realized depends on a combination of factors, including the window to wall area, window orientation, thermostat set points, HVAC system, outdoor air temperatures, and amount of solar radiation affecting the window surface. Heating-only HVAC system types can be especially prone to energy penalties from lower SHGC because there is no cooling system to save energy from the decreased solar gains, although this does not reflect other potential benefits such as thermal comfort or glare control. Also, in some cases, HVAC systems that use multiple fuel types may experience heating savings for one of the fuel types and a heating penalty for the other due to nuanced load changes that shift load within the system.
+The heating end use (for the various fuel types) generally shows energy savings above the 25<sup>th</sup> percentile of the distribution. Heating savings are expected when decreasing the window U-value due to the increased insulative properties. However, some models experienced heating penalties. This is often due to the increased SHGC of the replacement windows, which is intended to decrease cooling energy consumption. However, this can also block some beneficial solar heat gain, which can cause an increased heating load. Whether or not annual heating savings are realized depends on a combination of factors, including the window to wall area, window orientation, thermostat set points, HVAC system, outdoor air temperatures, and amount of solar radiation affecting the window surface. Heating-only HVAC system types can be especially prone to energy penalties from lower SHGC because there is no cooling system to save energy from the decreased solar gains, although this does not reflect other potential benefits such as thermal comfort or glare control. Also, in some cases, HVAC systems that use multiple fuel types may experience heating savings for one of the fuel types and a heating penalty for the other due to nuanced load changes that shift load within the system.
 
 {:refdef: style="text-align: center;"}
 ![Diagram Description automatically generated](./media/5e5935e8-1632-439f-b520-f267f2d423c8.jpeg)
