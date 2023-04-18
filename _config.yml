@@ -11,7 +11,7 @@ aux_links:
     - "https://github.com/NREL/ComStock"
 aux_links_new_tab: true
 footer_content: "ComStock, Copyright (c) 2019-2022, Alliance for Sustainable Energy, LLC, and other contributors. All rights reserved."
-color_scheme: comstock
+color_scheme: general
 callouts:
   warning:
     title: Warning

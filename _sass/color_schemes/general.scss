@@ -9,8 +9,17 @@ $btn-primary-color: #3E567C;
 $base-button-color: #ECECEC;
 $search-result-preview-color: #24344D;
 $search-background-color: #E6E7E8;
-$table-background-color: #E6E7E8;
+$table-background-color: $white;
 $feedback-color: darken($sidebar-color, 2%);
 $code-background-color: #C5CCD7; 
 $code-linenumber-color: #24344D; 
 
+table {
+    border-top: 5px solid #af7c21;
+    border-bottom: 5px solid #af7c21;
+}
+
+.table_link_text {
+    color: #24344D;
+    text-decoration: underline;
+}
