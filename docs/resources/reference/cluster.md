@@ -2,7 +2,8 @@
 layout: default
 title: Cluster
 nav_order: 2
-parent: Documentation
+parent: Reference
+grand-parent: Resources
 published: false
 ---
 

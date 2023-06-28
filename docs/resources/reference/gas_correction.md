@@ -2,7 +2,8 @@
 layout: default
 title: Gas Correction
 nav_order: 3
-parent: Documentation
+parent: Reference
+grand-parent: Resources
 published: false
 ---
 
