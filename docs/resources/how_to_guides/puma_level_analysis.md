@@ -5,11 +5,13 @@ parent: How-to Guides
 grand_parent: Resources
 nav_order: 2
 ---
-# How-to: Downloading and using PUMA-level ComStock data for analysis
+# How-to: Understand the annual energy use by building type for a city.
 
 June 27, 2023
 
-## Example statement: I want to understand the annual energy use by building type for the city of Richmond, CA.
+This guide will walk you through how to prepare PUMA-level ComStock data for analysis using the following example statement:
+
+**I want to understand the annual energy use by building type for the city of Richmond, CA.**
 
 ComStock has multiple fields that indicate where models are located
 across the country. When conducting analysis for a city using the

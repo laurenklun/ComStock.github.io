@@ -1,11 +1,11 @@
 ---
 layout: default
 title: Joining External Geospatial Data
-parent: How-to Guides
+parent: Tutorials
 grand_parent: Resources
 nav_order: 1
 ---
-# How-to Guide: Joining External Data to ComStock using Geospatial Fields
+# Tutorial: Joining Data from an External Dataset to ComStock using Geospatial Fields
 
 June 14, 2023
 

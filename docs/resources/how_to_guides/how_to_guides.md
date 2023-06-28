@@ -7,5 +7,6 @@ has_children: true
 ---
 
 # How-to Guides
+This section provides a collection of step-by-step guides for using the ComStock dataset to answer a given question. 
 
 {: .fw-500 }
