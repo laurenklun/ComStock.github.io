@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Residential Unitary Heat Pump Water Heater
-parent: Measures
-grand_parent: Documentation
+parent: Upgrade Measures
+grand_parent: Reference
+great_grand_parent: Resources
 nav_order: 4
 published: false
 ---

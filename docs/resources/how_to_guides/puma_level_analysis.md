@@ -2,6 +2,8 @@
 layout: default
 title: PUMA-level Analysis
 parent: How-to Guides
+grand_parent: Resources
+nav_order: 2
 ---
 # How-to: Downloading and using PUMA-level ComStock data for analysis
 

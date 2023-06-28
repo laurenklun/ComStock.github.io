@@ -1,7 +1,11 @@
 ---
 layout: default
 title: How-to Guides
-nav_order: 5
+parent: Resources
+nav_order: 1
 has_children: true
 ---
 
+# How-to Guides
+
+{: .fw-500 }

@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Measures
-parent: Documentation
+title: Upgrade Measures
+parent: Reference
+grand_parent: Resources
 nav_order: 5
 has_children: true
 ---
