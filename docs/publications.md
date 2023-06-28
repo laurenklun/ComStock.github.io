@@ -5,7 +5,7 @@ nav_order: 7
 ---
 
 # Publications
-
+{: .fw-500 }
 ## NREL Reports, Papers, and Presentations
 
 > {: .publication }
@@ -18,12 +18,12 @@ nav_order: 7
 ></span>
 
 > {: .publication }
->> **Buidling Stock Cluster Methodology Documentation (2023)**
+>> **Building Stock Cluster Methodology Documentation (2023)**
 >>
 >> Clustering of counties together represents a similarity of building characteristics and climate zone.
 >
 ><span class="fs-2">
->[Link]([https://www.nrel.gov/docs/fy23osti/83819.pdf](https://www.nrel.gov/docs/fy23osti/84648.pdf)){: .btn}
+>[Link](https://www.nrel.gov/docs/fy23osti/84648.pdf){: .btn}
 ></span>
 
 > {: .publication }
