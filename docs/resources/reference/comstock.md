@@ -2,7 +2,8 @@
 layout: default
 title: ComStock
 nav_order: 1
-parent: Documentation
+parent: Reference
+grand_parent: Resources
 ---
 
 # ComStock Reference Documentation
